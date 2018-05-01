@@ -1,0 +1,19 @@
+﻿@model Transporto.ViewModels.Mantenimiento._DeleteMantenimientoViewModel
+@{
+    ViewBag.Title = "Eliminar Mantenimiento";
+    Layout = ConstantHelpers.LAYOUT.MODAL_LAYOUT_PATH;
+    ViewBag.Form = new ModalFormHelpers("DeleteMantenimiento", "Mantenimiento", FormMethod.Post);
+}
+
+<div class="row">
+    <div class="col-sm-6">
+        @Html.HiddenFor(x => x.matenimientoID)
+        <h3>Esta seguro que desea eliminar Cliente </h3>
+    </div>
+</div>
+@section Footer {
+    <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-check"></i> Aceptar</button>
+}
+
+
+

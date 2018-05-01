@@ -1,0 +1,21 @@
+﻿@model Transporto.ViewModels.Contactos._DeleteContatcosViewModel
+@{
+    ViewBag.Title = "Eliminar Contacto";
+    Layout = ConstantHelpers.LAYOUT.MODAL_LAYOUT_PATH;
+    ViewBag.Form = new ModalFormHelpers("DeleteContacto", "Contacto", FormMethod.Post);
+}
+
+<div class="row">
+    <div class="col-sm-6">
+        @Html.HiddenFor(x => x.ContactoId)
+        <h3>Esta seguro que desea eliminar Contacto </h3>
+    </div>
+</div>
+@section Footer {
+    <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-check"></i> Aceptar</button>
+}
+
+
+
+
+

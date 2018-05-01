@@ -1,0 +1,570 @@
+
+-- --------------------------------------------------
+-- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
+-- --------------------------------------------------
+-- Date Created: 04/30/2018 16:32:11
+-- Generated from EDMX file: C:\Users\José Sandovl\Desktop\Transporto\Transporto\Models\Transporto.edmx
+-- --------------------------------------------------
+
+SET QUOTED_IDENTIFIER OFF;
+GO
+Create database BD_TRANSPORTO;
+go
+USE [BD_TRANSPORTO];
+GO
+IF SCHEMA_ID(N'dbo') IS NULL EXECUTE(N'CREATE SCHEMA [dbo]');
+GO
+
+-- --------------------------------------------------
+-- Dropping existing FOREIGN KEY constraints
+-- --------------------------------------------------
+
+IF OBJECT_ID(N'[dbo].[FK_Contactos_EmpresaCliente]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Contactos] DROP CONSTRAINT [FK_Contactos_EmpresaCliente];
+GO
+IF OBJECT_ID(N'[dbo].[FK_EmpresaCliente_Distrito]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[EmpresaCliente] DROP CONSTRAINT [FK_EmpresaCliente_Distrito];
+GO
+IF OBJECT_ID(N'[dbo].[FK_HojaDeRuta_Ayudante]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[HojaDeRuta] DROP CONSTRAINT [FK_HojaDeRuta_Ayudante];
+GO
+IF OBJECT_ID(N'[dbo].[FK_HojaDeRuta_Chofer]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[HojaDeRuta] DROP CONSTRAINT [FK_HojaDeRuta_Chofer];
+GO
+IF OBJECT_ID(N'[dbo].[FK_HojaDeRuta_Distrito]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[HojaDeRuta] DROP CONSTRAINT [FK_HojaDeRuta_Distrito];
+GO
+IF OBJECT_ID(N'[dbo].[FK_HojaDeRuta_EmpresaCliente]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[HojaDeRuta] DROP CONSTRAINT [FK_HojaDeRuta_EmpresaCliente];
+GO
+IF OBJECT_ID(N'[dbo].[FK_HojaDeRuta_Vehiculo]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[HojaDeRuta] DROP CONSTRAINT [FK_HojaDeRuta_Vehiculo];
+GO
+IF OBJECT_ID(N'[dbo].[FK_Mantenimiento_Usuario]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Mantenimiento] DROP CONSTRAINT [FK_Mantenimiento_Usuario];
+GO
+IF OBJECT_ID(N'[dbo].[FK_Mantenimiento_Vehiculo]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Mantenimiento] DROP CONSTRAINT [FK_Mantenimiento_Vehiculo];
+GO
+IF OBJECT_ID(N'[dbo].[FK_Observacion_HojaDeRuta]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Observacion] DROP CONSTRAINT [FK_Observacion_HojaDeRuta];
+GO
+IF OBJECT_ID(N'[dbo].[FK_RolesDeUsuario_Rol]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[RolesDeUsuario] DROP CONSTRAINT [FK_RolesDeUsuario_Rol];
+GO
+IF OBJECT_ID(N'[dbo].[FK_RolesDeUsuario_Usuario]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[RolesDeUsuario] DROP CONSTRAINT [FK_RolesDeUsuario_Usuario];
+GO
+
+-- --------------------------------------------------
+-- Dropping existing tables
+-- --------------------------------------------------
+
+IF OBJECT_ID(N'[dbo].[Ayudante]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Ayudante];
+GO
+IF OBJECT_ID(N'[dbo].[Chofer]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Chofer];
+GO
+IF OBJECT_ID(N'[dbo].[Contactos]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Contactos];
+GO
+IF OBJECT_ID(N'[dbo].[Distrito]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Distrito];
+GO
+IF OBJECT_ID(N'[dbo].[EmpresaCliente]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[EmpresaCliente];
+GO
+IF OBJECT_ID(N'[dbo].[HojaDeRuta]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[HojaDeRuta];
+GO
+IF OBJECT_ID(N'[dbo].[Mantenimiento]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Mantenimiento];
+GO
+IF OBJECT_ID(N'[dbo].[Observacion]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Observacion];
+GO
+IF OBJECT_ID(N'[dbo].[Rol]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Rol];
+GO
+IF OBJECT_ID(N'[dbo].[RolesDeUsuario]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[RolesDeUsuario];
+GO
+IF OBJECT_ID(N'[dbo].[Usuario]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Usuario];
+GO
+IF OBJECT_ID(N'[dbo].[Vehiculo]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Vehiculo];
+GO
+
+-- --------------------------------------------------
+-- Creating all tables
+-- --------------------------------------------------
+
+-- Creating table 'Ayudante'
+CREATE TABLE [dbo].[Ayudante] (
+    [IDAyudate] int IDENTITY(1,1) NOT NULL,
+    [NombreAyudante] varchar(50)  NULL,
+    [ApellidoAyudante] varchar(50)  NOT NULL,
+    [DNIAyudante] char(8)  NOT NULL,
+    [DireccionAyudante] varchar(50)  NULL,
+    [TelefonoAyudante] varchar(50)  NULL,
+    [CelularAyudante] varchar(50)  NULL,
+    [Estado] varchar(50)  NULL
+);
+GO
+
+-- Creating table 'Chofer'
+CREATE TABLE [dbo].[Chofer] (
+    [IDchofer] int IDENTITY(1,1) NOT NULL,
+    [NombreChofer] varchar(50)  NULL,
+    [ApellidosChofer] varchar(50)  NOT NULL,
+    [DNIChofer] varchar(50)  NOT NULL,
+    [FuncionChofer] varchar(50)  NULL,
+    [NumeroBreveteChofer] varchar(50)  NULL,
+    [FechaDActivacionBrevete] datetime  NOT NULL,
+    [FecchaVencimientoBrevete] datetime  NOT NULL,
+    [CelularPersonalChofer] varchar(50)  NULL,
+    [CelularCorporativoChofer] varchar(50)  NULL,
+    [EmailChofer] varchar(50)  NULL,
+    [Estado] varchar(3)  NULL
+);
+GO
+
+-- Creating table 'Contactos'
+CREATE TABLE [dbo].[Contactos] (
+    [IDContactos] int IDENTITY(1,1) NOT NULL,
+    [Dni] varchar(50)  NULL,
+    [Nombre] varchar(50)  NULL,
+    [Apellido] varchar(50)  NULL,
+    [Celular] varchar(50)  NULL,
+    [EmailContacto] varchar(50)  NULL,
+    [IDEmpresa] int  NOT NULL,
+    [Estado] varchar(3)  NULL
+);
+GO
+
+-- Creating table 'Distrito'
+CREATE TABLE [dbo].[Distrito] (
+    [IDDistrito] int IDENTITY(1,1) NOT NULL,
+    [NombreDistrito] varchar(100)  NULL
+);
+GO
+
+-- Creating table 'EmpresaCliente'
+CREATE TABLE [dbo].[EmpresaCliente] (
+    [IDEmpresaCliente] int IDENTITY(1,1) NOT NULL,
+    [Ruc] varchar(50)  NOT NULL,
+    [NombreEmpresa] varchar(50)  NOT NULL,
+    [TelefonoCorporativo] varchar(50)  NULL,
+    [Direccion] varchar(50)  NULL,
+    [IDDistrito] int  NOT NULL,
+    [EmailCorporativa] varchar(50)  NULL,
+    [Observaciones] varchar(50)  NULL,
+    [DNIContaco] char(8)  NOT NULL,
+    [NombreContacto] varchar(25)  NULL,
+    [ApellidoContacto] varchar(50)  NULL,
+    [CelularContacto] varchar(9)  NULL,
+    [EmailContaco] varchar(30)  NULL,
+    [Estado] varchar(3)  NOT NULL
+);
+GO
+
+-- Creating table 'HojaDeRuta'
+CREATE TABLE [dbo].[HojaDeRuta] (
+    [IDHojaDruta] int IDENTITY(1,1) NOT NULL,
+    [IDVehiculo] int  NOT NULL,
+    [Documento] varchar(50)  NULL,
+    [NumeroDocumento] varchar(50)  NOT NULL,
+    [IDChofer] int  NOT NULL,
+    [IDAyudante] int  NOT NULL,
+    [Fecha] datetime  NULL,
+    [IDClienteEmpresa] int  NOT NULL,
+    [Direccion] varchar(50)  NULL,
+    [IDDistrito] int  NOT NULL,
+    [Peso] decimal(10,2)  NULL,
+    [Volumen] decimal(5,5)  NULL,
+    [Valor] decimal(10,10)  NULL,
+    [Status] varchar(50)  NULL,
+    [Hora] datetime  NULL,
+    [Estado] varchar(3)  NULL
+);
+GO
+
+-- Creating table 'Mantenimiento'
+CREATE TABLE [dbo].[Mantenimiento] (
+    [IDMantenimiento] int IDENTITY(1,1) NOT NULL,
+    [Kilometraje] int  NOT NULL,
+    [FechaMantenimiento] datetime  NOT NULL,
+    [Taller] varchar(50)  NULL,
+    [FechaDMantenimientoObcional] datetime  NULL,
+    [Monto] decimal(10,2)  NOT NULL,
+    [Motivo] varchar(50)  NULL,
+    [IDUsuario] int  NOT NULL,
+    [IDVehiculo] int  NOT NULL,
+    [Estado] varchar(50)  NOT NULL
+);
+GO
+
+-- Creating table 'Observacion'
+CREATE TABLE [dbo].[Observacion] (
+    [IDObservaciones] int IDENTITY(1,1) NOT NULL,
+    [IDHojaDeRuta] int  NOT NULL,
+    [DescripcionDObservacion] varchar(100)  NULL
+);
+GO
+
+-- Creating table 'Rol'
+CREATE TABLE [dbo].[Rol] (
+    [IDRol] int IDENTITY(1,1) NOT NULL,
+    [Rol1] varchar(30)  NULL,
+    [Estado] varchar(3)  NOT NULL
+);
+GO
+
+-- Creating table 'RolesDeUsuario'
+CREATE TABLE [dbo].[RolesDeUsuario] (
+    [IDRolesUsuario] int IDENTITY(1,1) NOT NULL,
+    [IDUsuario] int  NOT NULL,
+    [IDRol] int  NOT NULL,
+    [Estado] varchar(3)  NOT NULL
+);
+GO
+
+-- Creating table 'Usuario'
+CREATE TABLE [dbo].[Usuario] (
+    [IdUsuario] int IDENTITY(1,1) NOT NULL,
+    [Codigo] varchar(25)  NOT NULL,
+    [Comtrasena] char(4)  NOT NULL,
+    [Nombre] varchar(50)  NULL,
+    [Apellido] varchar(50)  NULL,
+    [Dni] char(8)  NULL,
+    [Estado] varchar(3)  NULL
+);
+GO
+
+-- Creating table 'Vehiculo'
+CREATE TABLE [dbo].[Vehiculo] (
+    [IDVehiculo] int IDENTITY(1,1) NOT NULL,
+    [Marca] varchar(50)  NULL,
+    [Modelo] varchar(50)  NULL,
+    [Tipo] varchar(50)  NULL,
+    [Placa] char(6)  NOT NULL,
+    [SoatFechaInic] datetime  NOT NULL,
+    [SoatFechVenc] datetime  NOT NULL,
+    [Peso] decimal(10,8)  NULL,
+    [Volumen] decimal(10,8)  NULL,
+    [FechaDeInicioRevisionTecn] datetime  NULL,
+    [FechaDeCaducidadReviciTecni] datetime  NULL,
+    [FechaIncioSeguroVehicular] datetime  NULL,
+    [FechaCaducidadSeguVehicu] datetime  NULL,
+    [NumeroHabilitacion] varchar(50)  NULL,
+    [FechaInicioCertificadoFumiga] datetime  NULL,
+    [FechaCaducidadCertificadoFumiga] datetime  NULL,
+    [Estado] varchar(3)  NULL
+);
+GO
+
+-- --------------------------------------------------
+-- Creating all PRIMARY KEY constraints
+-- --------------------------------------------------
+
+-- Creating primary key on [IDAyudate] in table 'Ayudante'
+ALTER TABLE [dbo].[Ayudante]
+ADD CONSTRAINT [PK_Ayudante]
+    PRIMARY KEY CLUSTERED ([IDAyudate] ASC);
+GO
+
+-- Creating primary key on [IDchofer] in table 'Chofer'
+ALTER TABLE [dbo].[Chofer]
+ADD CONSTRAINT [PK_Chofer]
+    PRIMARY KEY CLUSTERED ([IDchofer] ASC);
+GO
+
+-- Creating primary key on [IDContactos] in table 'Contactos'
+ALTER TABLE [dbo].[Contactos]
+ADD CONSTRAINT [PK_Contactos]
+    PRIMARY KEY CLUSTERED ([IDContactos] ASC);
+GO
+
+-- Creating primary key on [IDDistrito] in table 'Distrito'
+ALTER TABLE [dbo].[Distrito]
+ADD CONSTRAINT [PK_Distrito]
+    PRIMARY KEY CLUSTERED ([IDDistrito] ASC);
+GO
+
+-- Creating primary key on [IDEmpresaCliente] in table 'EmpresaCliente'
+ALTER TABLE [dbo].[EmpresaCliente]
+ADD CONSTRAINT [PK_EmpresaCliente]
+    PRIMARY KEY CLUSTERED ([IDEmpresaCliente] ASC);
+GO
+
+-- Creating primary key on [IDHojaDruta] in table 'HojaDeRuta'
+ALTER TABLE [dbo].[HojaDeRuta]
+ADD CONSTRAINT [PK_HojaDeRuta]
+    PRIMARY KEY CLUSTERED ([IDHojaDruta] ASC);
+GO
+
+-- Creating primary key on [IDMantenimiento] in table 'Mantenimiento'
+ALTER TABLE [dbo].[Mantenimiento]
+ADD CONSTRAINT [PK_Mantenimiento]
+    PRIMARY KEY CLUSTERED ([IDMantenimiento] ASC);
+GO
+
+-- Creating primary key on [IDObservaciones] in table 'Observacion'
+ALTER TABLE [dbo].[Observacion]
+ADD CONSTRAINT [PK_Observacion]
+    PRIMARY KEY CLUSTERED ([IDObservaciones] ASC);
+GO
+
+-- Creating primary key on [IDRol] in table 'Rol'
+ALTER TABLE [dbo].[Rol]
+ADD CONSTRAINT [PK_Rol]
+    PRIMARY KEY CLUSTERED ([IDRol] ASC);
+GO
+
+-- Creating primary key on [IDRolesUsuario] in table 'RolesDeUsuario'
+ALTER TABLE [dbo].[RolesDeUsuario]
+ADD CONSTRAINT [PK_RolesDeUsuario]
+    PRIMARY KEY CLUSTERED ([IDRolesUsuario] ASC);
+GO
+
+-- Creating primary key on [IdUsuario] in table 'Usuario'
+ALTER TABLE [dbo].[Usuario]
+ADD CONSTRAINT [PK_Usuario]
+    PRIMARY KEY CLUSTERED ([IdUsuario] ASC);
+GO
+
+-- Creating primary key on [IDVehiculo] in table 'Vehiculo'
+ALTER TABLE [dbo].[Vehiculo]
+ADD CONSTRAINT [PK_Vehiculo]
+    PRIMARY KEY CLUSTERED ([IDVehiculo] ASC);
+GO
+
+-- --------------------------------------------------
+-- Creating all FOREIGN KEY constraints
+-- --------------------------------------------------
+
+-- Creating foreign key on [IDAyudante] in table 'HojaDeRuta'
+ALTER TABLE [dbo].[HojaDeRuta]
+ADD CONSTRAINT [FK_HojaDeRuta_Ayudante]
+    FOREIGN KEY ([IDAyudante])
+    REFERENCES [dbo].[Ayudante]
+        ([IDAyudate])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_HojaDeRuta_Ayudante'
+CREATE INDEX [IX_FK_HojaDeRuta_Ayudante]
+ON [dbo].[HojaDeRuta]
+    ([IDAyudante]);
+GO
+
+-- Creating foreign key on [IDChofer] in table 'HojaDeRuta'
+ALTER TABLE [dbo].[HojaDeRuta]
+ADD CONSTRAINT [FK_HojaDeRuta_Chofer]
+    FOREIGN KEY ([IDChofer])
+    REFERENCES [dbo].[Chofer]
+        ([IDchofer])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_HojaDeRuta_Chofer'
+CREATE INDEX [IX_FK_HojaDeRuta_Chofer]
+ON [dbo].[HojaDeRuta]
+    ([IDChofer]);
+GO
+
+-- Creating foreign key on [IDEmpresa] in table 'Contactos'
+ALTER TABLE [dbo].[Contactos]
+ADD CONSTRAINT [FK_Contactos_EmpresaCliente]
+    FOREIGN KEY ([IDEmpresa])
+    REFERENCES [dbo].[EmpresaCliente]
+        ([IDEmpresaCliente])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_Contactos_EmpresaCliente'
+CREATE INDEX [IX_FK_Contactos_EmpresaCliente]
+ON [dbo].[Contactos]
+    ([IDEmpresa]);
+GO
+
+-- Creating foreign key on [IDDistrito] in table 'EmpresaCliente'
+ALTER TABLE [dbo].[EmpresaCliente]
+ADD CONSTRAINT [FK_EmpresaCliente_Distrito]
+    FOREIGN KEY ([IDDistrito])
+    REFERENCES [dbo].[Distrito]
+        ([IDDistrito])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_EmpresaCliente_Distrito'
+CREATE INDEX [IX_FK_EmpresaCliente_Distrito]
+ON [dbo].[EmpresaCliente]
+    ([IDDistrito]);
+GO
+
+-- Creating foreign key on [IDDistrito] in table 'HojaDeRuta'
+ALTER TABLE [dbo].[HojaDeRuta]
+ADD CONSTRAINT [FK_HojaDeRuta_Distrito]
+    FOREIGN KEY ([IDDistrito])
+    REFERENCES [dbo].[Distrito]
+        ([IDDistrito])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_HojaDeRuta_Distrito'
+CREATE INDEX [IX_FK_HojaDeRuta_Distrito]
+ON [dbo].[HojaDeRuta]
+    ([IDDistrito]);
+GO
+
+-- Creating foreign key on [IDClienteEmpresa] in table 'HojaDeRuta'
+ALTER TABLE [dbo].[HojaDeRuta]
+ADD CONSTRAINT [FK_HojaDeRuta_EmpresaCliente]
+    FOREIGN KEY ([IDClienteEmpresa])
+    REFERENCES [dbo].[EmpresaCliente]
+        ([IDEmpresaCliente])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_HojaDeRuta_EmpresaCliente'
+CREATE INDEX [IX_FK_HojaDeRuta_EmpresaCliente]
+ON [dbo].[HojaDeRuta]
+    ([IDClienteEmpresa]);
+GO
+
+-- Creating foreign key on [IDVehiculo] in table 'HojaDeRuta'
+ALTER TABLE [dbo].[HojaDeRuta]
+ADD CONSTRAINT [FK_HojaDeRuta_Vehiculo]
+    FOREIGN KEY ([IDVehiculo])
+    REFERENCES [dbo].[Vehiculo]
+        ([IDVehiculo])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_HojaDeRuta_Vehiculo'
+CREATE INDEX [IX_FK_HojaDeRuta_Vehiculo]
+ON [dbo].[HojaDeRuta]
+    ([IDVehiculo]);
+GO
+
+-- Creating foreign key on [IDHojaDeRuta] in table 'Observacion'
+ALTER TABLE [dbo].[Observacion]
+ADD CONSTRAINT [FK_Observacion_HojaDeRuta]
+    FOREIGN KEY ([IDHojaDeRuta])
+    REFERENCES [dbo].[HojaDeRuta]
+        ([IDHojaDruta])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_Observacion_HojaDeRuta'
+CREATE INDEX [IX_FK_Observacion_HojaDeRuta]
+ON [dbo].[Observacion]
+    ([IDHojaDeRuta]);
+GO
+
+-- Creating foreign key on [IDUsuario] in table 'Mantenimiento'
+ALTER TABLE [dbo].[Mantenimiento]
+ADD CONSTRAINT [FK_Mantenimiento_Usuario]
+    FOREIGN KEY ([IDUsuario])
+    REFERENCES [dbo].[Usuario]
+        ([IdUsuario])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_Mantenimiento_Usuario'
+CREATE INDEX [IX_FK_Mantenimiento_Usuario]
+ON [dbo].[Mantenimiento]
+    ([IDUsuario]);
+GO
+
+-- Creating foreign key on [IDVehiculo] in table 'Mantenimiento'
+ALTER TABLE [dbo].[Mantenimiento]
+ADD CONSTRAINT [FK_Mantenimiento_Vehiculo]
+    FOREIGN KEY ([IDVehiculo])
+    REFERENCES [dbo].[Vehiculo]
+        ([IDVehiculo])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_Mantenimiento_Vehiculo'
+CREATE INDEX [IX_FK_Mantenimiento_Vehiculo]
+ON [dbo].[Mantenimiento]
+    ([IDVehiculo]);
+GO
+
+-- Creating foreign key on [IDRol] in table 'RolesDeUsuario'
+ALTER TABLE [dbo].[RolesDeUsuario]
+ADD CONSTRAINT [FK_RolesDeUsuario_Rol]
+    FOREIGN KEY ([IDRol])
+    REFERENCES [dbo].[Rol]
+        ([IDRol])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_RolesDeUsuario_Rol'
+CREATE INDEX [IX_FK_RolesDeUsuario_Rol]
+ON [dbo].[RolesDeUsuario]
+    ([IDRol]);
+GO
+
+-- Creating foreign key on [IDUsuario] in table 'RolesDeUsuario'
+ALTER TABLE [dbo].[RolesDeUsuario]
+ADD CONSTRAINT [FK_RolesDeUsuario_Usuario]
+    FOREIGN KEY ([IDUsuario])
+    REFERENCES [dbo].[Usuario]
+        ([IdUsuario])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_RolesDeUsuario_Usuario'
+CREATE INDEX [IX_FK_RolesDeUsuario_Usuario]
+ON [dbo].[RolesDeUsuario]
+    ([IDUsuario]);
+GO
+
+-- --------------------------------------------------
+-- Script has ended
+-- --------------------------------------------------
+
+
+insert into Distrito values ('Cercado de Lima');
+insert into Distrito values ('Ate');
+insert into Distrito values ('Barranco');
+insert into Distrito values ('Breña');
+insert into Distrito values ('Comas');
+insert into Distrito values ('Chorrillos');
+insert into Distrito values ('El Agustino');
+insert into Distrito values ('Jesús María');
+insert into Distrito values ('La Molina');
+insert into Distrito values ('La Victoria');
+insert into Distrito values ('Lince');
+insert into Distrito values ('Magdalena del Mar');
+insert into Distrito values ('Miraflores');
+insert into Distrito values ('Pueblo Libre');
+insert into Distrito values ('Puente Piedra');
+insert into Distrito values ('Rimac');
+insert into Distrito values ('San Isidro');
+insert into Distrito values ('Independencia');
+insert into Distrito values ('San Juan de Miraflores');
+insert into Distrito values ('San Luis');
+
+insert into Distrito values ('San Martin de Porres');
+insert into Distrito values ('San Miguel');
+insert into Distrito values ('Santiago de Surco');
+insert into Distrito values ('Surquillo');
+insert into Distrito values ('Villa María del Triunfo');
+insert into Distrito values ('San Juan de Lurigancho');
+insert into Distrito values ('Santa Rosa');
+insert into Distrito values ('Los Olivos');
+insert into Distrito values ('San Borja');
+insert into Distrito values ('Villa El Savador');
+insert into Distrito values ('Santa Anita');
+insert into Distrito values ('Cercado Callao');
+insert into Distrito values ('Bellavista');
+insert into Distrito values ('Carmen de la Legua');
+insert into Distrito values ('La Perla');
+insert into Distrito values ('La Punta');
+insert into Distrito values ('Ventanilla');

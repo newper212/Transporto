@@ -1,0 +1,24 @@
+﻿@model Transporto.ViewModels.RoldeUsuario.AddEditRolViewModel
+@{
+    ViewBag.Title = "Agregar/Modificar Rol de Usuario";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="col-md-6" style="margin-top:25px;">
+    <div class="row">
+        <form class="form-horizontal" method="post">
+            @Html.HiddenFor(x => x.IDRolDusuario)
+            <div class="form-group">
+                @Html.LabelFor(x => x.usuarioID)
+                @Html.DropDownListFor(x => x.usuarioID, new SelectList(Model.ListUsuario, "IdUsuario", "Codigo"), "Seleccione", new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(x => x.ROLID)
+                @Html.DropDownListFor(x => x.ROLID, new SelectList(Model.List1RoL, "IDRol", "Rol1"), "Seleccione", new { @class = "form-control" })
+            </div>
+
+
+            @*@Html.DropDownListFor(x => x.DistritoId, new SelectList(Model.ListDistrito,"DistritoId", "NombreDistrito"), "Seleccione")*@
+            <button type="submit" class="btn btn-primary">Guardar</button>
+        </form>
+    </div>
+</div>

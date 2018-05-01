@@ -1,0 +1,59 @@
+﻿@model Transporto.ViewModels.Mantenimiento.ListMantenimientoViewModel
+@{
+
+    ViewBag.Title = "Mantenimiento :";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Mantenimiento</h2>
+
+<div class="col-md-12">
+    <div class="card-box">
+        @*<a class="btn btn-primary btn-sm" href="@Url.Action("AddEditMantenimiento", "Mantenimiento")">Nuevo</a>*@
+        <table class="table table-striped table-condensed">
+            <thead>
+                <tr>
+                    <th>Kilometraje</th>
+                    <th>Fecha de mantenimiento</th>
+                    <th>Taller</th>
+                    <th>Fecha de mantenimiento obcional</th>
+                    <th>Monto</th>
+                    <th>Motivo</th>
+                    <th>Usuario</th>
+                    <th>Vehiculo</th>
+                    @*<th>Dni Contacto</th>
+                        <th>Nombre del contacto</th>
+                        <th>Celular del contacto</th>
+                        <th>Email del contacto</th>*@
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var mantenimiento in Model.LstMantenimiento)
+            {
+                    <tr>
+                        <td> @mantenimiento.Kilometraje</td>
+                        <td> @mantenimiento.FechaMantenimiento</td>
+                        <td> @mantenimiento.Taller</td>
+                        <td> @mantenimiento.FechaDMantenimientoObcional</td>
+                        <td> @mantenimiento.Monto</td>
+                        <td> @mantenimiento.Motivo</td>
+                        <td> @mantenimiento.Usuario.Codigo</td>
+                        <td> @mantenimiento.Vehiculo.Placa</td>
+                       
+                        @*<td> @empresa.DNIContaco</td>
+                            <td> @empresa.NombreContacto</td>
+                            <td> @empresa.CelularContacto</td>
+                            <td> @empresa.EmailContaco</td>*@
+
+                        @*<td> <a class="btn btn-primary btn-sm pull-right" href="@Url.Action("AddEditMantenimiento", "Mantenimiento", new { @idMantenimiento = @mantenimiento.IDMantenimiento })">Editar</a></td>
+                        <td> <a class="btn btn-danger btn-sm pull-right" @Data.ModalLink("_Deletemantenimiento", "Mantenimiento", new { @idMantenimiento = @mantenimiento.IDMantenimiento })>Eliminar</a></td>*@
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+

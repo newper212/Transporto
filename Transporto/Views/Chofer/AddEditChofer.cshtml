@@ -1,0 +1,87 @@
+﻿@model Transporto.ViewModels.Chofer.AddEditChoferViewModel
+@{
+    ViewBag.Title = "Chofer";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="col-md-12" style="margin-top:25px;">
+    <div class="card-box">
+        @*@if (Model.Choferid.HasValue)*@
+        @*{
+            <h4 class="header-title">Editar Conductor</h4>
+        }
+        else
+        {
+            <h4 class="header-title">Agregar Conductor</h4>
+        }*@
+        <div class="row">
+            <div class="p-20">
+                <form class="form-horizontal" method="post">
+                    @Html.HiddenFor(x => x.Choferid)
+                    <div class="col-md-6">
+                        <div class="form-group col-md-10">
+                            @Html.LabelFor(x => x.NombreChofer)
+                            @Html.TextBoxFor(x => x.NombreChofer, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group col-md-10">
+                            @Html.LabelFor(x => x.ApellidoChofer)
+                            @Html.TextBoxFor(x => x.ApellidoChofer, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group col-md-10">
+                            @Html.LabelFor(x => x.DNICHOFER)
+                            @Html.TextBoxFor(x => x.DNICHOFER, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group col-md-10">
+                            @Html.LabelFor(x => x.FuncionChofer)
+                            @Html.TextBoxFor(x => x.FuncionChofer, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group col-md-10">
+                            @Html.LabelFor(x => x.NumeroBrevete)
+                            @Html.TextBoxFor(x => x.NumeroBrevete, new { @class = "form-control" })
+                        </div>                        
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group col-md-10">
+                            @Html.LabelFor(x => x.FechaActivacionBrevete)
+                            @Html.TextBoxFor(x => x.FechaActivacionBrevete, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group col-md-10">
+                            @Html.LabelFor(x => x.FechaVencimientoBrevete)
+                            @Html.TextBoxFor(x => x.FechaVencimientoBrevete, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group col-md-10">
+                            @Html.LabelFor(x => x.CelularPersonal)
+                            @Html.TextBoxFor(x => x.CelularPersonal, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group col-md-10">
+                            @Html.LabelFor(x => x.CelularCorporativo)
+                            @Html.TextBoxFor(x => x.CelularCorporativo, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group col-md-10">
+                            @Html.LabelFor(x => x.Email)
+                            @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <hr />
+                        @*@Html.DropDownListFor(x => x.DistritoId, new SelectList(Model.ListDistrito,"DistritoId", "NombreDistrito"), "Seleccione")*@
+                        <button type="submit" class="btn btn-primary" style="margin-left:10px;">Guardar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+
+        $('#FechaActivacionBrevete').datepicker({
+            format: 'dd/mm/yyyy',
+            todayBtn: true,
+            todayHightLight: true
+        });
+
+    </script>
+}

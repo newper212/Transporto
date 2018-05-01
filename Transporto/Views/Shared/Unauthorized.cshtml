@@ -1,0 +1,26 @@
+﻿
+@{
+    Layout = "_Layout.cshtml";
+    //ViewBag.Title = "Unauthorized";
+}
+<div class="col-xs-12">
+
+    <h1 class="page_error_code text-primary">401</h1>
+    <h1 class="page_error_info">Oops! No Autorizado</h1>
+    <div class="row">
+        <div class="col-md-offset-3 col-sm-offset-3 col-xs-offset-2 col-xs-8 col-sm-6">
+            <form action="javascript:;" method="post" class="page_error_search">
+                <div class="input-group transparent">
+                    <span class="input-group-addon">
+                        <i class="fa fa-search icon-primary"></i>
+                    </span>
+                    <input type="text" class="form-control" placeholder="Try a new search">
+                </div>
+                <div class="text-center page_error_btn">
+                    <a class="btn btn-primary btn-lg" href='@Url.Action("Dashboard","Home")'><i class='fa fa-home'></i> &nbsp; Ir al inicio</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>

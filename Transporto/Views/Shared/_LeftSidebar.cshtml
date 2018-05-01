@@ -1,0 +1,69 @@
+﻿@{
+    ViewBag.Title = "_LeftSidebar";
+}
+<div class="left side-menu">
+    <div class="sidebar-inner slimscrollleft">
+        <div id="sidebar-menu">
+            <ul>
+                <li class="text-muted menu-title"><i class="ti-menu-alt"></i> Menú de Opciones</li>
+
+                <li class="@(ViewBag.Section == "Dashboard" ? "active" : "")">
+                    <a href="@Url.Action("Index", "Home")" class="waves-effect @(ViewBag.Section == "Dashboard" ? "active" : "")"><i class="ti-dashboard"></i> <span> Dashboard </span></a>
+                </li>
+                <!--=====================================================================================-->
+
+                <li class="has_sub">
+                    <a class="waves-effect"><i class="ti-truck"></i><span> Vehiculo </span><span class="menu-arrow"></span></a>
+                    <ul class="list-unstyled">
+                        <li><a href="@Url.Action("ListVehiculo", "Vehiculo")"> Lista de Vehiculos</a></li>
+                        <li><a href="@Url.Action("ListSoat", "Vehiculo")"> SOAT</a></li>
+                        <li><a href="@Url.Action("ListEstadoVehiculo", "Vehiculo")">Estado</a></li>
+                        <li><a href="@Url.Action("ListMantenimiento", "Mantenimiento")">Mantenimiento</a></li>  
+                    </ul>
+                </li>
+
+                <!--=====================================================================================-->
+
+                <li class="has_sub">
+                    <a class="waves-effect"><i class="md-contacts"></i><span> Empresa Cliente </span><span class="menu-arrow"></span></a>
+                    <ul class="list-unstyled">
+                        <li><a href="@Url.Action("LstEmpresaCliente", "EmpresaCliente")"> Clientes</a></li>
+                        <li><a href="@Url.Action("LstContacto", "EmpresaCliente")"> Contactos Fijos</a></li>
+                        <li><a href="@Url.Action("ListContacto", "Contacto")"> Contactos</a></li>
+                   
+                    </ul>
+                </li>
+
+                   
+
+                <li class="@(ViewBag.Section == "Choferes" ? "active" : "")">
+                    <a href="@Url.Action("ListChofer", "Chofer")" class="waves-effect @(ViewBag.Section == "Choferes" ? "active" : "")"><i class="md md-credit-card"></i> <span> Chofer </span></a>
+                </li>
+
+                <li class="@(ViewBag.Section == "Ayudante" ? "active" : "")">
+                    <a href="@Url.Action("ListAyudante", "Ayudante")" class="waves-effect @(ViewBag.Section == "Asistentes" ? "active" : "")"><i class="md-assignment"></i> <span> Asistente </span></a>
+                </li>
+
+                <li class="@(ViewBag.Section == "HojaRutas" ? "active" : "")">
+                    <a href="@Url.Action("ListHojasRutas", "HojaRuta")" class="waves-effect @(ViewBag.Section == "HojaRutas" ? "active" : "")"><i class="ti-location-pin"></i> <span> Hoja de Ruta </span></a>
+                </li>
+
+                <li class="@(ViewBag.Section == "Usuario" ? "active" : "")">
+                    <a href="@Url.Action("ListUsuario", "Usuario")" class="waves-effect @(ViewBag.Section == "Usuarios" ? "active" : "")"><i class="ti-user"></i> <span> Usuarios </span></a>
+                </li>
+
+                <li class="@(ViewBag.Section == "Roles" ? "active" : "")">
+                    <a href="@Url.Action("ListRol", "Rol")" class="waves-effect @(ViewBag.Section == "Roles" ? "active" : "")"><i class="ti-file"></i> <span> Roles </span></a>
+                </li>
+
+                <li class="@(ViewBag.Section == "RolesUsuarios" ? "active" : "")">
+                    <a href="@Url.Action("ListRolUsuario", "RolesUsuario")" class="waves-effect @(ViewBag.Section == "RolesUsuarios" ? "active" : "")"><i class="ti-files"></i> <span> Roles de Usuario </span></a>
+                </li>
+
+
+            </ul>
+            <div class="clearfix"></div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>

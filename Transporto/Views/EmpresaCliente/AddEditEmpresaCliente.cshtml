@@ -1,0 +1,82 @@
+﻿
+@model Transporto.ViewModels.EmpresaCliente.AddEditEmpresaViewModel
+@{
+    ViewBag.Title = "Agregar/Modificar Cliente";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="col-md-6" style="margin-top:25px;">
+    <div class="row">
+        <form class="form-horizontal" method="post">
+            @Html.HiddenFor(x => x.EmpresaId)
+            <div class="form-group">
+                @Html.LabelFor(x => x.Ruc)
+                @Html.TextBoxFor(x => x.Ruc, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(x => x.NombreEmpresa)
+                @Html.TextBoxFor(x => x.NombreEmpresa, new { @class = "form-control" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(x => x.TelefonoCorporativo)
+                @Html.TextBoxFor(x => x.TelefonoCorporativo, new { @class = "form-control" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(x => x.Direccion)
+                @Html.TextBoxFor(x => x.Direccion, new { @class = "form-control" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(x => x.DistritoId)
+          
+                 @Html.DropDownListFor(x => x.DistritoId, new SelectList(Model.ListDistrito, "IDDistrito", "NombreDistrito"), "Seleccione", new { @class = "form-control" })
+                
+               
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(x => x.EmailCorporativo)
+                @Html.TextBoxFor(x => x.EmailCorporativo, new { @class = "form-control" })
+            </div>
+
+
+            <div class="form-group">
+                @Html.LabelFor(x => x.Observaciones)
+                @Html.TextBoxFor(x => x.Observaciones, new { @class = "form-control" })
+            </div>
+
+
+            <div class="form-group">
+                @Html.LabelFor(x => x.DniContacto)
+                @Html.TextBoxFor(x => x.DniContacto, new { @class = "form-control" })
+            </div>
+
+
+
+            <div class="form-group">
+                @Html.LabelFor(x => x.NombreContacto)
+                @Html.TextBoxFor(x => x.NombreContacto, new { @class = "form-control" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(x => x.CelularContacto)
+                @Html.TextBoxFor(x => x.CelularContacto, new { @class = "form-control" })
+            </div>
+
+
+
+            <div class="form-group">
+                @Html.LabelFor(x => x.EmailContacto)
+                @Html.TextBoxFor(x => x.EmailContacto, new { @class = "form-control" })
+            </div>
+
+           
+
+
+            @*@Html.DropDownListFor(x => x.DistritoId, new SelectList(Model.ListDistrito,"DistritoId", "NombreDistrito"), "Seleccione")*@
+            <button type="submit" class="btn btn-primary">Guardar</button>
+        </form>
+    </div>
+</div>
+

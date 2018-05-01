@@ -1,0 +1,40 @@
+﻿@model Transporto.ViewModels.usuario.AddEditUsuarioViewModel
+@{
+    ViewBag.Title = "Agregar/Modificar Usuario";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="col-md-6" style="margin-top:25px;">
+    <div class="row">
+        <form class="form-horizontal" method="post">
+            @Html.HiddenFor(x => x.UsuarioId)
+            <div class="form-group">
+                @Html.LabelFor(x => x.Usuario)
+                @Html.TextBoxFor(x => x.Usuario, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(x => x.Comtrasena)
+                @Html.TextBoxFor(x => x.Comtrasena, new { @class = "form-control" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(x => x.Nombre)
+                @Html.TextBoxFor(x => x.Nombre, new { @class = "form-control" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(x => x.Apellido)
+                @Html.TextBoxFor(x => x.Apellido, new { @class = "form-control" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(x => x.DNI)
+                @Html.TextBoxFor(x => x.DNI, new { @class = "form-control" })
+            </div>
+
+         
+
+            @*@Html.DropDownListFor(x => x.DistritoId, new SelectList(Model.ListDistrito,"DistritoId", "NombreDistrito"), "Seleccione")*@
+            <button type="submit" class="btn btn-primary">Guardar</button>
+        </form>
+    </div>
+</div>

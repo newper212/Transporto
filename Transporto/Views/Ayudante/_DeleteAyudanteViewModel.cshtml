@@ -1,0 +1,19 @@
+﻿@model Transporto.ViewModels.Ayudante._DeleteAyudanteViewModel
+@{
+    ViewBag.Title = "Eliminar Ayudante";
+    Layout = ConstantHelpers.LAYOUT.MODAL_LAYOUT_PATH;
+    ViewBag.Form = new ModalFormHelpers("DeleteAyudante", "Ayudante", FormMethod.Post);
+}
+
+<div class="row">
+    <div class="col-sm-6">
+        @Html.HiddenFor(x => x.AyudanteID)
+        <h3>Esta seguro que desea eliminar Ayudante </h3>
+    </div>
+</div>
+@section Footer {
+    <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-check"></i> Aceptar</button>
+}
+
+
+

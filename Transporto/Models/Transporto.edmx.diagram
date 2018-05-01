@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="890e35469739473098e80d0936420532" Name="Diagram1">
+        <EntityTypeShape EntityType="BD_TRANSPORTOModel.Ayudante" Width="1.5" PointX="3" PointY="9.125" />
+        <EntityTypeShape EntityType="BD_TRANSPORTOModel.Chofer" Width="1.5" PointX="3" PointY="18" />
+        <EntityTypeShape EntityType="BD_TRANSPORTOModel.Contactos" Width="1.5" PointX="5.25" PointY="10.25" />
+        <EntityTypeShape EntityType="BD_TRANSPORTOModel.Distrito" Width="1.5" PointX="0.75" PointY="4.75" />
+        <EntityTypeShape EntityType="BD_TRANSPORTOModel.EmpresaCliente" Width="1.5" PointX="3" PointY="3.5" />
+        <EntityTypeShape EntityType="BD_TRANSPORTOModel.HojaDeRuta" Width="1.5" PointX="5.25" PointY="3" />
+        <EntityTypeShape EntityType="BD_TRANSPORTOModel.Mantenimiento" Width="1.5" PointX="10" PointY="13.875" />
+        <EntityTypeShape EntityType="BD_TRANSPORTOModel.Observacion" Width="1.5" PointX="7.5" PointY="4.75" />
+        <EntityTypeShape EntityType="BD_TRANSPORTOModel.Rol" Width="1.5" PointX="7.75" PointY="14.375" />
+        <EntityTypeShape EntityType="BD_TRANSPORTOModel.RolesDeUsuario" Width="1.5" PointX="10" PointY="10.125" />
+        <EntityTypeShape EntityType="BD_TRANSPORTOModel.Usuario" Width="1.5" PointX="7.75" PointY="9.875" />
+        <EntityTypeShape EntityType="BD_TRANSPORTOModel.Vehiculo" Width="1.5" PointX="3" PointY="12.625" />
+        <AssociationConnector Association="BD_TRANSPORTOModel.FK_HojaDeRuta_Ayudante" />
+        <AssociationConnector Association="BD_TRANSPORTOModel.FK_HojaDeRuta_Chofer" />
+        <AssociationConnector Association="BD_TRANSPORTOModel.FK_Contactos_EmpresaCliente" />
+        <AssociationConnector Association="BD_TRANSPORTOModel.FK_EmpresaCliente_Distrito" />
+        <AssociationConnector Association="BD_TRANSPORTOModel.FK_HojaDeRuta_Distrito" />
+        <AssociationConnector Association="BD_TRANSPORTOModel.FK_HojaDeRuta_EmpresaCliente" />
+        <AssociationConnector Association="BD_TRANSPORTOModel.FK_HojaDeRuta_Vehiculo" />
+        <AssociationConnector Association="BD_TRANSPORTOModel.FK_Observacion_HojaDeRuta" />
+        <AssociationConnector Association="BD_TRANSPORTOModel.FK_Mantenimiento_Usuario" />
+        <AssociationConnector Association="BD_TRANSPORTOModel.FK_Mantenimiento_Vehiculo" />
+        <AssociationConnector Association="BD_TRANSPORTOModel.FK_RolesDeUsuario_Rol" />
+        <AssociationConnector Association="BD_TRANSPORTOModel.FK_RolesDeUsuario_Usuario" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

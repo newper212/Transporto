@@ -1,0 +1,19 @@
+﻿@model Transporto.ViewModels.EmpresaCliente._DeleteEmpresaCliente
+@{
+    ViewBag.Title = "Eliminar Empresa";
+    Layout = ConstantHelpers.LAYOUT.MODAL_LAYOUT_PATH;
+    ViewBag.Form = new ModalFormHelpers("DeleteEmpresaCliente", "EmpresaCliente", FormMethod.Post);
+}
+
+<div class="row">
+    <div class="col-sm-6">
+        @Html.HiddenFor(x => x.EmpresaId)
+        <h3>Esta seguro que desea eliminar Cliente </h3>
+    </div>
+</div>
+@section Footer {
+    <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-check"></i> Aceptar</button>
+}
+
+
+

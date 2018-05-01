@@ -1,0 +1,60 @@
+﻿
+@model Transporto.ViewModels.Mantenimiento.AddEditMantenimientoViewModel
+@{
+    ViewBag.Title = "Agregar/Modificar Mantenimiento";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="col-md-6" style="margin-top:25px;">
+    <div class="row">
+        <form class="form-horizontal" method="post">
+            @Html.HiddenFor(x => x.IDMantenimiento)
+            <div class="form-group">
+                @Html.LabelFor(x => x.Kilometraje)
+                @Html.TextBoxFor(x => x.Kilometraje, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(x => x.FechaMantenimiento)
+                @Html.TextBoxFor(x => x.FechaMantenimiento, new { @class = "form-control" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(x => x.Taller)
+                @Html.TextBoxFor(x => x.Taller, new { @class = "form-control" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(x => x.FechaDMantenimientoObcional)
+                @Html.TextBoxFor(x => x.FechaDMantenimientoObcional, new { @class = "form-control" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(x => x.Monto)
+                @Html.TextBoxFor(x => x.Monto, new { @class = "form-control" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(x => x.Motivo)
+                @Html.TextBoxFor(x => x.Motivo, new { @class = "form-control" })
+            </div>
+
+
+            
+            <div class="form-group">
+            @Html.LabelFor(x => x.usuarioID)
+
+            @Html.DropDownListFor(x => x.usuarioID, new SelectList(Model.ListUsuario, "IdUsuario", "Codigo"), "Seleccione", new { @class = "form-control" })
+        </div>
+
+            <div class="form-group">
+                @Html.LabelFor(x => x.vehiculoID)
+
+                @Html.DropDownListFor(x => x.vehiculoID, new SelectList(Model.Listvehiculo, "IDVehiculo", "Placa"), "Seleccione", new { @class = "form-control" })
+            </div>
+
+            @*@Html.DropDownListFor(x => x.DistritoId, new SelectList(Model.ListDistrito,"DistritoId", "NombreDistrito"), "Seleccione")*@
+            <button type="submit" class="btn btn-primary">Guardar</button>
+        </form>
+    </div>
+</div>
+
+

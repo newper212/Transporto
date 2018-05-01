@@ -1,0 +1,18 @@
+﻿
+@model Transporto.ViewModels.RoldeUsuario._DeleteRoldeUsuarioViewModel
+@{
+    ViewBag.Title = "Eliminar Rol Usuario";
+    Layout = ConstantHelpers.LAYOUT.MODAL_LAYOUT_PATH;
+    ViewBag.Form = new ModalFormHelpers(" DeleteRolUsuario", "RoldeUsuario", FormMethod.Post);
+}
+
+<div class="row">
+    <div class="col-sm-6">
+        @Html.HiddenFor(x => x.RolUsuarioID)
+        <h3>Esta seguro que desea eliminar este Rol del Usuario </h3>
+    </div>
+</div>
+@section Footer {
+    <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-check"></i> Aceptar</button>
+}
+

@@ -1,0 +1,54 @@
+﻿@model Transporto.ViewModels.RevisionTecnica.ListRevisionTecnicaModel
+@{
+    ViewBag.Title = "";
+}
+
+<div class="col-md-12">
+<div class="card-box">
+    <div class="header-title">
+        <h4>Filtrar por Placa</h4>
+    </div>
+    <form action="@Url.Action("ListRevisionTecnica", "RevisionTecnica", new { Placa = Model.Placa })">
+        <div class="form-group">
+            <label>Placa</label>
+            @Html.TextBoxFor(x => x.Placa, new { @class = "form-control", @placeholder = "Ingrese una Placa" })
+        </div>
+        <button class="btn btn-primary" type="submit"><i class="fa fa-filter"></i> Filtrar</button>
+        <a class="btn btn-primary" href="@Url.Action("ListRevisionTecnica", "RevisionTecnica")"><i class="fa fa-refresh"></i></a>
+    </form>
+</div>
+<div class="card-box">
+    <div class="header-title">
+        <h3>Revision Tecnica</h3>
+    </div>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Placa</th>
+                @*<th>Nro. Soat</th>
+                <th>Fecha Inicio</th>
+                <th>Fecha Caducidad</th>
+                <th>Marca</th>*@
+                <th>Estado</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var vehiculo in Model.LstRevisionTecnica)
+            {
+                <tr>
+
+                    <td>@vehiculo.Placa</td>
+                    @*<td>@vehiculo.NumeroSoat</td>
+                    <td>@vehiculo.FechaInicioSOAT.ToShortDateString()</td>
+                    <td>@vehiculo.FechaVencimientoSOAT.ToShortDateString()</td>
+                    <td>@vehiculo.Marca</td>*@
+                    <td>@Html.Raw(ConstantHelpers.ESTADO.GetLabelEstado(vehiculo.Estado))</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div class="pagination-container">
+        @Html.PagedListPager(Model.LstRevisionTecnica, page => Url.Action("ListRevisionTecnica", "RevisionTecnica", new { p = page }), ConstantHelpers.Bootstrap3Pager)
+    </div>
+</div>
+</div>

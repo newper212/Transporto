@@ -1,0 +1,18 @@
+﻿@model Transporto.ViewModels.Chofer._DeleteChoferViewModel
+@{
+    ViewBag.Title = "Eliminar Chofer";
+    Layout = ConstantHelpers.LAYOUT.MODAL_LAYOUT_PATH;
+    ViewBag.Form = new ModalFormHelpers("DeleteChofer", "Chofer", FormMethod.Post);
+}
+
+<div class="row">
+    <div class="col-sm-6">
+        @Html.HiddenFor(x => x.ChoferID)
+        <h3>Esta seguro que desea eliminar Chofer </h3>
+    </div>
+</div>
+@section Footer {
+    <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-check"></i> Aceptar</button>
+}
+
+

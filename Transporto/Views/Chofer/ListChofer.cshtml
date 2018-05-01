@@ -1,0 +1,52 @@
+﻿@model Transporto.ViewModels.Chofer.ListChoferViewModel
+@{
+
+    ViewBag.Title = "ListChofer";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ListChofer</h2>
+
+<div class="col-md-12">
+    <div class="card-box">
+        <a class="btn btn-primary btn-sm pull-right" href="@Url.Action("AddEditChofer", "Chofer")">Agregar</a>
+        <table class="table table-striped table-condensed">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>DNI</th>
+                    <th>Funcion</th>
+                    <th>Brevete</th>
+                    <th>Fecha de activacion Brevete</th>
+                    <th>Fecha de vencimiento Brevete</th>
+                    <th>Celular personal</th>
+                    <th>Celular Corporativo</th>
+                    <th>Email</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var chofer in Model.LstChofer)
+            {
+                    <tr>
+                        <td> @chofer.NombreChofer</td>
+                        <td> @chofer.ApellidosChofer</td>
+                        <td> @chofer.DNIChofer</td>
+                        <td> @chofer.FuncionChofer</td>
+                        <td> @chofer.NumeroBreveteChofer</td>
+                        <td> @chofer.FechaDActivacionBrevete.ToShortDateString()</td>
+                        <td> @chofer.FechaDActivacionBrevete.ToShortDateString()</td>
+                        <td> @chofer.CelularPersonalChofer</td>
+                        <td> @chofer.CelularCorporativoChofer</td>
+                        <td> @chofer.EmailChofer</td>
+                        <td> <a class="btn btn-primary btn-sm pull-right" href="@Url.Action("AddEditChofer", "Chofer", new { @ChoferId = @chofer.IDchofer })">Editar</a></td>
+                        <td> <a class="btn btn-danger btn-sm pull-right" @Data.ModalLink("_DeleteChoferViewModel", "Chofer", new { @ChoferId = @chofer.IDchofer })>Eliminar</a></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+

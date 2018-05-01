@@ -1,0 +1,981 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="BD_TRANSPORTOModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Ayudante">
+          <Key>
+            <PropertyRef Name="IDAyudate" />
+          </Key>
+          <Property Name="IDAyudate" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NombreAyudante" Type="varchar" MaxLength="50" />
+          <Property Name="ApellidoAyudante" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DNIAyudante" Type="char" MaxLength="8" Nullable="false" />
+          <Property Name="DireccionAyudante" Type="varchar" MaxLength="50" />
+          <Property Name="TelefonoAyudante" Type="varchar" MaxLength="50" />
+          <Property Name="CelularAyudante" Type="varchar" MaxLength="50" />
+          <Property Name="Estado" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Chofer">
+          <Key>
+            <PropertyRef Name="IDchofer" />
+          </Key>
+          <Property Name="IDchofer" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NombreChofer" Type="varchar" MaxLength="50" />
+          <Property Name="ApellidosChofer" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DNIChofer" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="FuncionChofer" Type="varchar" MaxLength="50" />
+          <Property Name="NumeroBreveteChofer" Type="varchar" MaxLength="50" />
+          <Property Name="FechaDActivacionBrevete" Type="date" Nullable="false" />
+          <Property Name="FecchaVencimientoBrevete" Type="date" Nullable="false" />
+          <Property Name="CelularPersonalChofer" Type="varchar" MaxLength="50" />
+          <Property Name="CelularCorporativoChofer" Type="varchar" MaxLength="50" />
+          <Property Name="EmailChofer" Type="varchar" MaxLength="50" />
+          <Property Name="Estado" Type="varchar" MaxLength="3" />
+        </EntityType>
+        <EntityType Name="Contactos">
+          <Key>
+            <PropertyRef Name="IDContactos" />
+          </Key>
+          <Property Name="IDContactos" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Dni" Type="varchar" MaxLength="50" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" />
+          <Property Name="Apellido" Type="varchar" MaxLength="50" />
+          <Property Name="Celular" Type="varchar" MaxLength="50" />
+          <Property Name="EmailContacto" Type="varchar" MaxLength="50" />
+          <Property Name="IDEmpresa" Type="int" Nullable="false" />
+          <Property Name="Estado" Type="varchar" MaxLength="3" />
+        </EntityType>
+        <EntityType Name="Distrito">
+          <Key>
+            <PropertyRef Name="IDDistrito" />
+          </Key>
+          <Property Name="IDDistrito" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NombreDistrito" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="EmpresaCliente">
+          <Key>
+            <PropertyRef Name="IDEmpresaCliente" />
+          </Key>
+          <Property Name="IDEmpresaCliente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ruc" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="NombreEmpresa" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="TelefonoCorporativo" Type="varchar" MaxLength="50" />
+          <Property Name="Direccion" Type="varchar" MaxLength="50" />
+          <Property Name="IDDistrito" Type="int" Nullable="false" />
+          <Property Name="EmailCorporativa" Type="varchar" MaxLength="50" />
+          <Property Name="Observaciones" Type="varchar" MaxLength="50" />
+          <Property Name="DNIContaco" Type="char" MaxLength="8" Nullable="false" />
+          <Property Name="NombreContacto" Type="varchar" MaxLength="25" />
+          <Property Name="ApellidoContacto" Type="varchar" MaxLength="50" />
+          <Property Name="CelularContacto" Type="varchar" MaxLength="9" />
+          <Property Name="EmailContaco" Type="varchar" MaxLength="30" />
+          <Property Name="Estado" Type="varchar" MaxLength="3" Nullable="false" />
+        </EntityType>
+        <EntityType Name="HojaDeRuta">
+          <Key>
+            <PropertyRef Name="IDHojaDruta" />
+          </Key>
+          <Property Name="IDHojaDruta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDVehiculo" Type="int" Nullable="false" />
+          <Property Name="Documento" Type="varchar" MaxLength="50" />
+          <Property Name="NumeroDocumento" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="IDChofer" Type="int" Nullable="false" />
+          <Property Name="IDAyudante" Type="int" Nullable="false" />
+          <Property Name="Fecha" Type="date" />
+          <Property Name="IDClienteEmpresa" Type="int" Nullable="false" />
+          <Property Name="Direccion" Type="varchar" MaxLength="50" />
+          <Property Name="IDDistrito" Type="int" Nullable="false" />
+          <Property Name="Peso" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="Volumen" Type="decimal" Precision="5" Scale="5" />
+          <Property Name="Valor" Type="decimal" Precision="10" Scale="10" />
+          <Property Name="Status" Type="varchar" MaxLength="50" />
+          <Property Name="Hora" Type="datetime" />
+          <Property Name="Estado" Type="varchar" MaxLength="3" />
+        </EntityType>
+        <EntityType Name="Mantenimiento">
+          <Key>
+            <PropertyRef Name="IDMantenimiento" />
+          </Key>
+          <Property Name="IDMantenimiento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Kilometraje" Type="int" Nullable="false" />
+          <Property Name="FechaMantenimiento" Type="date" Nullable="false" />
+          <Property Name="Taller" Type="varchar" MaxLength="50" />
+          <Property Name="FechaDMantenimientoObcional" Type="date" />
+          <Property Name="Monto" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Motivo" Type="varchar" MaxLength="50" />
+          <Property Name="IDUsuario" Type="int" Nullable="false" />
+          <Property Name="IDVehiculo" Type="int" Nullable="false" />
+          <Property Name="Estado" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Observacion">
+          <Key>
+            <PropertyRef Name="IDObservaciones" />
+          </Key>
+          <Property Name="IDObservaciones" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDHojaDeRuta" Type="int" Nullable="false" />
+          <Property Name="DescripcionDObservacion" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Rol">
+          <Key>
+            <PropertyRef Name="IDRol" />
+          </Key>
+          <Property Name="IDRol" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Rol1" Type="varchar" MaxLength="30" />
+          <Property Name="Estado" Type="varchar" MaxLength="3" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RolesDeUsuario">
+          <Key>
+            <PropertyRef Name="IDRolesUsuario" />
+          </Key>
+          <Property Name="IDRolesUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDUsuario" Type="int" Nullable="false" />
+          <Property Name="IDRol" Type="int" Nullable="false" />
+          <Property Name="Estado" Type="varchar" MaxLength="3" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="IdUsuario" />
+          </Key>
+          <Property Name="IdUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Codigo" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="Comtrasena" Type="char" MaxLength="4" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" />
+          <Property Name="Apellido" Type="varchar" MaxLength="50" />
+          <Property Name="Dni" Type="char" MaxLength="8" />
+          <Property Name="Estado" Type="varchar" MaxLength="3" />
+        </EntityType>
+        <EntityType Name="Vehiculo">
+          <Key>
+            <PropertyRef Name="IDVehiculo" />
+          </Key>
+          <Property Name="IDVehiculo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Marca" Type="varchar" MaxLength="50" />
+          <Property Name="Modelo" Type="varchar" MaxLength="50" />
+          <Property Name="Tipo" Type="varchar" MaxLength="50" />
+          <Property Name="Placa" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="SoatFechaInic" Type="date" Nullable="false" />
+          <Property Name="SoatFechVenc" Type="date" Nullable="false" />
+          <Property Name="Peso" Type="decimal" Precision="10" Scale="8" />
+          <Property Name="Volumen" Type="decimal" Precision="10" Scale="8" />
+          <Property Name="FechaDeInicioRevisionTecn" Type="date" />
+          <Property Name="FechaDeCaducidadReviciTecni" Type="date" />
+          <Property Name="FechaIncioSeguroVehicular" Type="date" />
+          <Property Name="FechaCaducidadSeguVehicu" Type="date" />
+          <Property Name="NumeroHabilitacion" Type="varchar" MaxLength="50" />
+          <Property Name="FechaInicioCertificadoFumiga" Type="date" />
+          <Property Name="FechaCaducidadCertificadoFumiga" Type="date" />
+          <Property Name="Estado" Type="varchar" MaxLength="3" />
+        </EntityType>
+        <Association Name="FK_Contactos_EmpresaCliente">
+          <End Role="EmpresaCliente" Type="Self.EmpresaCliente" Multiplicity="1" />
+          <End Role="Contactos" Type="Self.Contactos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmpresaCliente">
+              <PropertyRef Name="IDEmpresaCliente" />
+            </Principal>
+            <Dependent Role="Contactos">
+              <PropertyRef Name="IDEmpresa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EmpresaCliente_Distrito">
+          <End Role="Distrito" Type="Self.Distrito" Multiplicity="1" />
+          <End Role="EmpresaCliente" Type="Self.EmpresaCliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Distrito">
+              <PropertyRef Name="IDDistrito" />
+            </Principal>
+            <Dependent Role="EmpresaCliente">
+              <PropertyRef Name="IDDistrito" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HojaDeRuta_Ayudante">
+          <End Role="Ayudante" Type="Self.Ayudante" Multiplicity="1" />
+          <End Role="HojaDeRuta" Type="Self.HojaDeRuta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ayudante">
+              <PropertyRef Name="IDAyudate" />
+            </Principal>
+            <Dependent Role="HojaDeRuta">
+              <PropertyRef Name="IDAyudante" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HojaDeRuta_Chofer">
+          <End Role="Chofer" Type="Self.Chofer" Multiplicity="1" />
+          <End Role="HojaDeRuta" Type="Self.HojaDeRuta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Chofer">
+              <PropertyRef Name="IDchofer" />
+            </Principal>
+            <Dependent Role="HojaDeRuta">
+              <PropertyRef Name="IDChofer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HojaDeRuta_Distrito">
+          <End Role="Distrito" Type="Self.Distrito" Multiplicity="1" />
+          <End Role="HojaDeRuta" Type="Self.HojaDeRuta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Distrito">
+              <PropertyRef Name="IDDistrito" />
+            </Principal>
+            <Dependent Role="HojaDeRuta">
+              <PropertyRef Name="IDDistrito" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HojaDeRuta_EmpresaCliente">
+          <End Role="EmpresaCliente" Type="Self.EmpresaCliente" Multiplicity="1" />
+          <End Role="HojaDeRuta" Type="Self.HojaDeRuta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmpresaCliente">
+              <PropertyRef Name="IDEmpresaCliente" />
+            </Principal>
+            <Dependent Role="HojaDeRuta">
+              <PropertyRef Name="IDClienteEmpresa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HojaDeRuta_Vehiculo">
+          <End Role="Vehiculo" Type="Self.Vehiculo" Multiplicity="1" />
+          <End Role="HojaDeRuta" Type="Self.HojaDeRuta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vehiculo">
+              <PropertyRef Name="IDVehiculo" />
+            </Principal>
+            <Dependent Role="HojaDeRuta">
+              <PropertyRef Name="IDVehiculo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Mantenimiento_Usuario">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+          <End Role="Mantenimiento" Type="Self.Mantenimiento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="IdUsuario" />
+            </Principal>
+            <Dependent Role="Mantenimiento">
+              <PropertyRef Name="IDUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Mantenimiento_Vehiculo">
+          <End Role="Vehiculo" Type="Self.Vehiculo" Multiplicity="1" />
+          <End Role="Mantenimiento" Type="Self.Mantenimiento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vehiculo">
+              <PropertyRef Name="IDVehiculo" />
+            </Principal>
+            <Dependent Role="Mantenimiento">
+              <PropertyRef Name="IDVehiculo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Observacion_HojaDeRuta">
+          <End Role="HojaDeRuta" Type="Self.HojaDeRuta" Multiplicity="1" />
+          <End Role="Observacion" Type="Self.Observacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HojaDeRuta">
+              <PropertyRef Name="IDHojaDruta" />
+            </Principal>
+            <Dependent Role="Observacion">
+              <PropertyRef Name="IDHojaDeRuta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RolesDeUsuario_Rol">
+          <End Role="Rol" Type="Self.Rol" Multiplicity="1" />
+          <End Role="RolesDeUsuario" Type="Self.RolesDeUsuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rol">
+              <PropertyRef Name="IDRol" />
+            </Principal>
+            <Dependent Role="RolesDeUsuario">
+              <PropertyRef Name="IDRol" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RolesDeUsuario_Usuario">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+          <End Role="RolesDeUsuario" Type="Self.RolesDeUsuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="IdUsuario" />
+            </Principal>
+            <Dependent Role="RolesDeUsuario">
+              <PropertyRef Name="IDUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="BD_TRANSPORTOModelStoreContainer">
+          <EntitySet Name="Ayudante" EntityType="Self.Ayudante" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Chofer" EntityType="Self.Chofer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Contactos" EntityType="Self.Contactos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Distrito" EntityType="Self.Distrito" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EmpresaCliente" EntityType="Self.EmpresaCliente" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HojaDeRuta" EntityType="Self.HojaDeRuta" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Mantenimiento" EntityType="Self.Mantenimiento" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Observacion" EntityType="Self.Observacion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Rol" EntityType="Self.Rol" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RolesDeUsuario" EntityType="Self.RolesDeUsuario" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Vehiculo" EntityType="Self.Vehiculo" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Contactos_EmpresaCliente" Association="Self.FK_Contactos_EmpresaCliente">
+            <End Role="EmpresaCliente" EntitySet="EmpresaCliente" />
+            <End Role="Contactos" EntitySet="Contactos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmpresaCliente_Distrito" Association="Self.FK_EmpresaCliente_Distrito">
+            <End Role="Distrito" EntitySet="Distrito" />
+            <End Role="EmpresaCliente" EntitySet="EmpresaCliente" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HojaDeRuta_Ayudante" Association="Self.FK_HojaDeRuta_Ayudante">
+            <End Role="Ayudante" EntitySet="Ayudante" />
+            <End Role="HojaDeRuta" EntitySet="HojaDeRuta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HojaDeRuta_Chofer" Association="Self.FK_HojaDeRuta_Chofer">
+            <End Role="Chofer" EntitySet="Chofer" />
+            <End Role="HojaDeRuta" EntitySet="HojaDeRuta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HojaDeRuta_Distrito" Association="Self.FK_HojaDeRuta_Distrito">
+            <End Role="Distrito" EntitySet="Distrito" />
+            <End Role="HojaDeRuta" EntitySet="HojaDeRuta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HojaDeRuta_EmpresaCliente" Association="Self.FK_HojaDeRuta_EmpresaCliente">
+            <End Role="EmpresaCliente" EntitySet="EmpresaCliente" />
+            <End Role="HojaDeRuta" EntitySet="HojaDeRuta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HojaDeRuta_Vehiculo" Association="Self.FK_HojaDeRuta_Vehiculo">
+            <End Role="Vehiculo" EntitySet="Vehiculo" />
+            <End Role="HojaDeRuta" EntitySet="HojaDeRuta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Mantenimiento_Usuario" Association="Self.FK_Mantenimiento_Usuario">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Mantenimiento" EntitySet="Mantenimiento" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Mantenimiento_Vehiculo" Association="Self.FK_Mantenimiento_Vehiculo">
+            <End Role="Vehiculo" EntitySet="Vehiculo" />
+            <End Role="Mantenimiento" EntitySet="Mantenimiento" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Observacion_HojaDeRuta" Association="Self.FK_Observacion_HojaDeRuta">
+            <End Role="HojaDeRuta" EntitySet="HojaDeRuta" />
+            <End Role="Observacion" EntitySet="Observacion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RolesDeUsuario_Rol" Association="Self.FK_RolesDeUsuario_Rol">
+            <End Role="Rol" EntitySet="Rol" />
+            <End Role="RolesDeUsuario" EntitySet="RolesDeUsuario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RolesDeUsuario_Usuario" Association="Self.FK_RolesDeUsuario_Usuario">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="RolesDeUsuario" EntitySet="RolesDeUsuario" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BD_TRANSPORTOModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="BD_TRANSPORTOEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Ayudante" EntityType="BD_TRANSPORTOModel.Ayudante" />
+          <EntitySet Name="Chofer" EntityType="BD_TRANSPORTOModel.Chofer" />
+          <EntitySet Name="Contactos" EntityType="BD_TRANSPORTOModel.Contactos" />
+          <EntitySet Name="Distrito" EntityType="BD_TRANSPORTOModel.Distrito" />
+          <EntitySet Name="EmpresaCliente" EntityType="BD_TRANSPORTOModel.EmpresaCliente" />
+          <EntitySet Name="HojaDeRuta" EntityType="BD_TRANSPORTOModel.HojaDeRuta" />
+          <EntitySet Name="Mantenimiento" EntityType="BD_TRANSPORTOModel.Mantenimiento" />
+          <EntitySet Name="Observacion" EntityType="BD_TRANSPORTOModel.Observacion" />
+          <EntitySet Name="Rol" EntityType="BD_TRANSPORTOModel.Rol" />
+          <EntitySet Name="RolesDeUsuario" EntityType="BD_TRANSPORTOModel.RolesDeUsuario" />
+          <EntitySet Name="Usuario" EntityType="BD_TRANSPORTOModel.Usuario" />
+          <EntitySet Name="Vehiculo" EntityType="BD_TRANSPORTOModel.Vehiculo" />
+          <AssociationSet Name="FK_HojaDeRuta_Ayudante" Association="BD_TRANSPORTOModel.FK_HojaDeRuta_Ayudante">
+            <End Role="Ayudante" EntitySet="Ayudante" />
+            <End Role="HojaDeRuta" EntitySet="HojaDeRuta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HojaDeRuta_Chofer" Association="BD_TRANSPORTOModel.FK_HojaDeRuta_Chofer">
+            <End Role="Chofer" EntitySet="Chofer" />
+            <End Role="HojaDeRuta" EntitySet="HojaDeRuta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Contactos_EmpresaCliente" Association="BD_TRANSPORTOModel.FK_Contactos_EmpresaCliente">
+            <End Role="EmpresaCliente" EntitySet="EmpresaCliente" />
+            <End Role="Contactos" EntitySet="Contactos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmpresaCliente_Distrito" Association="BD_TRANSPORTOModel.FK_EmpresaCliente_Distrito">
+            <End Role="Distrito" EntitySet="Distrito" />
+            <End Role="EmpresaCliente" EntitySet="EmpresaCliente" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HojaDeRuta_Distrito" Association="BD_TRANSPORTOModel.FK_HojaDeRuta_Distrito">
+            <End Role="Distrito" EntitySet="Distrito" />
+            <End Role="HojaDeRuta" EntitySet="HojaDeRuta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HojaDeRuta_EmpresaCliente" Association="BD_TRANSPORTOModel.FK_HojaDeRuta_EmpresaCliente">
+            <End Role="EmpresaCliente" EntitySet="EmpresaCliente" />
+            <End Role="HojaDeRuta" EntitySet="HojaDeRuta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HojaDeRuta_Vehiculo" Association="BD_TRANSPORTOModel.FK_HojaDeRuta_Vehiculo">
+            <End Role="Vehiculo" EntitySet="Vehiculo" />
+            <End Role="HojaDeRuta" EntitySet="HojaDeRuta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Observacion_HojaDeRuta" Association="BD_TRANSPORTOModel.FK_Observacion_HojaDeRuta">
+            <End Role="HojaDeRuta" EntitySet="HojaDeRuta" />
+            <End Role="Observacion" EntitySet="Observacion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Mantenimiento_Usuario" Association="BD_TRANSPORTOModel.FK_Mantenimiento_Usuario">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Mantenimiento" EntitySet="Mantenimiento" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Mantenimiento_Vehiculo" Association="BD_TRANSPORTOModel.FK_Mantenimiento_Vehiculo">
+            <End Role="Vehiculo" EntitySet="Vehiculo" />
+            <End Role="Mantenimiento" EntitySet="Mantenimiento" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RolesDeUsuario_Rol" Association="BD_TRANSPORTOModel.FK_RolesDeUsuario_Rol">
+            <End Role="Rol" EntitySet="Rol" />
+            <End Role="RolesDeUsuario" EntitySet="RolesDeUsuario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RolesDeUsuario_Usuario" Association="BD_TRANSPORTOModel.FK_RolesDeUsuario_Usuario">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="RolesDeUsuario" EntitySet="RolesDeUsuario" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Ayudante">
+          <Key>
+            <PropertyRef Name="IDAyudate" />
+          </Key>
+          <Property Name="IDAyudate" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NombreAyudante" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ApellidoAyudante" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DNIAyudante" Type="String" Nullable="false" MaxLength="8" FixedLength="true" Unicode="false" />
+          <Property Name="DireccionAyudante" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TelefonoAyudante" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CelularAyudante" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Estado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="HojaDeRuta" Relationship="BD_TRANSPORTOModel.FK_HojaDeRuta_Ayudante" FromRole="Ayudante" ToRole="HojaDeRuta" />
+        </EntityType>
+        <EntityType Name="Chofer">
+          <Key>
+            <PropertyRef Name="IDchofer" />
+          </Key>
+          <Property Name="IDchofer" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NombreChofer" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ApellidosChofer" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DNIChofer" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FuncionChofer" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NumeroBreveteChofer" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FechaDActivacionBrevete" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="FecchaVencimientoBrevete" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="CelularPersonalChofer" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CelularCorporativoChofer" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EmailChofer" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Estado" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="HojaDeRuta" Relationship="BD_TRANSPORTOModel.FK_HojaDeRuta_Chofer" FromRole="Chofer" ToRole="HojaDeRuta" />
+        </EntityType>
+        <EntityType Name="Contactos">
+          <Key>
+            <PropertyRef Name="IDContactos" />
+          </Key>
+          <Property Name="IDContactos" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Dni" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Apellido" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Celular" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EmailContacto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IDEmpresa" Type="Int32" Nullable="false" />
+          <Property Name="Estado" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="EmpresaCliente" Relationship="BD_TRANSPORTOModel.FK_Contactos_EmpresaCliente" FromRole="Contactos" ToRole="EmpresaCliente" />
+        </EntityType>
+        <EntityType Name="Distrito">
+          <Key>
+            <PropertyRef Name="IDDistrito" />
+          </Key>
+          <Property Name="IDDistrito" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NombreDistrito" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="EmpresaCliente" Relationship="BD_TRANSPORTOModel.FK_EmpresaCliente_Distrito" FromRole="Distrito" ToRole="EmpresaCliente" />
+          <NavigationProperty Name="HojaDeRuta" Relationship="BD_TRANSPORTOModel.FK_HojaDeRuta_Distrito" FromRole="Distrito" ToRole="HojaDeRuta" />
+        </EntityType>
+        <EntityType Name="EmpresaCliente">
+          <Key>
+            <PropertyRef Name="IDEmpresaCliente" />
+          </Key>
+          <Property Name="IDEmpresaCliente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ruc" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NombreEmpresa" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TelefonoCorporativo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Direccion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IDDistrito" Type="Int32" Nullable="false" />
+          <Property Name="EmailCorporativa" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Observaciones" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DNIContaco" Type="String" Nullable="false" MaxLength="8" FixedLength="true" Unicode="false" />
+          <Property Name="NombreContacto" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="ApellidoContacto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CelularContacto" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+          <Property Name="EmailContaco" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Estado" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Contactos" Relationship="BD_TRANSPORTOModel.FK_Contactos_EmpresaCliente" FromRole="EmpresaCliente" ToRole="Contactos" />
+          <NavigationProperty Name="Distrito" Relationship="BD_TRANSPORTOModel.FK_EmpresaCliente_Distrito" FromRole="EmpresaCliente" ToRole="Distrito" />
+          <NavigationProperty Name="HojaDeRuta" Relationship="BD_TRANSPORTOModel.FK_HojaDeRuta_EmpresaCliente" FromRole="EmpresaCliente" ToRole="HojaDeRuta" />
+        </EntityType>
+        <EntityType Name="HojaDeRuta">
+          <Key>
+            <PropertyRef Name="IDHojaDruta" />
+          </Key>
+          <Property Name="IDHojaDruta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDVehiculo" Type="Int32" Nullable="false" />
+          <Property Name="Documento" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NumeroDocumento" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IDChofer" Type="Int32" Nullable="false" />
+          <Property Name="IDAyudante" Type="Int32" Nullable="false" />
+          <Property Name="Fecha" Type="DateTime" Precision="0" />
+          <Property Name="IDClienteEmpresa" Type="Int32" Nullable="false" />
+          <Property Name="Direccion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IDDistrito" Type="Int32" Nullable="false" />
+          <Property Name="Peso" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="Volumen" Type="Decimal" Precision="5" Scale="5" />
+          <Property Name="Valor" Type="Decimal" Precision="10" Scale="10" />
+          <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Hora" Type="DateTime" Precision="3" />
+          <Property Name="Estado" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Ayudante" Relationship="BD_TRANSPORTOModel.FK_HojaDeRuta_Ayudante" FromRole="HojaDeRuta" ToRole="Ayudante" />
+          <NavigationProperty Name="Chofer" Relationship="BD_TRANSPORTOModel.FK_HojaDeRuta_Chofer" FromRole="HojaDeRuta" ToRole="Chofer" />
+          <NavigationProperty Name="Distrito" Relationship="BD_TRANSPORTOModel.FK_HojaDeRuta_Distrito" FromRole="HojaDeRuta" ToRole="Distrito" />
+          <NavigationProperty Name="EmpresaCliente" Relationship="BD_TRANSPORTOModel.FK_HojaDeRuta_EmpresaCliente" FromRole="HojaDeRuta" ToRole="EmpresaCliente" />
+          <NavigationProperty Name="Vehiculo" Relationship="BD_TRANSPORTOModel.FK_HojaDeRuta_Vehiculo" FromRole="HojaDeRuta" ToRole="Vehiculo" />
+          <NavigationProperty Name="Observacion" Relationship="BD_TRANSPORTOModel.FK_Observacion_HojaDeRuta" FromRole="HojaDeRuta" ToRole="Observacion" />
+        </EntityType>
+        <EntityType Name="Mantenimiento">
+          <Key>
+            <PropertyRef Name="IDMantenimiento" />
+          </Key>
+          <Property Name="IDMantenimiento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Kilometraje" Type="Int32" Nullable="false" />
+          <Property Name="FechaMantenimiento" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Taller" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FechaDMantenimientoObcional" Type="DateTime" Precision="0" />
+          <Property Name="Monto" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="Motivo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IDUsuario" Type="Int32" Nullable="false" />
+          <Property Name="IDVehiculo" Type="Int32" Nullable="false" />
+          <Property Name="Estado" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Usuario" Relationship="BD_TRANSPORTOModel.FK_Mantenimiento_Usuario" FromRole="Mantenimiento" ToRole="Usuario" />
+          <NavigationProperty Name="Vehiculo" Relationship="BD_TRANSPORTOModel.FK_Mantenimiento_Vehiculo" FromRole="Mantenimiento" ToRole="Vehiculo" />
+        </EntityType>
+        <EntityType Name="Observacion">
+          <Key>
+            <PropertyRef Name="IDObservaciones" />
+          </Key>
+          <Property Name="IDObservaciones" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDHojaDeRuta" Type="Int32" Nullable="false" />
+          <Property Name="DescripcionDObservacion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="HojaDeRuta" Relationship="BD_TRANSPORTOModel.FK_Observacion_HojaDeRuta" FromRole="Observacion" ToRole="HojaDeRuta" />
+        </EntityType>
+        <EntityType Name="Rol">
+          <Key>
+            <PropertyRef Name="IDRol" />
+          </Key>
+          <Property Name="IDRol" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Rol1" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Estado" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="RolesDeUsuario" Relationship="BD_TRANSPORTOModel.FK_RolesDeUsuario_Rol" FromRole="Rol" ToRole="RolesDeUsuario" />
+        </EntityType>
+        <EntityType Name="RolesDeUsuario">
+          <Key>
+            <PropertyRef Name="IDRolesUsuario" />
+          </Key>
+          <Property Name="IDRolesUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDUsuario" Type="Int32" Nullable="false" />
+          <Property Name="IDRol" Type="Int32" Nullable="false" />
+          <Property Name="Estado" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Rol" Relationship="BD_TRANSPORTOModel.FK_RolesDeUsuario_Rol" FromRole="RolesDeUsuario" ToRole="Rol" />
+          <NavigationProperty Name="Usuario" Relationship="BD_TRANSPORTOModel.FK_RolesDeUsuario_Usuario" FromRole="RolesDeUsuario" ToRole="Usuario" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="IdUsuario" />
+          </Key>
+          <Property Name="IdUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Codigo" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="Comtrasena" Type="String" Nullable="false" MaxLength="4" FixedLength="true" Unicode="false" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Apellido" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Dni" Type="String" MaxLength="8" FixedLength="true" Unicode="false" />
+          <Property Name="Estado" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Mantenimiento" Relationship="BD_TRANSPORTOModel.FK_Mantenimiento_Usuario" FromRole="Usuario" ToRole="Mantenimiento" />
+          <NavigationProperty Name="RolesDeUsuario" Relationship="BD_TRANSPORTOModel.FK_RolesDeUsuario_Usuario" FromRole="Usuario" ToRole="RolesDeUsuario" />
+        </EntityType>
+        <EntityType Name="Vehiculo">
+          <Key>
+            <PropertyRef Name="IDVehiculo" />
+          </Key>
+          <Property Name="IDVehiculo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Marca" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Modelo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Tipo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Placa" Type="String" Nullable="false" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Name="SoatFechaInic" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="SoatFechVenc" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Peso" Type="Decimal" Precision="10" Scale="8" />
+          <Property Name="Volumen" Type="Decimal" Precision="10" Scale="8" />
+          <Property Name="FechaDeInicioRevisionTecn" Type="DateTime" Precision="0" />
+          <Property Name="FechaDeCaducidadReviciTecni" Type="DateTime" Precision="0" />
+          <Property Name="FechaIncioSeguroVehicular" Type="DateTime" Precision="0" />
+          <Property Name="FechaCaducidadSeguVehicu" Type="DateTime" Precision="0" />
+          <Property Name="NumeroHabilitacion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FechaInicioCertificadoFumiga" Type="DateTime" Precision="0" />
+          <Property Name="FechaCaducidadCertificadoFumiga" Type="DateTime" Precision="0" />
+          <Property Name="Estado" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="HojaDeRuta" Relationship="BD_TRANSPORTOModel.FK_HojaDeRuta_Vehiculo" FromRole="Vehiculo" ToRole="HojaDeRuta" />
+          <NavigationProperty Name="Mantenimiento" Relationship="BD_TRANSPORTOModel.FK_Mantenimiento_Vehiculo" FromRole="Vehiculo" ToRole="Mantenimiento" />
+        </EntityType>
+        <Association Name="FK_HojaDeRuta_Ayudante">
+          <End Type="BD_TRANSPORTOModel.Ayudante" Role="Ayudante" Multiplicity="1" />
+          <End Type="BD_TRANSPORTOModel.HojaDeRuta" Role="HojaDeRuta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ayudante">
+              <PropertyRef Name="IDAyudate" />
+            </Principal>
+            <Dependent Role="HojaDeRuta">
+              <PropertyRef Name="IDAyudante" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HojaDeRuta_Chofer">
+          <End Type="BD_TRANSPORTOModel.Chofer" Role="Chofer" Multiplicity="1" />
+          <End Type="BD_TRANSPORTOModel.HojaDeRuta" Role="HojaDeRuta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Chofer">
+              <PropertyRef Name="IDchofer" />
+            </Principal>
+            <Dependent Role="HojaDeRuta">
+              <PropertyRef Name="IDChofer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Contactos_EmpresaCliente">
+          <End Type="BD_TRANSPORTOModel.EmpresaCliente" Role="EmpresaCliente" Multiplicity="1" />
+          <End Type="BD_TRANSPORTOModel.Contactos" Role="Contactos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmpresaCliente">
+              <PropertyRef Name="IDEmpresaCliente" />
+            </Principal>
+            <Dependent Role="Contactos">
+              <PropertyRef Name="IDEmpresa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EmpresaCliente_Distrito">
+          <End Type="BD_TRANSPORTOModel.Distrito" Role="Distrito" Multiplicity="1" />
+          <End Type="BD_TRANSPORTOModel.EmpresaCliente" Role="EmpresaCliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Distrito">
+              <PropertyRef Name="IDDistrito" />
+            </Principal>
+            <Dependent Role="EmpresaCliente">
+              <PropertyRef Name="IDDistrito" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HojaDeRuta_Distrito">
+          <End Type="BD_TRANSPORTOModel.Distrito" Role="Distrito" Multiplicity="1" />
+          <End Type="BD_TRANSPORTOModel.HojaDeRuta" Role="HojaDeRuta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Distrito">
+              <PropertyRef Name="IDDistrito" />
+            </Principal>
+            <Dependent Role="HojaDeRuta">
+              <PropertyRef Name="IDDistrito" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HojaDeRuta_EmpresaCliente">
+          <End Type="BD_TRANSPORTOModel.EmpresaCliente" Role="EmpresaCliente" Multiplicity="1" />
+          <End Type="BD_TRANSPORTOModel.HojaDeRuta" Role="HojaDeRuta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmpresaCliente">
+              <PropertyRef Name="IDEmpresaCliente" />
+            </Principal>
+            <Dependent Role="HojaDeRuta">
+              <PropertyRef Name="IDClienteEmpresa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HojaDeRuta_Vehiculo">
+          <End Type="BD_TRANSPORTOModel.Vehiculo" Role="Vehiculo" Multiplicity="1" />
+          <End Type="BD_TRANSPORTOModel.HojaDeRuta" Role="HojaDeRuta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vehiculo">
+              <PropertyRef Name="IDVehiculo" />
+            </Principal>
+            <Dependent Role="HojaDeRuta">
+              <PropertyRef Name="IDVehiculo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Observacion_HojaDeRuta">
+          <End Type="BD_TRANSPORTOModel.HojaDeRuta" Role="HojaDeRuta" Multiplicity="1" />
+          <End Type="BD_TRANSPORTOModel.Observacion" Role="Observacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HojaDeRuta">
+              <PropertyRef Name="IDHojaDruta" />
+            </Principal>
+            <Dependent Role="Observacion">
+              <PropertyRef Name="IDHojaDeRuta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Mantenimiento_Usuario">
+          <End Type="BD_TRANSPORTOModel.Usuario" Role="Usuario" Multiplicity="1" />
+          <End Type="BD_TRANSPORTOModel.Mantenimiento" Role="Mantenimiento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="IdUsuario" />
+            </Principal>
+            <Dependent Role="Mantenimiento">
+              <PropertyRef Name="IDUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Mantenimiento_Vehiculo">
+          <End Type="BD_TRANSPORTOModel.Vehiculo" Role="Vehiculo" Multiplicity="1" />
+          <End Type="BD_TRANSPORTOModel.Mantenimiento" Role="Mantenimiento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vehiculo">
+              <PropertyRef Name="IDVehiculo" />
+            </Principal>
+            <Dependent Role="Mantenimiento">
+              <PropertyRef Name="IDVehiculo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RolesDeUsuario_Rol">
+          <End Type="BD_TRANSPORTOModel.Rol" Role="Rol" Multiplicity="1" />
+          <End Type="BD_TRANSPORTOModel.RolesDeUsuario" Role="RolesDeUsuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rol">
+              <PropertyRef Name="IDRol" />
+            </Principal>
+            <Dependent Role="RolesDeUsuario">
+              <PropertyRef Name="IDRol" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RolesDeUsuario_Usuario">
+          <End Type="BD_TRANSPORTOModel.Usuario" Role="Usuario" Multiplicity="1" />
+          <End Type="BD_TRANSPORTOModel.RolesDeUsuario" Role="RolesDeUsuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="IdUsuario" />
+            </Principal>
+            <Dependent Role="RolesDeUsuario">
+              <PropertyRef Name="IDUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BD_TRANSPORTOModelStoreContainer" CdmEntityContainer="BD_TRANSPORTOEntities">
+          <EntitySetMapping Name="Ayudante">
+            <EntityTypeMapping TypeName="BD_TRANSPORTOModel.Ayudante">
+              <MappingFragment StoreEntitySet="Ayudante">
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="CelularAyudante" ColumnName="CelularAyudante" />
+                <ScalarProperty Name="TelefonoAyudante" ColumnName="TelefonoAyudante" />
+                <ScalarProperty Name="DireccionAyudante" ColumnName="DireccionAyudante" />
+                <ScalarProperty Name="DNIAyudante" ColumnName="DNIAyudante" />
+                <ScalarProperty Name="ApellidoAyudante" ColumnName="ApellidoAyudante" />
+                <ScalarProperty Name="NombreAyudante" ColumnName="NombreAyudante" />
+                <ScalarProperty Name="IDAyudate" ColumnName="IDAyudate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Chofer">
+            <EntityTypeMapping TypeName="BD_TRANSPORTOModel.Chofer">
+              <MappingFragment StoreEntitySet="Chofer">
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="EmailChofer" ColumnName="EmailChofer" />
+                <ScalarProperty Name="CelularCorporativoChofer" ColumnName="CelularCorporativoChofer" />
+                <ScalarProperty Name="CelularPersonalChofer" ColumnName="CelularPersonalChofer" />
+                <ScalarProperty Name="FecchaVencimientoBrevete" ColumnName="FecchaVencimientoBrevete" />
+                <ScalarProperty Name="FechaDActivacionBrevete" ColumnName="FechaDActivacionBrevete" />
+                <ScalarProperty Name="NumeroBreveteChofer" ColumnName="NumeroBreveteChofer" />
+                <ScalarProperty Name="FuncionChofer" ColumnName="FuncionChofer" />
+                <ScalarProperty Name="DNIChofer" ColumnName="DNIChofer" />
+                <ScalarProperty Name="ApellidosChofer" ColumnName="ApellidosChofer" />
+                <ScalarProperty Name="NombreChofer" ColumnName="NombreChofer" />
+                <ScalarProperty Name="IDchofer" ColumnName="IDchofer" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Contactos">
+            <EntityTypeMapping TypeName="BD_TRANSPORTOModel.Contactos">
+              <MappingFragment StoreEntitySet="Contactos">
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="IDEmpresa" ColumnName="IDEmpresa" />
+                <ScalarProperty Name="EmailContacto" ColumnName="EmailContacto" />
+                <ScalarProperty Name="Celular" ColumnName="Celular" />
+                <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Dni" ColumnName="Dni" />
+                <ScalarProperty Name="IDContactos" ColumnName="IDContactos" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Distrito">
+            <EntityTypeMapping TypeName="BD_TRANSPORTOModel.Distrito">
+              <MappingFragment StoreEntitySet="Distrito">
+                <ScalarProperty Name="NombreDistrito" ColumnName="NombreDistrito" />
+                <ScalarProperty Name="IDDistrito" ColumnName="IDDistrito" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EmpresaCliente">
+            <EntityTypeMapping TypeName="BD_TRANSPORTOModel.EmpresaCliente">
+              <MappingFragment StoreEntitySet="EmpresaCliente">
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="EmailContaco" ColumnName="EmailContaco" />
+                <ScalarProperty Name="CelularContacto" ColumnName="CelularContacto" />
+                <ScalarProperty Name="ApellidoContacto" ColumnName="ApellidoContacto" />
+                <ScalarProperty Name="NombreContacto" ColumnName="NombreContacto" />
+                <ScalarProperty Name="DNIContaco" ColumnName="DNIContaco" />
+                <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+                <ScalarProperty Name="EmailCorporativa" ColumnName="EmailCorporativa" />
+                <ScalarProperty Name="IDDistrito" ColumnName="IDDistrito" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+                <ScalarProperty Name="TelefonoCorporativo" ColumnName="TelefonoCorporativo" />
+                <ScalarProperty Name="NombreEmpresa" ColumnName="NombreEmpresa" />
+                <ScalarProperty Name="Ruc" ColumnName="Ruc" />
+                <ScalarProperty Name="IDEmpresaCliente" ColumnName="IDEmpresaCliente" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HojaDeRuta">
+            <EntityTypeMapping TypeName="BD_TRANSPORTOModel.HojaDeRuta">
+              <MappingFragment StoreEntitySet="HojaDeRuta">
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="Hora" ColumnName="Hora" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Valor" ColumnName="Valor" />
+                <ScalarProperty Name="Volumen" ColumnName="Volumen" />
+                <ScalarProperty Name="Peso" ColumnName="Peso" />
+                <ScalarProperty Name="IDDistrito" ColumnName="IDDistrito" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+                <ScalarProperty Name="IDClienteEmpresa" ColumnName="IDClienteEmpresa" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="IDAyudante" ColumnName="IDAyudante" />
+                <ScalarProperty Name="IDChofer" ColumnName="IDChofer" />
+                <ScalarProperty Name="NumeroDocumento" ColumnName="NumeroDocumento" />
+                <ScalarProperty Name="Documento" ColumnName="Documento" />
+                <ScalarProperty Name="IDVehiculo" ColumnName="IDVehiculo" />
+                <ScalarProperty Name="IDHojaDruta" ColumnName="IDHojaDruta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Mantenimiento">
+            <EntityTypeMapping TypeName="BD_TRANSPORTOModel.Mantenimiento">
+              <MappingFragment StoreEntitySet="Mantenimiento">
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="IDVehiculo" ColumnName="IDVehiculo" />
+                <ScalarProperty Name="IDUsuario" ColumnName="IDUsuario" />
+                <ScalarProperty Name="Motivo" ColumnName="Motivo" />
+                <ScalarProperty Name="Monto" ColumnName="Monto" />
+                <ScalarProperty Name="FechaDMantenimientoObcional" ColumnName="FechaDMantenimientoObcional" />
+                <ScalarProperty Name="Taller" ColumnName="Taller" />
+                <ScalarProperty Name="FechaMantenimiento" ColumnName="FechaMantenimiento" />
+                <ScalarProperty Name="Kilometraje" ColumnName="Kilometraje" />
+                <ScalarProperty Name="IDMantenimiento" ColumnName="IDMantenimiento" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Observacion">
+            <EntityTypeMapping TypeName="BD_TRANSPORTOModel.Observacion">
+              <MappingFragment StoreEntitySet="Observacion">
+                <ScalarProperty Name="DescripcionDObservacion" ColumnName="DescripcionDObservacion" />
+                <ScalarProperty Name="IDHojaDeRuta" ColumnName="IDHojaDeRuta" />
+                <ScalarProperty Name="IDObservaciones" ColumnName="IDObservaciones" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Rol">
+            <EntityTypeMapping TypeName="BD_TRANSPORTOModel.Rol">
+              <MappingFragment StoreEntitySet="Rol">
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="Rol1" ColumnName="Rol1" />
+                <ScalarProperty Name="IDRol" ColumnName="IDRol" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RolesDeUsuario">
+            <EntityTypeMapping TypeName="BD_TRANSPORTOModel.RolesDeUsuario">
+              <MappingFragment StoreEntitySet="RolesDeUsuario">
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="IDRol" ColumnName="IDRol" />
+                <ScalarProperty Name="IDUsuario" ColumnName="IDUsuario" />
+                <ScalarProperty Name="IDRolesUsuario" ColumnName="IDRolesUsuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usuario">
+            <EntityTypeMapping TypeName="BD_TRANSPORTOModel.Usuario">
+              <MappingFragment StoreEntitySet="Usuario">
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="Dni" ColumnName="Dni" />
+                <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Comtrasena" ColumnName="Comtrasena" />
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vehiculo">
+            <EntityTypeMapping TypeName="BD_TRANSPORTOModel.Vehiculo">
+              <MappingFragment StoreEntitySet="Vehiculo">
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="FechaCaducidadCertificadoFumiga" ColumnName="FechaCaducidadCertificadoFumiga" />
+                <ScalarProperty Name="FechaInicioCertificadoFumiga" ColumnName="FechaInicioCertificadoFumiga" />
+                <ScalarProperty Name="NumeroHabilitacion" ColumnName="NumeroHabilitacion" />
+                <ScalarProperty Name="FechaCaducidadSeguVehicu" ColumnName="FechaCaducidadSeguVehicu" />
+                <ScalarProperty Name="FechaIncioSeguroVehicular" ColumnName="FechaIncioSeguroVehicular" />
+                <ScalarProperty Name="FechaDeCaducidadReviciTecni" ColumnName="FechaDeCaducidadReviciTecni" />
+                <ScalarProperty Name="FechaDeInicioRevisionTecn" ColumnName="FechaDeInicioRevisionTecn" />
+                <ScalarProperty Name="Volumen" ColumnName="Volumen" />
+                <ScalarProperty Name="Peso" ColumnName="Peso" />
+                <ScalarProperty Name="SoatFechVenc" ColumnName="SoatFechVenc" />
+                <ScalarProperty Name="SoatFechaInic" ColumnName="SoatFechaInic" />
+                <ScalarProperty Name="Placa" ColumnName="Placa" />
+                <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+                <ScalarProperty Name="Modelo" ColumnName="Modelo" />
+                <ScalarProperty Name="Marca" ColumnName="Marca" />
+                <ScalarProperty Name="IDVehiculo" ColumnName="IDVehiculo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
