@@ -16,7 +16,7 @@ namespace Transporto.Controllers
         {
             var model = new ListChoferViewModel();
             model.Fill(CargarDatosContext(), p);
-            return View(model);
+            return View(model);    
         }
 
         //get
