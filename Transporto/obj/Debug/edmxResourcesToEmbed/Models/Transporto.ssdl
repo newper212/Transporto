@@ -1,0 +1,373 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BD_TRANSPORTOModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Ayudante">
+    <Key>
+      <PropertyRef Name="IDAyudate" />
+    </Key>
+    <Property Name="IDAyudate" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NombreAyudante" Type="varchar" MaxLength="50" />
+    <Property Name="ApellidoAyudante" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DNIAyudante" Type="char" MaxLength="8" Nullable="false" />
+    <Property Name="DireccionAyudante" Type="varchar" MaxLength="50" />
+    <Property Name="TelefonoAyudante" Type="varchar" MaxLength="50" />
+    <Property Name="CelularAyudante" Type="varchar" MaxLength="50" />
+    <Property Name="Estado" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Chofer">
+    <Key>
+      <PropertyRef Name="IDchofer" />
+    </Key>
+    <Property Name="IDchofer" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NombreChofer" Type="varchar" MaxLength="50" />
+    <Property Name="ApellidosChofer" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DNIChofer" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="FuncionChofer" Type="varchar" MaxLength="50" />
+    <Property Name="NumeroBreveteChofer" Type="varchar" MaxLength="50" />
+    <Property Name="FechaDActivacionBrevete" Type="date" Nullable="false" />
+    <Property Name="FecchaVencimientoBrevete" Type="date" Nullable="false" />
+    <Property Name="CelularPersonalChofer" Type="varchar" MaxLength="50" />
+    <Property Name="CelularCorporativoChofer" Type="varchar" MaxLength="50" />
+    <Property Name="EmailChofer" Type="varchar" MaxLength="50" />
+    <Property Name="Estado" Type="varchar" MaxLength="3" />
+  </EntityType>
+  <EntityType Name="Contactos">
+    <Key>
+      <PropertyRef Name="IDContactos" />
+    </Key>
+    <Property Name="IDContactos" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Dni" Type="varchar" MaxLength="50" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" />
+    <Property Name="Apellido" Type="varchar" MaxLength="50" />
+    <Property Name="Celular" Type="varchar" MaxLength="50" />
+    <Property Name="EmailContacto" Type="varchar" MaxLength="50" />
+    <Property Name="IDEmpresa" Type="int" Nullable="false" />
+    <Property Name="Estado" Type="varchar" MaxLength="3" />
+  </EntityType>
+  <EntityType Name="Distrito">
+    <Key>
+      <PropertyRef Name="IDDistrito" />
+    </Key>
+    <Property Name="IDDistrito" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NombreDistrito" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="EmpresaCliente">
+    <Key>
+      <PropertyRef Name="IDEmpresaCliente" />
+    </Key>
+    <Property Name="IDEmpresaCliente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ruc" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="NombreEmpresa" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TelefonoCorporativo" Type="varchar" MaxLength="50" />
+    <Property Name="Direccion" Type="varchar" MaxLength="50" />
+    <Property Name="IDDistrito" Type="int" Nullable="false" />
+    <Property Name="EmailCorporativa" Type="varchar" MaxLength="50" />
+    <Property Name="Observaciones" Type="varchar" MaxLength="50" />
+    <Property Name="DNIContaco" Type="char" MaxLength="8" Nullable="false" />
+    <Property Name="NombreContacto" Type="varchar" MaxLength="25" />
+    <Property Name="ApellidoContacto" Type="varchar" MaxLength="50" />
+    <Property Name="CelularContacto" Type="varchar" MaxLength="9" />
+    <Property Name="EmailContaco" Type="varchar" MaxLength="30" />
+    <Property Name="Estado" Type="varchar" MaxLength="3" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HojaDeRuta">
+    <Key>
+      <PropertyRef Name="IDHojaDruta" />
+    </Key>
+    <Property Name="IDHojaDruta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IDVehiculo" Type="int" Nullable="false" />
+    <Property Name="Documento" Type="varchar" MaxLength="50" />
+    <Property Name="NumeroDocumento" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IDChofer" Type="int" Nullable="false" />
+    <Property Name="IDAyudante" Type="int" Nullable="false" />
+    <Property Name="Fecha" Type="date" />
+    <Property Name="IDClienteEmpresa" Type="int" Nullable="false" />
+    <Property Name="Direccion" Type="varchar" MaxLength="50" />
+    <Property Name="IDDistrito" Type="int" Nullable="false" />
+    <Property Name="Peso" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="Volumen" Type="decimal" Precision="5" Scale="5" />
+    <Property Name="Valor" Type="decimal" Precision="10" Scale="10" />
+    <Property Name="Status" Type="varchar" MaxLength="50" />
+    <Property Name="Hora" Type="datetime" />
+    <Property Name="Estado" Type="varchar" MaxLength="3" />
+  </EntityType>
+  <EntityType Name="Mantenimiento">
+    <Key>
+      <PropertyRef Name="IDMantenimiento" />
+    </Key>
+    <Property Name="IDMantenimiento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Kilometraje" Type="int" Nullable="false" />
+    <Property Name="FechaMantenimiento" Type="date" Nullable="false" />
+    <Property Name="Taller" Type="varchar" MaxLength="50" />
+    <Property Name="FechaDMantenimientoObcional" Type="date" />
+    <Property Name="Monto" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="Motivo" Type="varchar" MaxLength="50" />
+    <Property Name="IDUsuario" Type="int" Nullable="false" />
+    <Property Name="IDVehiculo" Type="int" Nullable="false" />
+    <Property Name="Estado" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Observacion">
+    <Key>
+      <PropertyRef Name="IDObservaciones" />
+    </Key>
+    <Property Name="IDObservaciones" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IDHojaDeRuta" Type="int" Nullable="false" />
+    <Property Name="DescripcionDObservacion" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Rol">
+    <Key>
+      <PropertyRef Name="IDRol" />
+    </Key>
+    <Property Name="IDRol" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Rol1" Type="varchar" MaxLength="30" />
+    <Property Name="Estado" Type="varchar" MaxLength="3" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RolesDeUsuario">
+    <Key>
+      <PropertyRef Name="IDRolesUsuario" />
+    </Key>
+    <Property Name="IDRolesUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IDUsuario" Type="int" Nullable="false" />
+    <Property Name="IDRol" Type="int" Nullable="false" />
+    <Property Name="Estado" Type="varchar" MaxLength="3" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="IdUsuario" />
+    </Key>
+    <Property Name="IdUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Codigo" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="Comtrasena" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" />
+    <Property Name="Apellido" Type="varchar" MaxLength="50" />
+    <Property Name="Dni" Type="char" MaxLength="8" />
+    <Property Name="Estado" Type="varchar" MaxLength="3" />
+  </EntityType>
+  <EntityType Name="Vehiculo">
+    <Key>
+      <PropertyRef Name="IDVehiculo" />
+    </Key>
+    <Property Name="IDVehiculo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Marca" Type="varchar" MaxLength="50" />
+    <Property Name="Modelo" Type="varchar" MaxLength="50" />
+    <Property Name="Tipo" Type="varchar" MaxLength="50" />
+    <Property Name="Placa" Type="char" MaxLength="6" Nullable="false" />
+    <Property Name="SoatFechaInic" Type="date" Nullable="false" />
+    <Property Name="SoatFechVenc" Type="date" Nullable="false" />
+    <Property Name="Peso" Type="decimal" Precision="10" Scale="8" />
+    <Property Name="Volumen" Type="decimal" Precision="10" Scale="8" />
+    <Property Name="FechaDeInicioRevisionTecn" Type="date" />
+    <Property Name="FechaDeCaducidadReviciTecni" Type="date" />
+    <Property Name="FechaIncioSeguroVehicular" Type="date" />
+    <Property Name="FechaCaducidadSeguVehicu" Type="date" />
+    <Property Name="NumeroHabilitacion" Type="varchar" MaxLength="50" />
+    <Property Name="FechaInicioCertificadoFumiga" Type="date" />
+    <Property Name="FechaCaducidadCertificadoFumiga" Type="date" />
+    <Property Name="Estado" Type="varchar" MaxLength="3" />
+  </EntityType>
+  <Association Name="FK_Contactos_EmpresaCliente">
+    <End Role="EmpresaCliente" Type="Self.EmpresaCliente" Multiplicity="1" />
+    <End Role="Contactos" Type="Self.Contactos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EmpresaCliente">
+        <PropertyRef Name="IDEmpresaCliente" />
+      </Principal>
+      <Dependent Role="Contactos">
+        <PropertyRef Name="IDEmpresa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EmpresaCliente_Distrito">
+    <End Role="Distrito" Type="Self.Distrito" Multiplicity="1" />
+    <End Role="EmpresaCliente" Type="Self.EmpresaCliente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Distrito">
+        <PropertyRef Name="IDDistrito" />
+      </Principal>
+      <Dependent Role="EmpresaCliente">
+        <PropertyRef Name="IDDistrito" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HojaDeRuta_Ayudante">
+    <End Role="Ayudante" Type="Self.Ayudante" Multiplicity="1" />
+    <End Role="HojaDeRuta" Type="Self.HojaDeRuta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ayudante">
+        <PropertyRef Name="IDAyudate" />
+      </Principal>
+      <Dependent Role="HojaDeRuta">
+        <PropertyRef Name="IDAyudante" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HojaDeRuta_Chofer">
+    <End Role="Chofer" Type="Self.Chofer" Multiplicity="1" />
+    <End Role="HojaDeRuta" Type="Self.HojaDeRuta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Chofer">
+        <PropertyRef Name="IDchofer" />
+      </Principal>
+      <Dependent Role="HojaDeRuta">
+        <PropertyRef Name="IDChofer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HojaDeRuta_Distrito">
+    <End Role="Distrito" Type="Self.Distrito" Multiplicity="1" />
+    <End Role="HojaDeRuta" Type="Self.HojaDeRuta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Distrito">
+        <PropertyRef Name="IDDistrito" />
+      </Principal>
+      <Dependent Role="HojaDeRuta">
+        <PropertyRef Name="IDDistrito" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HojaDeRuta_EmpresaCliente">
+    <End Role="EmpresaCliente" Type="Self.EmpresaCliente" Multiplicity="1" />
+    <End Role="HojaDeRuta" Type="Self.HojaDeRuta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EmpresaCliente">
+        <PropertyRef Name="IDEmpresaCliente" />
+      </Principal>
+      <Dependent Role="HojaDeRuta">
+        <PropertyRef Name="IDClienteEmpresa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HojaDeRuta_Vehiculo">
+    <End Role="Vehiculo" Type="Self.Vehiculo" Multiplicity="1" />
+    <End Role="HojaDeRuta" Type="Self.HojaDeRuta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vehiculo">
+        <PropertyRef Name="IDVehiculo" />
+      </Principal>
+      <Dependent Role="HojaDeRuta">
+        <PropertyRef Name="IDVehiculo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Mantenimiento_Usuario">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="Mantenimiento" Type="Self.Mantenimiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="IdUsuario" />
+      </Principal>
+      <Dependent Role="Mantenimiento">
+        <PropertyRef Name="IDUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Mantenimiento_Vehiculo">
+    <End Role="Vehiculo" Type="Self.Vehiculo" Multiplicity="1" />
+    <End Role="Mantenimiento" Type="Self.Mantenimiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vehiculo">
+        <PropertyRef Name="IDVehiculo" />
+      </Principal>
+      <Dependent Role="Mantenimiento">
+        <PropertyRef Name="IDVehiculo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Observacion_HojaDeRuta">
+    <End Role="HojaDeRuta" Type="Self.HojaDeRuta" Multiplicity="1" />
+    <End Role="Observacion" Type="Self.Observacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HojaDeRuta">
+        <PropertyRef Name="IDHojaDruta" />
+      </Principal>
+      <Dependent Role="Observacion">
+        <PropertyRef Name="IDHojaDeRuta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RolesDeUsuario_Rol">
+    <End Role="Rol" Type="Self.Rol" Multiplicity="1" />
+    <End Role="RolesDeUsuario" Type="Self.RolesDeUsuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rol">
+        <PropertyRef Name="IDRol" />
+      </Principal>
+      <Dependent Role="RolesDeUsuario">
+        <PropertyRef Name="IDRol" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RolesDeUsuario_Usuario">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="RolesDeUsuario" Type="Self.RolesDeUsuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="IdUsuario" />
+      </Principal>
+      <Dependent Role="RolesDeUsuario">
+        <PropertyRef Name="IDUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BD_TRANSPORTOModelStoreContainer">
+    <EntitySet Name="Ayudante" EntityType="Self.Ayudante" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Chofer" EntityType="Self.Chofer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Contactos" EntityType="Self.Contactos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Distrito" EntityType="Self.Distrito" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EmpresaCliente" EntityType="Self.EmpresaCliente" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HojaDeRuta" EntityType="Self.HojaDeRuta" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Mantenimiento" EntityType="Self.Mantenimiento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Observacion" EntityType="Self.Observacion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Rol" EntityType="Self.Rol" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RolesDeUsuario" EntityType="Self.RolesDeUsuario" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Vehiculo" EntityType="Self.Vehiculo" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Contactos_EmpresaCliente" Association="Self.FK_Contactos_EmpresaCliente">
+      <End Role="EmpresaCliente" EntitySet="EmpresaCliente" />
+      <End Role="Contactos" EntitySet="Contactos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmpresaCliente_Distrito" Association="Self.FK_EmpresaCliente_Distrito">
+      <End Role="Distrito" EntitySet="Distrito" />
+      <End Role="EmpresaCliente" EntitySet="EmpresaCliente" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HojaDeRuta_Ayudante" Association="Self.FK_HojaDeRuta_Ayudante">
+      <End Role="Ayudante" EntitySet="Ayudante" />
+      <End Role="HojaDeRuta" EntitySet="HojaDeRuta" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HojaDeRuta_Chofer" Association="Self.FK_HojaDeRuta_Chofer">
+      <End Role="Chofer" EntitySet="Chofer" />
+      <End Role="HojaDeRuta" EntitySet="HojaDeRuta" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HojaDeRuta_Distrito" Association="Self.FK_HojaDeRuta_Distrito">
+      <End Role="Distrito" EntitySet="Distrito" />
+      <End Role="HojaDeRuta" EntitySet="HojaDeRuta" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HojaDeRuta_EmpresaCliente" Association="Self.FK_HojaDeRuta_EmpresaCliente">
+      <End Role="EmpresaCliente" EntitySet="EmpresaCliente" />
+      <End Role="HojaDeRuta" EntitySet="HojaDeRuta" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HojaDeRuta_Vehiculo" Association="Self.FK_HojaDeRuta_Vehiculo">
+      <End Role="Vehiculo" EntitySet="Vehiculo" />
+      <End Role="HojaDeRuta" EntitySet="HojaDeRuta" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Mantenimiento_Usuario" Association="Self.FK_Mantenimiento_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Mantenimiento" EntitySet="Mantenimiento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Mantenimiento_Vehiculo" Association="Self.FK_Mantenimiento_Vehiculo">
+      <End Role="Vehiculo" EntitySet="Vehiculo" />
+      <End Role="Mantenimiento" EntitySet="Mantenimiento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Observacion_HojaDeRuta" Association="Self.FK_Observacion_HojaDeRuta">
+      <End Role="HojaDeRuta" EntitySet="HojaDeRuta" />
+      <End Role="Observacion" EntitySet="Observacion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RolesDeUsuario_Rol" Association="Self.FK_RolesDeUsuario_Rol">
+      <End Role="Rol" EntitySet="Rol" />
+      <End Role="RolesDeUsuario" EntitySet="RolesDeUsuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RolesDeUsuario_Usuario" Association="Self.FK_RolesDeUsuario_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="RolesDeUsuario" EntitySet="RolesDeUsuario" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

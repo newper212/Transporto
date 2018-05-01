@@ -1,0 +1,127 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A fully featured admin theme which can be used to build CRM, CMS, etc.">
+    <meta name="author" content="Coderthemes">
+
+    <link rel="shortcut icon" href="assets/images/favicon_1.ico">
+
+    <title>Virtual X - Sistema de Gestión de Reservas y Estaciones</title>
+
+    <link href="@Url.Content("~/Content/assets/css/bootstrap.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/assets/plugins/timepicker/bootstrap-timepicker.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/assets/css/core.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/assets/css/components.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/assets/css/icons.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/assets/css/pages.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/assets/css/responsive.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/assets/css/responsive.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/assets/plugins/bootstrap-sweetalert/sweet-alert.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/assets/plugins/select2/s2/select2.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/fullcalendar/lib/css/fullcalendar.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/fullcalendar/lib/css/fullcalendar.print.min.css")" rel="stylesheet" media='print' />
+    <link href="@Url.Content("~/Content/fullcalendar/lib/css/scheduler.min.css")" rel="stylesheet" />
+
+    <link href="@Url.Content("~/Content/assets/css/menucontext/jquery.contextMenu.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/assets/css/menucontext/jquery.contextMenu.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/assets/plugins/bootstrap-datepicker/css/bootstrap-datepicker.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/custom-styles.css")" rel="stylesheet" />
+    @RenderSection("Styles", false)
+</head>
+
+<body class="fixed-left widescreen">
+    <div id="wrapper">
+        @{ Html.RenderPartial("_Topbar");}
+        @{ Html.RenderPartial("_LeftSidebar");}
+        <div class="content-page">
+            <div class="content">
+                <div class="container">
+                    @*@MessageHelpers.ShowMessages(TempData)*@
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h4 class="page-title"><i class="ti-@ViewBag.PageIcon"></i>&nbsp;&nbsp;@ViewBag.Title</h4>
+                            @if (IsSectionDefined("Breadcrumbs"))
+                            {
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="@Url.Action("Dashboard", "Home")" style="color: #3da5c6;"><i class="ti-dashboard"></i></a></li>
+                                    @RenderSection("Breadcrumbs", false)
+                                    <li class="breadcrumb-item active"><strong>@ViewBag.Title</strong></li>
+                                </ol>
+                            }
+
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    @RenderBody()
+                </div>
+            </div>
+        </div>
+        <footer class="footer">
+            Virtual X © 2018. Todos los derechos reservados.
+        </footer>
+        <script>
+            var resizefunc = [];
+        </script>
+        <!-- jQuery  -->
+        <script src="@Url.Content("~/Content/assets/js/jquery.min.js")"></script>
+        <script src="@Url.Content("~/Content/assets/js/modernizr.min.js")"></script>
+        <script src="@Url.Content("~/Content/moment-with-locales.js")"></script>
+        <script src="@Url.Content("~/Content/assets/plugins/select2/s2/select2.min.js")"></script>
+        <script src="@Url.Content("~/Content/assets/js/bootstrap.min.js")"></script>
+        <script src="@Url.Content("~/Content/assets/plugins/timepicker/bootstrap-timepicker.js")"></script>
+        <script src="@Url.Content("~/Content/assets/js/detect.js")"></script>
+        <script src="@Url.Content("~/Content/assets/js/fastclick.js")"></script>
+        <script src="@Url.Content("~/Content/assets/js/jquery.slimscroll.js")"></script>
+        <script src="@Url.Content("~/Content/assets/js/jquery.blockUI.js")"></script>
+        <script src="@Url.Content("~/Content/assets/js/waves.js")"></script>
+        <script src="@Url.Content("~/Content/assets/js/wow.min.js")"></script>
+        <script src="@Url.Content("~/Content/assets/js/jquery.nicescroll.js")"></script>
+        <script src="@Url.Content("~/Content/assets/js/jquery.scrollTo.min.js")"></script>
+        <script src="@Url.Content("~/Content/assets/plugins/bootstrap-sweetalert/sweet-alert.min.js")"></script>
+        <script src="@Url.Content("~/Content/fullcalendar/lib/js/moment.min.js")"></script>
+        <script src="@Url.Content("~/Content/fullcalendar/lib/js/fullcalendar.min.js")"></script>
+        <script src="@Url.Content("~/Content/fullcalendar/lib/js/scheduler.min.js")"></script>
+        <script src="@Url.Content("~/Content/assets/js/jquery.core.js")"></script>
+        <script src="@Url.Content("~/Content/assets/js/jquery.app.js")"></script>
+        <script src="@Url.Content("~/Content/assets/js/menucontext/jquery.contextMenu.js")"></script>
+        <script src="@Url.Content("~/Content/assets/js/menucontext/jquery.contextMenu.min.js")"></script>
+        <script src="@Url.Content("~/Content/assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js")"></script>
+        <script src="@Url.Content("~/Content/assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.es.min.js")"></script>
+        <script src="@Url.Content("~/Content/assets/js/menucontext/jquery.ui.position.js")"></script>
+        <script src="@Url.Content("~/Content/assets/js/menucontext/jquery.ui.position.min.js")"></script>
+        <script src="@Url.Content("~/Content/assets/plugins/notifyjs/js/notify.js")"></script>
+        <script src="@Url.Content("~/Content/assets/plugins/notifications/notify-metro.js")"></script>
+        <script src="@Url.Content("~/Scripts/jquery.validate.min.js")"></script>
+        <script src="@Url.Content("~/Content/assets/plugins/parsleyjs/parsley.min.js")"></script>
+        <script src="@Url.Content("~/Content/assets/plugins/parsleyjs/parsley-es.js")"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery-validation-unobtrusive@3.2.6/jquery.validate.unobtrusive.min.js"></script>>
+
+        @*@RazorHelpers.Script("Pages/Shared/shopping-cart.js", Url);
+        @RazorHelpers.Script("Pages/Shared/Global.js", Url)*@
+        @RazorHelpers.Script("Pages/Shared/Global.js", Url)
+
+        @RenderSection("Scripts", false)
+
+        <!-- General section box modal start -->
+        <div class="row-fluid" id="default-modal-container">
+            <div class="hide" id="default-modal-loading">
+                <div class="modal-body">
+                    <h3>
+                        <i class="fa fa-cog fa-spin fa-1x fa-fw"></i> Cargando...
+                    </h3>
+                </div>
+            </div>
+            <div class="hide" id="default-modal-loading-error">
+                <div class="modal-body">
+                    <h3>
+                        <i class="fa fa-exclamation-triangle"></i> Ha ocurrido un error
+                    </h3>
+                </div>
+            </div>
+        </div>
+        <!-- modal end -->
+    </div>
+</body>
+</html>

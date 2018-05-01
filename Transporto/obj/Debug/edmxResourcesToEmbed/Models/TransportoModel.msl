@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DB_TempanoModelStoreContainer" CdmEntityContainer="DB_TempanoEntities">
+    <EntitySetMapping Name="Chofer">
+      <EntityTypeMapping TypeName="DB_TempanoModel.Chofer">
+        <MappingFragment StoreEntitySet="Chofer">
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="CelularCorporativo" ColumnName="CelularCorporativo" />
+          <ScalarProperty Name="CelularPersonal" ColumnName="CelularPersonal" />
+          <ScalarProperty Name="FechaVencimientoBrevete" ColumnName="FechaVencimientoBrevete" />
+          <ScalarProperty Name="FechaActivacionBrevete" ColumnName="FechaActivacionBrevete" />
+          <ScalarProperty Name="NumeroBrevete" ColumnName="NumeroBrevete" />
+          <ScalarProperty Name="DNI" ColumnName="DNI" />
+          <ScalarProperty Name="Apellidos" ColumnName="Apellidos" />
+          <ScalarProperty Name="Nombres" ColumnName="Nombres" />
+          <ScalarProperty Name="ChoferId" ColumnName="ChoferId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Departamento">
+      <EntityTypeMapping TypeName="DB_TempanoModel.Departamento">
+        <MappingFragment StoreEntitySet="Departamento">
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="DepartamentoId" ColumnName="DepartamentoId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Distrito">
+      <EntityTypeMapping TypeName="DB_TempanoModel.Distrito">
+        <MappingFragment StoreEntitySet="Distrito">
+          <ScalarProperty Name="ProvinciaId" ColumnName="ProvinciaId" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="DistritoId" ColumnName="DistritoId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kilometraje">
+      <EntityTypeMapping TypeName="DB_TempanoModel.Kilometraje">
+        <MappingFragment StoreEntitySet="Kilometraje">
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="EstadoMantenimiento" ColumnName="EstadoMantenimiento" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Redondeo" ColumnName="Redondeo" />
+          <ScalarProperty Name="Multiplo" ColumnName="Multiplo" />
+          <ScalarProperty Name="Kilometros" ColumnName="Kilometros" />
+          <ScalarProperty Name="VehiculoId" ColumnName="VehiculoId" />
+          <ScalarProperty Name="KilometrajeId" ColumnName="KilometrajeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Provincia">
+      <EntityTypeMapping TypeName="DB_TempanoModel.Provincia">
+        <MappingFragment StoreEntitySet="Provincia">
+          <ScalarProperty Name="DepartamentoId" ColumnName="DepartamentoId" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="ProvinciaId" ColumnName="ProvinciaId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuario">
+      <EntityTypeMapping TypeName="DB_TempanoModel.Usuario">
+        <MappingFragment StoreEntitySet="Usuario">
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="ApellidoMaterno" ColumnName="ApellidoMaterno" />
+          <ScalarProperty Name="ApellidoPaterno" ColumnName="ApellidoPaterno" />
+          <ScalarProperty Name="Nombres" ColumnName="Nombres" />
+          <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vehiculo">
+      <EntityTypeMapping TypeName="DB_TempanoModel.Vehiculo">
+        <MappingFragment StoreEntitySet="Vehiculo">
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="FechaVencimientoSOAT" ColumnName="FechaVencimientoSOAT" />
+          <ScalarProperty Name="Placa" ColumnName="Placa" />
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+          <ScalarProperty Name="Modelo" ColumnName="Modelo" />
+          <ScalarProperty Name="Marca" ColumnName="Marca" />
+          <ScalarProperty Name="VehiculoId" ColumnName="VehiculoId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GetVehiculos">
+      <EntityTypeMapping TypeName="DB_TempanoModel.GetVehiculos">
+        <MappingFragment StoreEntitySet="v_GetVehiculos">
+          <ScalarProperty Name="Alerta" ColumnName="Alerta" />
+          <ScalarProperty Name="VehiculoId" ColumnName="VehiculoId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GetVehiculoSOAT">
+      <EntityTypeMapping TypeName="DB_TempanoModel.GetVehiculoSOAT">
+        <MappingFragment StoreEntitySet="v_GetVehiculoSOAT">
+          <ScalarProperty Name="AlertaSOAT" ColumnName="AlertaSOAT" />
+          <ScalarProperty Name="VehiculoId" ColumnName="VehiculoId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AsistenteChofer">
+      <EntityTypeMapping TypeName="DB_TempanoModel.AsistenteChofer">
+        <MappingFragment StoreEntitySet="AsistenteChofer">
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Celular" ColumnName="Celular" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="DNI" ColumnName="DNI" />
+          <ScalarProperty Name="Apellidos" ColumnName="Apellidos" />
+          <ScalarProperty Name="Nombres" ColumnName="Nombres" />
+          <ScalarProperty Name="AsistenteId" ColumnName="AsistenteId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HojaRuta">
+      <EntityTypeMapping TypeName="DB_TempanoModel.HojaRuta">
+        <MappingFragment StoreEntitySet="HojaRuta">
+          <ScalarProperty Name="AsistenteAlternoId" ColumnName="AsistenteAlternoId" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Observacion" ColumnName="Observacion" />
+          <ScalarProperty Name="AsistenteId" ColumnName="AsistenteId" />
+          <ScalarProperty Name="ChoferId" ColumnName="ChoferId" />
+          <ScalarProperty Name="VehiculoId" ColumnName="VehiculoId" />
+          <ScalarProperty Name="HoraSalida" ColumnName="HoraSalida" />
+          <ScalarProperty Name="FechaHoja" ColumnName="FechaHoja" />
+          <ScalarProperty Name="HojaRutaId" ColumnName="HojaRutaId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Rol">
+      <EntityTypeMapping TypeName="DB_TempanoModel.Rol">
+        <MappingFragment StoreEntitySet="Rol">
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Acronimo" ColumnName="Acronimo" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="RolId" ColumnName="RolId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RolUsuario">
+      <EntityTypeMapping TypeName="DB_TempanoModel.RolUsuario">
+        <MappingFragment StoreEntitySet="RolUsuario">
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="EsPrincipal" ColumnName="EsPrincipal" />
+          <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
+          <ScalarProperty Name="RolId" ColumnName="RolId" />
+          <ScalarProperty Name="RolUsuarioId" ColumnName="RolUsuarioId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GetChoferBrevete">
+      <EntityTypeMapping TypeName="DB_TempanoModel.GetChoferBrevete">
+        <MappingFragment StoreEntitySet="v_GetChoferBrevete">
+          <ScalarProperty Name="AlertaBrevete" ColumnName="AlertaBrevete" />
+          <ScalarProperty Name="ChoferId" ColumnName="ChoferId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cliente">
+      <EntityTypeMapping TypeName="DB_TempanoModel.Cliente">
+        <MappingFragment StoreEntitySet="Cliente">
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+          <ScalarProperty Name="EmailPersonal" ColumnName="EmailPersonal" />
+          <ScalarProperty Name="EmailCorporativo" ColumnName="EmailCorporativo" />
+          <ScalarProperty Name="DistritoId" ColumnName="DistritoId" />
+          <ScalarProperty Name="ProvinciaId" ColumnName="ProvinciaId" />
+          <ScalarProperty Name="DepartamentoId" ColumnName="DepartamentoId" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Ruc" ColumnName="Ruc" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="ClienteId" ColumnName="ClienteId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Contacto">
+      <EntityTypeMapping TypeName="DB_TempanoModel.Contacto">
+        <MappingFragment StoreEntitySet="Contacto">
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Celular" ColumnName="Celular" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Apellidos" ColumnName="Apellidos" />
+          <ScalarProperty Name="Nombres" ColumnName="Nombres" />
+          <ScalarProperty Name="ClienteId" ColumnName="ClienteId" />
+          <ScalarProperty Name="ContactoId" ColumnName="ContactoId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

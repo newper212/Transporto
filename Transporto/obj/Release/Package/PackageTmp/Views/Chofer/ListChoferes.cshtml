@@ -1,0 +1,58 @@
+﻿@model Transporto.ViewModels.Chofer.ListChoferViewModel
+@{
+    ViewBag.Title = "Listado de Choferes";
+}
+
+@section Breadcrumbs{
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card-box">
+            <h4 class="m-t-0 header-title">Choferes</h4>
+            <p class="text-muted font-14 m-b-20">
+                Listado de Choferes registrados en <code>Tempano</code>.
+            </p>
+
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th class="col-md-3">Nombres</th>
+                        <th class="col-md-3">Apellidos</th>
+                        <th class="col-md-1">DNI</th>
+                        <th class="col-md-1">N° Brevete</th>
+                        <th class="col-md-1">Estado</th>
+                        <th class="col-md-2">Opciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var chofer in Model.LstChofer)
+                    {
+                        <tr>
+                            <td class="col-md-3">@chofer.Nombres</td>
+                            <td class="col-md-3">@chofer.Apellidos</td>
+                            <td class="col-md-1">@chofer.DNI</td>
+                            <td class="col-md-1">@chofer.NumeroBrevete</td>
+                            <td class="col-md-1">@chofer.Estado</td>
+                            <td class="actions col-md-2">
+                                <a style="color: #797979; font-size:initial; cursor: pointer;" href="@Url.Action("AddEditChofer", "Chofer", new { ChoferId = chofer.ChoferId })" class="on-default"><i class="ti-pencil"></i></a>&nbsp;&nbsp;&nbsp;
+                                <a style="color: red; font-size:initial; cursor: pointer;" @Data.ModalLink("_DeleteChofer", "Chofer", new { ChoferId = chofer.ChoferId }) class="on-default"><i class="ti-trash"></i></a>&nbsp;&nbsp;&nbsp;
+                                <a style="color: #007bff; font-size:initial; cursor: pointer;" @Data.ModalLink("_ViewChofer", "Chofer", new { ChoferId = chofer.ChoferId }) class="on-default"><i class="ti-eye"></i></a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+            <div class="row">
+                <div class="col-md-4" style="margin: 25px 0;">
+                    <a href="@Url.Action("AddEditChofer", "Chofer")" class="btn btn-sm btn-primary"><i class="ti-plus"></i> Nuevo</a>
+                </div>
+                <div class="col-md-8 text-right">
+                    @Html.PagedListPager(Model.LstChofer, page => Url.Action("ListChoferes", new { p = page, Nombre = Model.NombreChofer }), ConstantHelpers.Bootstrap3Pager)
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

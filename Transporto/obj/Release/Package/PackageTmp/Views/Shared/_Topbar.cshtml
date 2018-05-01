@@ -1,0 +1,80 @@
+﻿
+@{
+    ViewBag.Title = "_Topbar";
+}
+
+<div class="topbar">
+    <div class="topbar-left">
+        <div class="text-center">
+            <a href="@Url.Action("Index", "Home")" class="logo"><i class="md md-terrain"></i><span>TRANSPORTO</span></a>
+        </div>
+    </div>
+    <div class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <div class="">
+                <div class="pull-left">
+                    <button class="button-menu-mobile open-left waves-effect waves-light">
+                        <i class="md md-menu"></i>
+                    </button>
+                    <span class="clearfix"></span>
+                </div>
+
+                <ul class="nav navbar-nav navbar-right pull-right">
+                    <li class="dropdown top-menu-item-xs">
+                        <a href="#" data-toggle="dropdown" class="toggle">
+                            <i class="fa fa-users"></i>
+                            <span>Roles Asociados</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu">
+                            @*@foreach (var rolUsuario in Session.GetLstRolUsuario())
+                            {
+                                <li class="notify-all">
+                                    <a href="#">
+                                        @if(rolUsuario.Item2 == Session.GetRolId())
+                                        {
+                                            <i style="color: #81c868;" class="fa fa-check"></i>
+                                        }&nbsp;@rolUsuario.Item1
+                                    </a>
+                                </li>
+                            }*@
+                        </ul>
+                    </li>
+
+                    <li class="dropdown top-menu-item-xs">
+                            <a href="#" data-toggle="dropdown" class="toggle">
+                                <i class="fa fa-shopping-cart"></i>
+                                <span id="pedido-badge" class="badge badge-accent" data-url="@Url.Action("GetDetalleOrdenCompra","WebApi", new { UsuarioId = 1 })" style="display:none">0</span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-lg">
+                                <li class="notifi-title"><span class="label label-default pull-right"><strong id="cantidad-pedido">0</strong></span>PRE-RESERVAS ADQUIRIDAS</li>
+                                <li class="notification-list"><ul class="col-md-12 dropdown-menu-list list-unstyled ps-scrollbar" id="shopping-cart"></ul></li>
+                                <li class="notify-all">
+                                    <a style="background-color: #eeeeee;" class="text-center" @*id="make-pedido"*@ href="@Url.Action("AddEditVenta", "Sale")" @*data-href="@Url.Action("AddEditVenta", "Sale")"*@>
+                                        <i style="color: #81c868;" class="fa fa-check text-muted"></i><span style="font-size: 15px;"> Confirmar Reservas</span>
+                                    </a>
+                                </li>
+                                <li class="notify-all">
+                                    <a style="background-color: #dad8d8;" class="text-center" @*id="make-pedido"*@ href="@Url.Action("DeleteOrdenCompra", "Order")" data-href="@Url.Action("DeleteOrdenCompra", "Order")">
+                                        <i style="color: red;" class="fa fa-times text-muted"></i><span style="font-size: 15px;"> Cancelar Reservas</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    <li class="dropdown top-menu-item-xs">
+                            <a href="#" class="dropdown-toggle profile waves-effect waves-light" data-toggle="dropdown" aria-expanded="true"><i class="fa fa-user"></i> &nbsp;¡Bienvenido !</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="@Url.Action("Logout", "Login")"><i class="ti-power-off m-r-10 text-danger"></i> Cerrar Sesión</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+<!-- Top Bar End -->
+@section Scripts{
+<script>
+   
+</script>
+}

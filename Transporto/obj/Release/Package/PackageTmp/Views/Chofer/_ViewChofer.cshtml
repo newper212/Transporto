@@ -1,0 +1,53 @@
+﻿@model Transporto.ViewModels.Chofer._ViewChoferViewModel
+@{
+    Layout = ConstantHelpers.LAYOUT.MODAL_LAYOUT_PATH;
+    ViewBag.Title = "Ver Chofer";
+    ViewBag.PageIcon = "ti-user";
+}
+
+<div class="form-group">
+    @Html.LabelFor(x => x.NombreComleto, new { @class = "form-label col-md-3" })
+    @Html.TextBoxFor(x => x.NombreComleto, new { @class = "form-control", @readonly = "readonly" })
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(x => x.DNI, new { @class = "form-label col-md-3" })
+    @Html.TextBoxFor(x => x.DNI, new { @class = "form-control", @readonly = "readonly" })
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(x => x.NumeroBrevete, new { @class = "form-label col-md-3" })
+    @Html.TextBoxFor(x => x.NumeroBrevete, new { @class = "form-control", @readonly = "readonly" })
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(x => x.FechaActivacionBrevete, new { @class = "form-label col-md-4" })
+    @Html.TextBoxFor(x => x.FechaActivacionBrevete, "{0:dd/MM/yyyy}", new { @class = "form-control", @readonly = "readonly" })
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(x => x.FechaVencimientoBrevete, new { @class = "form-label col-md-3" })
+    @Html.TextBoxFor(x => x.FechaVencimientoBrevete, "{0:dd/MM/yyyy}", new { @class = "form-control", @readonly = "readonly" })
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(x => x.CelularPersonal, new { @class = "form-label col-md-3" })
+    @Html.TextBoxFor(x => x.CelularPersonal, new { @class = "form-control", @readonly = "readonly" })
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(x => x.CelularCorporativo, new { @class = "form-label col-md-3" })
+    @Html.TextBoxFor(x => x.CelularCorporativo, new { @class = "form-control", @readonly = "readonly" })
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(x => x.Email, new { @class = "form-label col-md-3" })
+    @Html.TextBoxFor(x => x.Email, new { @class = "form-control", @readonly = "readonly" })
+</div>
+
+
+<div class="form-group">
+    @Html.LabelFor(x => x.Estado, new { @class = "form-label col-md-2" })
+    @Html.Raw(ConstantHelpers.ESTADO.GetLabelEstado(Model.Estado))
+</div>
+

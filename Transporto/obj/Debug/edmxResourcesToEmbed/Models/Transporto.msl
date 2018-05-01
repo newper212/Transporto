@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BD_TRANSPORTOModelStoreContainer" CdmEntityContainer="BD_TRANSPORTOEntities">
+    <EntitySetMapping Name="Ayudante">
+      <EntityTypeMapping TypeName="BD_TRANSPORTOModel.Ayudante">
+        <MappingFragment StoreEntitySet="Ayudante">
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="CelularAyudante" ColumnName="CelularAyudante" />
+          <ScalarProperty Name="TelefonoAyudante" ColumnName="TelefonoAyudante" />
+          <ScalarProperty Name="DireccionAyudante" ColumnName="DireccionAyudante" />
+          <ScalarProperty Name="DNIAyudante" ColumnName="DNIAyudante" />
+          <ScalarProperty Name="ApellidoAyudante" ColumnName="ApellidoAyudante" />
+          <ScalarProperty Name="NombreAyudante" ColumnName="NombreAyudante" />
+          <ScalarProperty Name="IDAyudate" ColumnName="IDAyudate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Chofer">
+      <EntityTypeMapping TypeName="BD_TRANSPORTOModel.Chofer">
+        <MappingFragment StoreEntitySet="Chofer">
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="EmailChofer" ColumnName="EmailChofer" />
+          <ScalarProperty Name="CelularCorporativoChofer" ColumnName="CelularCorporativoChofer" />
+          <ScalarProperty Name="CelularPersonalChofer" ColumnName="CelularPersonalChofer" />
+          <ScalarProperty Name="FecchaVencimientoBrevete" ColumnName="FecchaVencimientoBrevete" />
+          <ScalarProperty Name="FechaDActivacionBrevete" ColumnName="FechaDActivacionBrevete" />
+          <ScalarProperty Name="NumeroBreveteChofer" ColumnName="NumeroBreveteChofer" />
+          <ScalarProperty Name="FuncionChofer" ColumnName="FuncionChofer" />
+          <ScalarProperty Name="DNIChofer" ColumnName="DNIChofer" />
+          <ScalarProperty Name="ApellidosChofer" ColumnName="ApellidosChofer" />
+          <ScalarProperty Name="NombreChofer" ColumnName="NombreChofer" />
+          <ScalarProperty Name="IDchofer" ColumnName="IDchofer" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Contactos">
+      <EntityTypeMapping TypeName="BD_TRANSPORTOModel.Contactos">
+        <MappingFragment StoreEntitySet="Contactos">
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="IDEmpresa" ColumnName="IDEmpresa" />
+          <ScalarProperty Name="EmailContacto" ColumnName="EmailContacto" />
+          <ScalarProperty Name="Celular" ColumnName="Celular" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Dni" ColumnName="Dni" />
+          <ScalarProperty Name="IDContactos" ColumnName="IDContactos" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Distrito">
+      <EntityTypeMapping TypeName="BD_TRANSPORTOModel.Distrito">
+        <MappingFragment StoreEntitySet="Distrito">
+          <ScalarProperty Name="NombreDistrito" ColumnName="NombreDistrito" />
+          <ScalarProperty Name="IDDistrito" ColumnName="IDDistrito" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmpresaCliente">
+      <EntityTypeMapping TypeName="BD_TRANSPORTOModel.EmpresaCliente">
+        <MappingFragment StoreEntitySet="EmpresaCliente">
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="EmailContaco" ColumnName="EmailContaco" />
+          <ScalarProperty Name="CelularContacto" ColumnName="CelularContacto" />
+          <ScalarProperty Name="ApellidoContacto" ColumnName="ApellidoContacto" />
+          <ScalarProperty Name="NombreContacto" ColumnName="NombreContacto" />
+          <ScalarProperty Name="DNIContaco" ColumnName="DNIContaco" />
+          <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+          <ScalarProperty Name="EmailCorporativa" ColumnName="EmailCorporativa" />
+          <ScalarProperty Name="IDDistrito" ColumnName="IDDistrito" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="TelefonoCorporativo" ColumnName="TelefonoCorporativo" />
+          <ScalarProperty Name="NombreEmpresa" ColumnName="NombreEmpresa" />
+          <ScalarProperty Name="Ruc" ColumnName="Ruc" />
+          <ScalarProperty Name="IDEmpresaCliente" ColumnName="IDEmpresaCliente" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HojaDeRuta">
+      <EntityTypeMapping TypeName="BD_TRANSPORTOModel.HojaDeRuta">
+        <MappingFragment StoreEntitySet="HojaDeRuta">
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Hora" ColumnName="Hora" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Valor" ColumnName="Valor" />
+          <ScalarProperty Name="Volumen" ColumnName="Volumen" />
+          <ScalarProperty Name="Peso" ColumnName="Peso" />
+          <ScalarProperty Name="IDDistrito" ColumnName="IDDistrito" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="IDClienteEmpresa" ColumnName="IDClienteEmpresa" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="IDAyudante" ColumnName="IDAyudante" />
+          <ScalarProperty Name="IDChofer" ColumnName="IDChofer" />
+          <ScalarProperty Name="NumeroDocumento" ColumnName="NumeroDocumento" />
+          <ScalarProperty Name="Documento" ColumnName="Documento" />
+          <ScalarProperty Name="IDVehiculo" ColumnName="IDVehiculo" />
+          <ScalarProperty Name="IDHojaDruta" ColumnName="IDHojaDruta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Mantenimiento">
+      <EntityTypeMapping TypeName="BD_TRANSPORTOModel.Mantenimiento">
+        <MappingFragment StoreEntitySet="Mantenimiento">
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="IDVehiculo" ColumnName="IDVehiculo" />
+          <ScalarProperty Name="IDUsuario" ColumnName="IDUsuario" />
+          <ScalarProperty Name="Motivo" ColumnName="Motivo" />
+          <ScalarProperty Name="Monto" ColumnName="Monto" />
+          <ScalarProperty Name="FechaDMantenimientoObcional" ColumnName="FechaDMantenimientoObcional" />
+          <ScalarProperty Name="Taller" ColumnName="Taller" />
+          <ScalarProperty Name="FechaMantenimiento" ColumnName="FechaMantenimiento" />
+          <ScalarProperty Name="Kilometraje" ColumnName="Kilometraje" />
+          <ScalarProperty Name="IDMantenimiento" ColumnName="IDMantenimiento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Observacion">
+      <EntityTypeMapping TypeName="BD_TRANSPORTOModel.Observacion">
+        <MappingFragment StoreEntitySet="Observacion">
+          <ScalarProperty Name="DescripcionDObservacion" ColumnName="DescripcionDObservacion" />
+          <ScalarProperty Name="IDHojaDeRuta" ColumnName="IDHojaDeRuta" />
+          <ScalarProperty Name="IDObservaciones" ColumnName="IDObservaciones" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Rol">
+      <EntityTypeMapping TypeName="BD_TRANSPORTOModel.Rol">
+        <MappingFragment StoreEntitySet="Rol">
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Rol1" ColumnName="Rol1" />
+          <ScalarProperty Name="IDRol" ColumnName="IDRol" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RolesDeUsuario">
+      <EntityTypeMapping TypeName="BD_TRANSPORTOModel.RolesDeUsuario">
+        <MappingFragment StoreEntitySet="RolesDeUsuario">
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="IDRol" ColumnName="IDRol" />
+          <ScalarProperty Name="IDUsuario" ColumnName="IDUsuario" />
+          <ScalarProperty Name="IDRolesUsuario" ColumnName="IDRolesUsuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuario">
+      <EntityTypeMapping TypeName="BD_TRANSPORTOModel.Usuario">
+        <MappingFragment StoreEntitySet="Usuario">
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Dni" ColumnName="Dni" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Comtrasena" ColumnName="Comtrasena" />
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vehiculo">
+      <EntityTypeMapping TypeName="BD_TRANSPORTOModel.Vehiculo">
+        <MappingFragment StoreEntitySet="Vehiculo">
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="FechaCaducidadCertificadoFumiga" ColumnName="FechaCaducidadCertificadoFumiga" />
+          <ScalarProperty Name="FechaInicioCertificadoFumiga" ColumnName="FechaInicioCertificadoFumiga" />
+          <ScalarProperty Name="NumeroHabilitacion" ColumnName="NumeroHabilitacion" />
+          <ScalarProperty Name="FechaCaducidadSeguVehicu" ColumnName="FechaCaducidadSeguVehicu" />
+          <ScalarProperty Name="FechaIncioSeguroVehicular" ColumnName="FechaIncioSeguroVehicular" />
+          <ScalarProperty Name="FechaDeCaducidadReviciTecni" ColumnName="FechaDeCaducidadReviciTecni" />
+          <ScalarProperty Name="FechaDeInicioRevisionTecn" ColumnName="FechaDeInicioRevisionTecn" />
+          <ScalarProperty Name="Volumen" ColumnName="Volumen" />
+          <ScalarProperty Name="Peso" ColumnName="Peso" />
+          <ScalarProperty Name="SoatFechVenc" ColumnName="SoatFechVenc" />
+          <ScalarProperty Name="SoatFechaInic" ColumnName="SoatFechaInic" />
+          <ScalarProperty Name="Placa" ColumnName="Placa" />
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+          <ScalarProperty Name="Modelo" ColumnName="Modelo" />
+          <ScalarProperty Name="Marca" ColumnName="Marca" />
+          <ScalarProperty Name="IDVehiculo" ColumnName="IDVehiculo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

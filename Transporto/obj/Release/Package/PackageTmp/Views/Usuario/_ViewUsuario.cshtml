@@ -1,0 +1,27 @@
+﻿
+@model Transporto.ViewModels.Usuario._ViewUsuarioViewModel
+@{
+    Layout = ConstantHelpers.LAYOUT.MODAL_LAYOUT_PATH;
+    ViewBag.Title = "Ver Usuario";
+    ViewBag.PageIcon = "ti-user";
+}
+
+<div class="form-group">
+    @Html.LabelFor(x => x.NombreComleto, new { @class = "form-label col-md-3" })
+    @Html.TextBoxFor(x => x.NombreComleto, new { @class = "form-control", @readonly = "readonly" })
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(x => x.Codigo, new { @class = "form-label col-md-3" })
+    @Html.TextBoxFor(x => x.Codigo, new { @class = "form-control", @readonly = "readonly" })
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(x => x.Password, new { @class = "form-label col-md-3" })
+    @Html.TextBoxFor(x => x.Password, new { @class = "form-control", @readonly = "readonly" })
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(x => x.Estado, new { @class = "form-label col-md-2" })
+    @Html.Raw(ConstantHelpers.ESTADO.GetLabelEstado(Model.Estado))
+</div>

@@ -1,0 +1,17 @@
+﻿@model Transporto.ViewModels.Chofer._DeleteChoferViewModel
+@{
+    Layout = ConstantHelpers.LAYOUT.MODAL_LAYOUT_PATH;
+    ViewBag.Title = "Eliminar   Chofer";
+    ViewBag.PageIcon = "ti-trash";
+    ViewBag.Form = new ModalFormHelpers("_DeleteChofer", "Chofer", FormMethod.Post);
+}
+
+@Html.HiddenFor(x => x.ChoferId)
+
+<p>¿Está seguro de eliminar el vehiculo <b>@Model.Nombres</b>?</p>
+
+@section Footer{
+    <button type="submit" class="btn btn-primary btn-xs"><i class="ti-check"></i>&nbsp;Aceptar</button>
+}
+
+

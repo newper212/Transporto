@@ -1,0 +1,423 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DB_TempanoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AsistenteChofer">
+    <Key>
+      <PropertyRef Name="AsistenteId" />
+    </Key>
+    <Property Name="AsistenteId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombres" Type="varchar" MaxLength="50" />
+    <Property Name="Apellidos" Type="varchar" MaxLength="50" />
+    <Property Name="DNI" Type="varchar" MaxLength="20" />
+    <Property Name="Direccion" Type="varchar" MaxLength="150" />
+    <Property Name="Telefono" Type="varchar" MaxLength="20" />
+    <Property Name="Celular" Type="varchar" MaxLength="20" />
+    <Property Name="Estado" Type="varchar" MaxLength="3" />
+  </EntityType>
+  <EntityType Name="Chofer">
+    <Key>
+      <PropertyRef Name="ChoferId" />
+    </Key>
+    <Property Name="ChoferId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombres" Type="varchar" MaxLength="150" />
+    <Property Name="Apellidos" Type="varchar" MaxLength="150" />
+    <Property Name="DNI" Type="varchar" MaxLength="8" />
+    <Property Name="NumeroBrevete" Type="varchar" MaxLength="30" />
+    <Property Name="FechaActivacionBrevete" Type="datetime" />
+    <Property Name="FechaVencimientoBrevete" Type="datetime" />
+    <Property Name="CelularPersonal" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="CelularCorporativo" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Estado" Type="varchar" MaxLength="3" />
+  </EntityType>
+  <EntityType Name="Cliente">
+    <Key>
+      <PropertyRef Name="ClienteId" />
+    </Key>
+    <Property Name="ClienteId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="150" />
+    <Property Name="Ruc" Type="varchar" MaxLength="11" />
+    <Property Name="Telefono" Type="varchar" MaxLength="20" />
+    <Property Name="Direccion" Type="varchar" MaxLength="150" />
+    <Property Name="DepartamentoId" Type="int" />
+    <Property Name="ProvinciaId" Type="int" />
+    <Property Name="DistritoId" Type="int" />
+    <Property Name="EmailCorporativo" Type="varchar" MaxLength="50" />
+    <Property Name="EmailPersonal" Type="varchar" MaxLength="50" />
+    <Property Name="Observaciones" Type="varchar(max)" />
+    <Property Name="Estado" Type="varchar" MaxLength="3" />
+  </EntityType>
+  <EntityType Name="Contacto">
+    <Key>
+      <PropertyRef Name="ContactoId" />
+    </Key>
+    <Property Name="ContactoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ClienteId" Type="int" />
+    <Property Name="Nombres" Type="varchar" MaxLength="150" />
+    <Property Name="Apellidos" Type="varchar" MaxLength="150" />
+    <Property Name="Telefono" Type="varchar" MaxLength="20" />
+    <Property Name="Celular" Type="varchar" MaxLength="20" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="Estado" Type="varchar" MaxLength="3" />
+  </EntityType>
+  <EntityType Name="Departamento">
+    <Key>
+      <PropertyRef Name="DepartamentoId" />
+    </Key>
+    <Property Name="DepartamentoId" Type="int" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Distrito">
+    <Key>
+      <PropertyRef Name="DistritoId" />
+    </Key>
+    <Property Name="DistritoId" Type="int" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ProvinciaId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HojaRuta">
+    <Key>
+      <PropertyRef Name="HojaRutaId" />
+    </Key>
+    <Property Name="HojaRutaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FechaHoja" Type="datetime" />
+    <Property Name="HoraSalida" Type="varchar" MaxLength="20" />
+    <Property Name="VehiculoId" Type="int" />
+    <Property Name="ChoferId" Type="int" />
+    <Property Name="AsistenteId" Type="int" />
+    <Property Name="AsistenteAlternoId" Type="int" />
+    <Property Name="Observacion" Type="varchar" MaxLength="200" />
+    <Property Name="Estado" Type="varchar" MaxLength="3" />
+  </EntityType>
+  <EntityType Name="Kilometraje">
+    <Key>
+      <PropertyRef Name="KilometrajeId" />
+    </Key>
+    <Property Name="KilometrajeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="VehiculoId" Type="int" />
+    <Property Name="Kilometros" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="Multiplo" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="Redondeo" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="Fecha" Type="datetime" />
+    <Property Name="EstadoMantenimiento" Type="char" MaxLength="1" />
+    <Property Name="Estado" Type="varchar" MaxLength="3" />
+  </EntityType>
+  <EntityType Name="Provincia">
+    <Key>
+      <PropertyRef Name="ProvinciaId" />
+    </Key>
+    <Property Name="ProvinciaId" Type="int" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DepartamentoId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Rol">
+    <Key>
+      <PropertyRef Name="RolId" />
+    </Key>
+    <Property Name="RolId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" />
+    <Property Name="Acronimo" Type="varchar" MaxLength="3" />
+    <Property Name="Estado" Type="varchar" MaxLength="3" />
+  </EntityType>
+  <EntityType Name="RolUsuario">
+    <Key>
+      <PropertyRef Name="RolUsuarioId" />
+    </Key>
+    <Property Name="RolUsuarioId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RolId" Type="int" Nullable="false" />
+    <Property Name="UsuarioId" Type="int" Nullable="false" />
+    <Property Name="EsPrincipal" Type="bit" />
+    <Property Name="Estado" Type="varchar" MaxLength="3" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="UsuarioId" />
+    </Key>
+    <Property Name="UsuarioId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombres" Type="varchar" MaxLength="150" />
+    <Property Name="ApellidoPaterno" Type="varchar" MaxLength="150" />
+    <Property Name="ApellidoMaterno" Type="varchar" MaxLength="150" />
+    <Property Name="Codigo" Type="varchar" MaxLength="50" />
+    <Property Name="Password" Type="varchar" MaxLength="50" />
+    <Property Name="Estado" Type="varchar" MaxLength="3" />
+  </EntityType>
+  <EntityType Name="Vehiculo">
+    <Key>
+      <PropertyRef Name="VehiculoId" />
+    </Key>
+    <Property Name="VehiculoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Marca" Type="varchar" MaxLength="20" />
+    <Property Name="Modelo" Type="varchar" MaxLength="20" />
+    <Property Name="Tipo" Type="varchar" MaxLength="20" />
+    <Property Name="Placa" Type="varchar" MaxLength="10" />
+    <Property Name="FechaVencimientoSOAT" Type="datetime" />
+    <Property Name="Estado" Type="varchar" MaxLength="3" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'DB_Tempano.dbo.v_GetChoferBrevete' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="v_GetChoferBrevete">
+    <Key>
+      <PropertyRef Name="ChoferId" />
+    </Key>
+    <Property Name="ChoferId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AlertaBrevete" Type="varchar" MaxLength="21" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'DB_Tempano.dbo.v_GetVehiculos' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="v_GetVehiculos">
+    <Key>
+      <PropertyRef Name="VehiculoId" />
+    </Key>
+    <Property Name="VehiculoId" Type="int" Nullable="false" />
+    <Property Name="Alerta" Type="varchar" MaxLength="22" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'DB_Tempano.dbo.v_GetVehiculoSOAT' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="v_GetVehiculoSOAT">
+    <Key>
+      <PropertyRef Name="VehiculoId" />
+    </Key>
+    <Property Name="VehiculoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AlertaSOAT" Type="varchar" MaxLength="21" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Cliente_Departamento">
+    <End Role="Departamento" Type="Self.Departamento" Multiplicity="0..1" />
+    <End Role="Cliente" Type="Self.Cliente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Departamento">
+        <PropertyRef Name="DepartamentoId" />
+      </Principal>
+      <Dependent Role="Cliente">
+        <PropertyRef Name="DepartamentoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cliente_Distrito">
+    <End Role="Distrito" Type="Self.Distrito" Multiplicity="0..1" />
+    <End Role="Cliente" Type="Self.Cliente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Distrito">
+        <PropertyRef Name="DistritoId" />
+      </Principal>
+      <Dependent Role="Cliente">
+        <PropertyRef Name="DistritoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cliente_Provincia">
+    <End Role="Provincia" Type="Self.Provincia" Multiplicity="0..1" />
+    <End Role="Cliente" Type="Self.Cliente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Provincia">
+        <PropertyRef Name="ProvinciaId" />
+      </Principal>
+      <Dependent Role="Cliente">
+        <PropertyRef Name="ProvinciaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Contacto_Cliente">
+    <End Role="Cliente" Type="Self.Cliente" Multiplicity="0..1" />
+    <End Role="Contacto" Type="Self.Contacto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cliente">
+        <PropertyRef Name="ClienteId" />
+      </Principal>
+      <Dependent Role="Contacto">
+        <PropertyRef Name="ClienteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Distrito_Provincia">
+    <End Role="Provincia" Type="Self.Provincia" Multiplicity="1" />
+    <End Role="Distrito" Type="Self.Distrito" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Provincia">
+        <PropertyRef Name="ProvinciaId" />
+      </Principal>
+      <Dependent Role="Distrito">
+        <PropertyRef Name="ProvinciaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HojaRuta_AsistenteChofer">
+    <End Role="AsistenteChofer" Type="Self.AsistenteChofer" Multiplicity="0..1" />
+    <End Role="HojaRuta" Type="Self.HojaRuta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AsistenteChofer">
+        <PropertyRef Name="AsistenteId" />
+      </Principal>
+      <Dependent Role="HojaRuta">
+        <PropertyRef Name="AsistenteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HojaRuta_AsistenteChofer1">
+    <End Role="AsistenteChofer" Type="Self.AsistenteChofer" Multiplicity="0..1" />
+    <End Role="HojaRuta" Type="Self.HojaRuta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AsistenteChofer">
+        <PropertyRef Name="AsistenteId" />
+      </Principal>
+      <Dependent Role="HojaRuta">
+        <PropertyRef Name="AsistenteAlternoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HojaRuta_Chofer">
+    <End Role="Chofer" Type="Self.Chofer" Multiplicity="0..1" />
+    <End Role="HojaRuta" Type="Self.HojaRuta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Chofer">
+        <PropertyRef Name="ChoferId" />
+      </Principal>
+      <Dependent Role="HojaRuta">
+        <PropertyRef Name="ChoferId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HojaRuta_Vehiculo">
+    <End Role="Vehiculo" Type="Self.Vehiculo" Multiplicity="0..1" />
+    <End Role="HojaRuta" Type="Self.HojaRuta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vehiculo">
+        <PropertyRef Name="VehiculoId" />
+      </Principal>
+      <Dependent Role="HojaRuta">
+        <PropertyRef Name="VehiculoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Kilometraje_Vehiculo">
+    <End Role="Vehiculo" Type="Self.Vehiculo" Multiplicity="0..1" />
+    <End Role="Kilometraje" Type="Self.Kilometraje" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vehiculo">
+        <PropertyRef Name="VehiculoId" />
+      </Principal>
+      <Dependent Role="Kilometraje">
+        <PropertyRef Name="VehiculoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Provincia_Departamento">
+    <End Role="Departamento" Type="Self.Departamento" Multiplicity="1" />
+    <End Role="Provincia" Type="Self.Provincia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Departamento">
+        <PropertyRef Name="DepartamentoId" />
+      </Principal>
+      <Dependent Role="Provincia">
+        <PropertyRef Name="DepartamentoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RolUsuario_Rol">
+    <End Role="Rol" Type="Self.Rol" Multiplicity="1" />
+    <End Role="RolUsuario" Type="Self.RolUsuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rol">
+        <PropertyRef Name="RolId" />
+      </Principal>
+      <Dependent Role="RolUsuario">
+        <PropertyRef Name="RolId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RolUsuario_Usuario">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="RolUsuario" Type="Self.RolUsuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="UsuarioId" />
+      </Principal>
+      <Dependent Role="RolUsuario">
+        <PropertyRef Name="UsuarioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DB_TempanoModelStoreContainer">
+    <EntitySet Name="AsistenteChofer" EntityType="Self.AsistenteChofer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Chofer" EntityType="Self.Chofer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Cliente" EntityType="Self.Cliente" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Contacto" EntityType="Self.Contacto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Departamento" EntityType="Self.Departamento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Distrito" EntityType="Self.Distrito" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HojaRuta" EntityType="Self.HojaRuta" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Kilometraje" EntityType="Self.Kilometraje" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Provincia" EntityType="Self.Provincia" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Rol" EntityType="Self.Rol" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RolUsuario" EntityType="Self.RolUsuario" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Vehiculo" EntityType="Self.Vehiculo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="v_GetChoferBrevete" EntityType="Self.v_GetChoferBrevete" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [v_GetChoferBrevete].[ChoferId] AS [ChoferId], 
+    [v_GetChoferBrevete].[AlertaBrevete] AS [AlertaBrevete]
+    FROM [dbo].[v_GetChoferBrevete] AS [v_GetChoferBrevete]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="v_GetVehiculos" EntityType="Self.v_GetVehiculos" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [v_GetVehiculos].[VehiculoId] AS [VehiculoId], 
+    [v_GetVehiculos].[Alerta] AS [Alerta]
+    FROM [dbo].[v_GetVehiculos] AS [v_GetVehiculos]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="v_GetVehiculoSOAT" EntityType="Self.v_GetVehiculoSOAT" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [v_GetVehiculoSOAT].[VehiculoId] AS [VehiculoId], 
+    [v_GetVehiculoSOAT].[AlertaSOAT] AS [AlertaSOAT]
+    FROM [dbo].[v_GetVehiculoSOAT] AS [v_GetVehiculoSOAT]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_Cliente_Departamento" Association="Self.FK_Cliente_Departamento">
+      <End Role="Departamento" EntitySet="Departamento" />
+      <End Role="Cliente" EntitySet="Cliente" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cliente_Distrito" Association="Self.FK_Cliente_Distrito">
+      <End Role="Distrito" EntitySet="Distrito" />
+      <End Role="Cliente" EntitySet="Cliente" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cliente_Provincia" Association="Self.FK_Cliente_Provincia">
+      <End Role="Provincia" EntitySet="Provincia" />
+      <End Role="Cliente" EntitySet="Cliente" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Contacto_Cliente" Association="Self.FK_Contacto_Cliente">
+      <End Role="Cliente" EntitySet="Cliente" />
+      <End Role="Contacto" EntitySet="Contacto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Distrito_Provincia" Association="Self.FK_Distrito_Provincia">
+      <End Role="Provincia" EntitySet="Provincia" />
+      <End Role="Distrito" EntitySet="Distrito" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HojaRuta_AsistenteChofer" Association="Self.FK_HojaRuta_AsistenteChofer">
+      <End Role="AsistenteChofer" EntitySet="AsistenteChofer" />
+      <End Role="HojaRuta" EntitySet="HojaRuta" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HojaRuta_AsistenteChofer1" Association="Self.FK_HojaRuta_AsistenteChofer1">
+      <End Role="AsistenteChofer" EntitySet="AsistenteChofer" />
+      <End Role="HojaRuta" EntitySet="HojaRuta" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HojaRuta_Chofer" Association="Self.FK_HojaRuta_Chofer">
+      <End Role="Chofer" EntitySet="Chofer" />
+      <End Role="HojaRuta" EntitySet="HojaRuta" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HojaRuta_Vehiculo" Association="Self.FK_HojaRuta_Vehiculo">
+      <End Role="Vehiculo" EntitySet="Vehiculo" />
+      <End Role="HojaRuta" EntitySet="HojaRuta" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Kilometraje_Vehiculo" Association="Self.FK_Kilometraje_Vehiculo">
+      <End Role="Vehiculo" EntitySet="Vehiculo" />
+      <End Role="Kilometraje" EntitySet="Kilometraje" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Provincia_Departamento" Association="Self.FK_Provincia_Departamento">
+      <End Role="Departamento" EntitySet="Departamento" />
+      <End Role="Provincia" EntitySet="Provincia" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RolUsuario_Rol" Association="Self.FK_RolUsuario_Rol">
+      <End Role="Rol" EntitySet="Rol" />
+      <End Role="RolUsuario" EntitySet="RolUsuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RolUsuario_Usuario" Association="Self.FK_RolUsuario_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="RolUsuario" EntitySet="RolUsuario" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

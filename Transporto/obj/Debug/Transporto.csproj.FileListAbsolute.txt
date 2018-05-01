@@ -1,0 +1,487 @@
+D:\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\roslyn\csc.exe
+D:\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\roslyn\System.Collections.Immutable.dll
+D:\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\roslyn\System.Reflection.Metadata.dll
+D:\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\roslyn\vbc.exe
+D:\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\roslyn\VBCSCompiler.exe
+D:\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\roslyn\VBCSCompiler.exe.config
+D:\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\Transporto.dll.config
+D:\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\Transporto.dll
+D:\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\Transporto.pdb
+D:\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\Antlr3.Runtime.dll
+D:\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\EntityFramework.dll
+D:\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\EntityFramework.SqlServer.dll
+D:\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\Microsoft.AspNet.Identity.Core.dll
+D:\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\Microsoft.Owin.dll
+D:\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\Microsoft.Owin.Security.Cookies.dll
+D:\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\Microsoft.Owin.Security.dll
+D:\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\Microsoft.Owin.Security.Facebook.dll
+D:\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\Microsoft.Owin.Security.Google.dll
+D:\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\Microsoft.Owin.Security.OAuth.dll
+D:\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\Microsoft.Owin.Security.Twitter.dll
+D:\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\Microsoft.Web.Infrastructure.dll
+D:\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\Newtonsoft.Json.dll
+D:\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\Owin.dll
+D:\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\PagedList.dll
+D:\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\PagedList.Mvc.dll
+D:\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\System.Web.Helpers.dll
+D:\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\System.Web.Mvc.dll
+D:\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\System.Web.Optimization.dll
+D:\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\System.Web.Razor.dll
+D:\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\System.Web.WebPages.Deployment.dll
+D:\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\System.Web.WebPages.dll
+D:\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\System.Web.WebPages.Razor.dll
+D:\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\WebGrease.dll
+D:\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\PagedList.xml
+D:\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\PagedList.Mvc.xml
+D:\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\System.Web.Helpers.xml
+D:\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\System.Web.Mvc.xml
+D:\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\System.Web.Optimization.xml
+D:\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\System.Web.Razor.xml
+D:\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\System.Web.WebPages.xml
+D:\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\System.Web.WebPages.Deployment.xml
+D:\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\System.Web.WebPages.Razor.xml
+D:\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\Antlr3.Runtime.pdb
+D:\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\Newtonsoft.Json.xml
+D:\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\EntityFramework.xml
+D:\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\EntityFramework.SqlServer.xml
+D:\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\Microsoft.AspNet.Identity.Core.xml
+D:\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\Microsoft.Owin.xml
+D:\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\Microsoft.Owin.Security.xml
+D:\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\Microsoft.Owin.Security.Facebook.xml
+D:\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\Microsoft.Owin.Security.Cookies.xml
+D:\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\Microsoft.Owin.Security.OAuth.xml
+D:\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\Microsoft.Owin.Security.Google.xml
+D:\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\Microsoft.Owin.Security.Twitter.xml
+D:\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\PROYECTO\Proyecto_Transporto\Transporto\Transporto\obj\Debug\Transporto.dll
+D:\PROYECTO\Proyecto_Transporto\Transporto\Transporto\obj\Debug\Transporto.pdb
+E:\Transport\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\roslyn\csc.exe
+E:\Transport\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\Transport\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\Transport\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\Transport\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\Transport\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\Transport\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\Transport\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\roslyn\System.Collections.Immutable.dll
+E:\Transport\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\roslyn\System.Reflection.Metadata.dll
+E:\Transport\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\roslyn\vbc.exe
+E:\Transport\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\roslyn\VBCSCompiler.exe
+E:\Transport\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\roslyn\VBCSCompiler.exe.config
+E:\Transport\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\Transporto.dll.config
+E:\Transport\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\Transporto.dll
+E:\Transport\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\Transporto.pdb
+E:\Transport\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\Antlr3.Runtime.dll
+E:\Transport\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\EntityFramework.dll
+E:\Transport\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\EntityFramework.SqlServer.dll
+E:\Transport\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\Microsoft.AspNet.Identity.Core.dll
+E:\Transport\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\Transport\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\Transport\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\Transport\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\Microsoft.Owin.dll
+E:\Transport\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\Transport\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\Microsoft.Owin.Security.Cookies.dll
+E:\Transport\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\Microsoft.Owin.Security.dll
+E:\Transport\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\Microsoft.Owin.Security.Facebook.dll
+E:\Transport\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\Microsoft.Owin.Security.Google.dll
+E:\Transport\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+E:\Transport\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\Microsoft.Owin.Security.OAuth.dll
+E:\Transport\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\Microsoft.Owin.Security.Twitter.dll
+E:\Transport\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\Microsoft.Web.Infrastructure.dll
+E:\Transport\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\Newtonsoft.Json.dll
+E:\Transport\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\Owin.dll
+E:\Transport\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\PagedList.dll
+E:\Transport\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\PagedList.Mvc.dll
+E:\Transport\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\System.Data.Entity.Repository.dll
+E:\Transport\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\System.Net.Http.dll
+E:\Transport\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\System.Net.Http.Extensions.dll
+E:\Transport\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\System.Net.Http.Formatting.dll
+E:\Transport\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\System.Net.Http.Primitives.dll
+E:\Transport\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\System.Net.Http.WebRequest.dll
+E:\Transport\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\System.Web.Helpers.dll
+E:\Transport\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\System.Web.Mvc.dll
+E:\Transport\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\System.Web.Optimization.dll
+E:\Transport\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\System.Web.Razor.dll
+E:\Transport\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\System.Web.WebPages.Deployment.dll
+E:\Transport\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\System.Web.WebPages.dll
+E:\Transport\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\System.Web.WebPages.Razor.dll
+E:\Transport\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\WebGrease.dll
+E:\Transport\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\Transport\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\PagedList.xml
+E:\Transport\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\PagedList.Mvc.xml
+E:\Transport\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\System.Net.Http.xml
+E:\Transport\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\System.Net.Http.WebRequest.xml
+E:\Transport\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\System.Web.Helpers.xml
+E:\Transport\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\System.Web.Mvc.xml
+E:\Transport\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\System.Web.Optimization.xml
+E:\Transport\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\System.Web.Razor.xml
+E:\Transport\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\System.Web.WebPages.xml
+E:\Transport\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\System.Web.WebPages.Deployment.xml
+E:\Transport\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\System.Web.WebPages.Razor.xml
+E:\Transport\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\Antlr3.Runtime.pdb
+E:\Transport\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\Newtonsoft.Json.xml
+E:\Transport\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\EntityFramework.xml
+E:\Transport\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\EntityFramework.SqlServer.xml
+E:\Transport\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\Microsoft.AspNet.Identity.Core.xml
+E:\Transport\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\Transport\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\Transport\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\Microsoft.Owin.xml
+E:\Transport\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\Transport\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\Microsoft.Owin.Security.xml
+E:\Transport\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\Microsoft.Owin.Security.Facebook.xml
+E:\Transport\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\Microsoft.Owin.Security.Cookies.xml
+E:\Transport\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\Microsoft.Owin.Security.OAuth.xml
+E:\Transport\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\Microsoft.Owin.Security.Google.xml
+E:\Transport\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\Microsoft.Owin.Security.Twitter.xml
+E:\Transport\PROYECTO\Proyecto_Transporto\Transporto\Transporto\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+E:\Transport\PROYECTO\Proyecto_Transporto\Transporto\Transporto\obj\Debug\Transporto.csprojResolveAssemblyReference.cache
+E:\Transport\PROYECTO\Proyecto_Transporto\Transporto\Transporto\obj\Debug\Transporto.Globalization.MessageFormValidation.resources
+E:\Transport\PROYECTO\Proyecto_Transporto\Transporto\Transporto\obj\Debug\Transporto.csproj.GenerateResource.Cache
+E:\Transport\PROYECTO\Proyecto_Transporto\Transporto\Transporto\obj\Debug\Transporto.dll
+E:\Transport\PROYECTO\Proyecto_Transporto\Transporto\Transporto\obj\Debug\Transporto.pdb
+E:\Transport\PROYECTO\Proyecto_Transporto\Proyecto\Transporto\Transporto\bin\roslyn\csc.exe
+E:\Transport\PROYECTO\Proyecto_Transporto\Proyecto\Transporto\Transporto\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\Transport\PROYECTO\Proyecto_Transporto\Proyecto\Transporto\Transporto\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\Transport\PROYECTO\Proyecto_Transporto\Proyecto\Transporto\Transporto\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\Transport\PROYECTO\Proyecto_Transporto\Proyecto\Transporto\Transporto\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\Transport\PROYECTO\Proyecto_Transporto\Proyecto\Transporto\Transporto\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\Transport\PROYECTO\Proyecto_Transporto\Proyecto\Transporto\Transporto\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\Transport\PROYECTO\Proyecto_Transporto\Proyecto\Transporto\Transporto\bin\roslyn\System.Collections.Immutable.dll
+E:\Transport\PROYECTO\Proyecto_Transporto\Proyecto\Transporto\Transporto\bin\roslyn\System.Reflection.Metadata.dll
+E:\Transport\PROYECTO\Proyecto_Transporto\Proyecto\Transporto\Transporto\bin\roslyn\vbc.exe
+E:\Transport\PROYECTO\Proyecto_Transporto\Proyecto\Transporto\Transporto\bin\roslyn\VBCSCompiler.exe
+E:\Transport\PROYECTO\Proyecto_Transporto\Proyecto\Transporto\Transporto\bin\roslyn\VBCSCompiler.exe.config
+E:\Transport\PROYECTO\Proyecto_Transporto\Proyecto\Transporto\Transporto\bin\Transporto.dll.config
+E:\Transport\PROYECTO\Proyecto_Transporto\Proyecto\Transporto\Transporto\bin\Transporto.dll
+E:\Transport\PROYECTO\Proyecto_Transporto\Proyecto\Transporto\Transporto\bin\Transporto.pdb
+E:\Transport\PROYECTO\Proyecto_Transporto\Proyecto\Transporto\Transporto\bin\Antlr3.Runtime.dll
+E:\Transport\PROYECTO\Proyecto_Transporto\Proyecto\Transporto\Transporto\bin\EntityFramework.dll
+E:\Transport\PROYECTO\Proyecto_Transporto\Proyecto\Transporto\Transporto\bin\EntityFramework.SqlServer.dll
+E:\Transport\PROYECTO\Proyecto_Transporto\Proyecto\Transporto\Transporto\bin\Microsoft.AspNet.Identity.Core.dll
+E:\Transport\PROYECTO\Proyecto_Transporto\Proyecto\Transporto\Transporto\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\Transport\PROYECTO\Proyecto_Transporto\Proyecto\Transporto\Transporto\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\Transport\PROYECTO\Proyecto_Transporto\Proyecto\Transporto\Transporto\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\Transport\PROYECTO\Proyecto_Transporto\Proyecto\Transporto\Transporto\bin\Microsoft.Owin.dll
+E:\Transport\PROYECTO\Proyecto_Transporto\Proyecto\Transporto\Transporto\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\Transport\PROYECTO\Proyecto_Transporto\Proyecto\Transporto\Transporto\bin\Microsoft.Owin.Security.Cookies.dll
+E:\Transport\PROYECTO\Proyecto_Transporto\Proyecto\Transporto\Transporto\bin\Microsoft.Owin.Security.dll
+E:\Transport\PROYECTO\Proyecto_Transporto\Proyecto\Transporto\Transporto\bin\Microsoft.Owin.Security.Facebook.dll
+E:\Transport\PROYECTO\Proyecto_Transporto\Proyecto\Transporto\Transporto\bin\Microsoft.Owin.Security.Google.dll
+E:\Transport\PROYECTO\Proyecto_Transporto\Proyecto\Transporto\Transporto\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+E:\Transport\PROYECTO\Proyecto_Transporto\Proyecto\Transporto\Transporto\bin\Microsoft.Owin.Security.OAuth.dll
+E:\Transport\PROYECTO\Proyecto_Transporto\Proyecto\Transporto\Transporto\bin\Microsoft.Owin.Security.Twitter.dll
+E:\Transport\PROYECTO\Proyecto_Transporto\Proyecto\Transporto\Transporto\bin\Microsoft.Web.Infrastructure.dll
+E:\Transport\PROYECTO\Proyecto_Transporto\Proyecto\Transporto\Transporto\bin\Newtonsoft.Json.dll
+E:\Transport\PROYECTO\Proyecto_Transporto\Proyecto\Transporto\Transporto\bin\Owin.dll
+E:\Transport\PROYECTO\Proyecto_Transporto\Proyecto\Transporto\Transporto\bin\PagedList.dll
+E:\Transport\PROYECTO\Proyecto_Transporto\Proyecto\Transporto\Transporto\bin\PagedList.Mvc.dll
+E:\Transport\PROYECTO\Proyecto_Transporto\Proyecto\Transporto\Transporto\bin\System.Data.Entity.Repository.dll
+E:\Transport\PROYECTO\Proyecto_Transporto\Proyecto\Transporto\Transporto\bin\System.Net.Http.dll
+E:\Transport\PROYECTO\Proyecto_Transporto\Proyecto\Transporto\Transporto\bin\System.Net.Http.Extensions.dll
+E:\Transport\PROYECTO\Proyecto_Transporto\Proyecto\Transporto\Transporto\bin\System.Net.Http.Formatting.dll
+E:\Transport\PROYECTO\Proyecto_Transporto\Proyecto\Transporto\Transporto\bin\System.Net.Http.Primitives.dll
+E:\Transport\PROYECTO\Proyecto_Transporto\Proyecto\Transporto\Transporto\bin\System.Net.Http.WebRequest.dll
+E:\Transport\PROYECTO\Proyecto_Transporto\Proyecto\Transporto\Transporto\bin\System.Web.Helpers.dll
+E:\Transport\PROYECTO\Proyecto_Transporto\Proyecto\Transporto\Transporto\bin\System.Web.Mvc.dll
+E:\Transport\PROYECTO\Proyecto_Transporto\Proyecto\Transporto\Transporto\bin\System.Web.Optimization.dll
+E:\Transport\PROYECTO\Proyecto_Transporto\Proyecto\Transporto\Transporto\bin\System.Web.Razor.dll
+E:\Transport\PROYECTO\Proyecto_Transporto\Proyecto\Transporto\Transporto\bin\System.Web.WebPages.Deployment.dll
+E:\Transport\PROYECTO\Proyecto_Transporto\Proyecto\Transporto\Transporto\bin\System.Web.WebPages.dll
+E:\Transport\PROYECTO\Proyecto_Transporto\Proyecto\Transporto\Transporto\bin\System.Web.WebPages.Razor.dll
+E:\Transport\PROYECTO\Proyecto_Transporto\Proyecto\Transporto\Transporto\bin\WebGrease.dll
+E:\Transport\PROYECTO\Proyecto_Transporto\Proyecto\Transporto\Transporto\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\Transport\PROYECTO\Proyecto_Transporto\Proyecto\Transporto\Transporto\bin\PagedList.xml
+E:\Transport\PROYECTO\Proyecto_Transporto\Proyecto\Transporto\Transporto\bin\PagedList.Mvc.xml
+E:\Transport\PROYECTO\Proyecto_Transporto\Proyecto\Transporto\Transporto\bin\System.Net.Http.xml
+E:\Transport\PROYECTO\Proyecto_Transporto\Proyecto\Transporto\Transporto\bin\System.Net.Http.WebRequest.xml
+E:\Transport\PROYECTO\Proyecto_Transporto\Proyecto\Transporto\Transporto\bin\System.Web.Helpers.xml
+E:\Transport\PROYECTO\Proyecto_Transporto\Proyecto\Transporto\Transporto\bin\System.Web.Mvc.xml
+E:\Transport\PROYECTO\Proyecto_Transporto\Proyecto\Transporto\Transporto\bin\System.Web.Optimization.xml
+E:\Transport\PROYECTO\Proyecto_Transporto\Proyecto\Transporto\Transporto\bin\System.Web.Razor.xml
+E:\Transport\PROYECTO\Proyecto_Transporto\Proyecto\Transporto\Transporto\bin\System.Web.WebPages.xml
+E:\Transport\PROYECTO\Proyecto_Transporto\Proyecto\Transporto\Transporto\bin\System.Web.WebPages.Deployment.xml
+E:\Transport\PROYECTO\Proyecto_Transporto\Proyecto\Transporto\Transporto\bin\System.Web.WebPages.Razor.xml
+E:\Transport\PROYECTO\Proyecto_Transporto\Proyecto\Transporto\Transporto\bin\Antlr3.Runtime.pdb
+E:\Transport\PROYECTO\Proyecto_Transporto\Proyecto\Transporto\Transporto\bin\Newtonsoft.Json.xml
+E:\Transport\PROYECTO\Proyecto_Transporto\Proyecto\Transporto\Transporto\bin\EntityFramework.xml
+E:\Transport\PROYECTO\Proyecto_Transporto\Proyecto\Transporto\Transporto\bin\EntityFramework.SqlServer.xml
+E:\Transport\PROYECTO\Proyecto_Transporto\Proyecto\Transporto\Transporto\bin\Microsoft.AspNet.Identity.Core.xml
+E:\Transport\PROYECTO\Proyecto_Transporto\Proyecto\Transporto\Transporto\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\Transport\PROYECTO\Proyecto_Transporto\Proyecto\Transporto\Transporto\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\Transport\PROYECTO\Proyecto_Transporto\Proyecto\Transporto\Transporto\bin\Microsoft.Owin.xml
+E:\Transport\PROYECTO\Proyecto_Transporto\Proyecto\Transporto\Transporto\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\Transport\PROYECTO\Proyecto_Transporto\Proyecto\Transporto\Transporto\bin\Microsoft.Owin.Security.xml
+E:\Transport\PROYECTO\Proyecto_Transporto\Proyecto\Transporto\Transporto\bin\Microsoft.Owin.Security.Facebook.xml
+E:\Transport\PROYECTO\Proyecto_Transporto\Proyecto\Transporto\Transporto\bin\Microsoft.Owin.Security.Cookies.xml
+E:\Transport\PROYECTO\Proyecto_Transporto\Proyecto\Transporto\Transporto\bin\Microsoft.Owin.Security.OAuth.xml
+E:\Transport\PROYECTO\Proyecto_Transporto\Proyecto\Transporto\Transporto\bin\Microsoft.Owin.Security.Google.xml
+E:\Transport\PROYECTO\Proyecto_Transporto\Proyecto\Transporto\Transporto\bin\Microsoft.Owin.Security.Twitter.xml
+E:\Transport\PROYECTO\Proyecto_Transporto\Proyecto\Transporto\Transporto\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+E:\Transport\PROYECTO\Proyecto_Transporto\Proyecto\Transporto\Transporto\obj\Debug\Transporto.Globalization.MessageFormValidation.resources
+E:\Transport\PROYECTO\Proyecto_Transporto\Proyecto\Transporto\Transporto\obj\Debug\Transporto.csproj.GenerateResource.Cache
+E:\Transport\PROYECTO\Proyecto_Transporto\Proyecto\Transporto\Transporto\obj\Debug\Transporto.dll
+E:\Transport\PROYECTO\Proyecto_Transporto\Proyecto\Transporto\Transporto\obj\Debug\Transporto.pdb
+E:\Transport\PROYECTO\Proyecto_Transporto\Proyecto\Transporto\Transporto\obj\Debug\Transporto.csprojResolveAssemblyReference.cache
+E:\BEETPERFECT\TRABAJO\TRABAJO\Transporto\Transporto\bin\roslyn\csc.exe
+E:\BEETPERFECT\TRABAJO\TRABAJO\Transporto\Transporto\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\BEETPERFECT\TRABAJO\TRABAJO\Transporto\Transporto\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\BEETPERFECT\TRABAJO\TRABAJO\Transporto\Transporto\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\BEETPERFECT\TRABAJO\TRABAJO\Transporto\Transporto\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\BEETPERFECT\TRABAJO\TRABAJO\Transporto\Transporto\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\BEETPERFECT\TRABAJO\TRABAJO\Transporto\Transporto\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\BEETPERFECT\TRABAJO\TRABAJO\Transporto\Transporto\bin\roslyn\System.Collections.Immutable.dll
+E:\BEETPERFECT\TRABAJO\TRABAJO\Transporto\Transporto\bin\roslyn\System.Reflection.Metadata.dll
+E:\BEETPERFECT\TRABAJO\TRABAJO\Transporto\Transporto\bin\roslyn\vbc.exe
+E:\BEETPERFECT\TRABAJO\TRABAJO\Transporto\Transporto\bin\roslyn\VBCSCompiler.exe
+E:\BEETPERFECT\TRABAJO\TRABAJO\Transporto\Transporto\bin\roslyn\VBCSCompiler.exe.config
+E:\BEETPERFECT\TRABAJO\TRABAJO\Transporto\Transporto\bin\Transporto.dll.config
+E:\BEETPERFECT\TRABAJO\TRABAJO\Transporto\Transporto\bin\Transporto.dll
+E:\BEETPERFECT\TRABAJO\TRABAJO\Transporto\Transporto\bin\Transporto.pdb
+E:\BEETPERFECT\TRABAJO\TRABAJO\Transporto\Transporto\bin\Antlr3.Runtime.dll
+E:\BEETPERFECT\TRABAJO\TRABAJO\Transporto\Transporto\bin\EntityFramework.dll
+E:\BEETPERFECT\TRABAJO\TRABAJO\Transporto\Transporto\bin\EntityFramework.SqlServer.dll
+E:\BEETPERFECT\TRABAJO\TRABAJO\Transporto\Transporto\bin\Microsoft.AspNet.Identity.Core.dll
+E:\BEETPERFECT\TRABAJO\TRABAJO\Transporto\Transporto\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\BEETPERFECT\TRABAJO\TRABAJO\Transporto\Transporto\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\BEETPERFECT\TRABAJO\TRABAJO\Transporto\Transporto\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\BEETPERFECT\TRABAJO\TRABAJO\Transporto\Transporto\bin\Microsoft.Owin.dll
+E:\BEETPERFECT\TRABAJO\TRABAJO\Transporto\Transporto\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\BEETPERFECT\TRABAJO\TRABAJO\Transporto\Transporto\bin\Microsoft.Owin.Security.Cookies.dll
+E:\BEETPERFECT\TRABAJO\TRABAJO\Transporto\Transporto\bin\Microsoft.Owin.Security.dll
+E:\BEETPERFECT\TRABAJO\TRABAJO\Transporto\Transporto\bin\Microsoft.Owin.Security.Facebook.dll
+E:\BEETPERFECT\TRABAJO\TRABAJO\Transporto\Transporto\bin\Microsoft.Owin.Security.Google.dll
+E:\BEETPERFECT\TRABAJO\TRABAJO\Transporto\Transporto\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+E:\BEETPERFECT\TRABAJO\TRABAJO\Transporto\Transporto\bin\Microsoft.Owin.Security.OAuth.dll
+E:\BEETPERFECT\TRABAJO\TRABAJO\Transporto\Transporto\bin\Microsoft.Owin.Security.Twitter.dll
+E:\BEETPERFECT\TRABAJO\TRABAJO\Transporto\Transporto\bin\Microsoft.Web.Infrastructure.dll
+E:\BEETPERFECT\TRABAJO\TRABAJO\Transporto\Transporto\bin\Newtonsoft.Json.dll
+E:\BEETPERFECT\TRABAJO\TRABAJO\Transporto\Transporto\bin\Owin.dll
+E:\BEETPERFECT\TRABAJO\TRABAJO\Transporto\Transporto\bin\PagedList.dll
+E:\BEETPERFECT\TRABAJO\TRABAJO\Transporto\Transporto\bin\PagedList.Mvc.dll
+E:\BEETPERFECT\TRABAJO\TRABAJO\Transporto\Transporto\bin\System.Data.Entity.Repository.dll
+E:\BEETPERFECT\TRABAJO\TRABAJO\Transporto\Transporto\bin\System.Net.Http.dll
+E:\BEETPERFECT\TRABAJO\TRABAJO\Transporto\Transporto\bin\System.Net.Http.Extensions.dll
+E:\BEETPERFECT\TRABAJO\TRABAJO\Transporto\Transporto\bin\System.Net.Http.Formatting.dll
+E:\BEETPERFECT\TRABAJO\TRABAJO\Transporto\Transporto\bin\System.Net.Http.Primitives.dll
+E:\BEETPERFECT\TRABAJO\TRABAJO\Transporto\Transporto\bin\System.Net.Http.WebRequest.dll
+E:\BEETPERFECT\TRABAJO\TRABAJO\Transporto\Transporto\bin\System.Web.Helpers.dll
+E:\BEETPERFECT\TRABAJO\TRABAJO\Transporto\Transporto\bin\System.Web.Mvc.dll
+E:\BEETPERFECT\TRABAJO\TRABAJO\Transporto\Transporto\bin\System.Web.Optimization.dll
+E:\BEETPERFECT\TRABAJO\TRABAJO\Transporto\Transporto\bin\System.Web.Razor.dll
+E:\BEETPERFECT\TRABAJO\TRABAJO\Transporto\Transporto\bin\System.Web.WebPages.Deployment.dll
+E:\BEETPERFECT\TRABAJO\TRABAJO\Transporto\Transporto\bin\System.Web.WebPages.dll
+E:\BEETPERFECT\TRABAJO\TRABAJO\Transporto\Transporto\bin\System.Web.WebPages.Razor.dll
+E:\BEETPERFECT\TRABAJO\TRABAJO\Transporto\Transporto\bin\WebGrease.dll
+E:\BEETPERFECT\TRABAJO\TRABAJO\Transporto\Transporto\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\BEETPERFECT\TRABAJO\TRABAJO\Transporto\Transporto\bin\PagedList.xml
+E:\BEETPERFECT\TRABAJO\TRABAJO\Transporto\Transporto\bin\PagedList.Mvc.xml
+E:\BEETPERFECT\TRABAJO\TRABAJO\Transporto\Transporto\bin\System.Net.Http.xml
+E:\BEETPERFECT\TRABAJO\TRABAJO\Transporto\Transporto\bin\System.Net.Http.WebRequest.xml
+E:\BEETPERFECT\TRABAJO\TRABAJO\Transporto\Transporto\bin\System.Web.Helpers.xml
+E:\BEETPERFECT\TRABAJO\TRABAJO\Transporto\Transporto\bin\System.Web.Mvc.xml
+E:\BEETPERFECT\TRABAJO\TRABAJO\Transporto\Transporto\bin\System.Web.Optimization.xml
+E:\BEETPERFECT\TRABAJO\TRABAJO\Transporto\Transporto\bin\System.Web.Razor.xml
+E:\BEETPERFECT\TRABAJO\TRABAJO\Transporto\Transporto\bin\System.Web.WebPages.xml
+E:\BEETPERFECT\TRABAJO\TRABAJO\Transporto\Transporto\bin\System.Web.WebPages.Deployment.xml
+E:\BEETPERFECT\TRABAJO\TRABAJO\Transporto\Transporto\bin\System.Web.WebPages.Razor.xml
+E:\BEETPERFECT\TRABAJO\TRABAJO\Transporto\Transporto\bin\Antlr3.Runtime.pdb
+E:\BEETPERFECT\TRABAJO\TRABAJO\Transporto\Transporto\bin\Newtonsoft.Json.xml
+E:\BEETPERFECT\TRABAJO\TRABAJO\Transporto\Transporto\bin\EntityFramework.xml
+E:\BEETPERFECT\TRABAJO\TRABAJO\Transporto\Transporto\bin\EntityFramework.SqlServer.xml
+E:\BEETPERFECT\TRABAJO\TRABAJO\Transporto\Transporto\bin\Microsoft.AspNet.Identity.Core.xml
+E:\BEETPERFECT\TRABAJO\TRABAJO\Transporto\Transporto\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\BEETPERFECT\TRABAJO\TRABAJO\Transporto\Transporto\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\BEETPERFECT\TRABAJO\TRABAJO\Transporto\Transporto\bin\Microsoft.Owin.xml
+E:\BEETPERFECT\TRABAJO\TRABAJO\Transporto\Transporto\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\BEETPERFECT\TRABAJO\TRABAJO\Transporto\Transporto\bin\Microsoft.Owin.Security.xml
+E:\BEETPERFECT\TRABAJO\TRABAJO\Transporto\Transporto\bin\Microsoft.Owin.Security.Facebook.xml
+E:\BEETPERFECT\TRABAJO\TRABAJO\Transporto\Transporto\bin\Microsoft.Owin.Security.Cookies.xml
+E:\BEETPERFECT\TRABAJO\TRABAJO\Transporto\Transporto\bin\Microsoft.Owin.Security.OAuth.xml
+E:\BEETPERFECT\TRABAJO\TRABAJO\Transporto\Transporto\bin\Microsoft.Owin.Security.Google.xml
+E:\BEETPERFECT\TRABAJO\TRABAJO\Transporto\Transporto\bin\Microsoft.Owin.Security.Twitter.xml
+E:\BEETPERFECT\TRABAJO\TRABAJO\Transporto\Transporto\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+E:\BEETPERFECT\TRABAJO\TRABAJO\Transporto\Transporto\obj\Debug\Transporto.csprojResolveAssemblyReference.cache
+E:\BEETPERFECT\TRABAJO\TRABAJO\Transporto\Transporto\obj\Debug\Transporto.Globalization.MessageFormValidation.resources
+E:\BEETPERFECT\TRABAJO\TRABAJO\Transporto\Transporto\obj\Debug\Transporto.csproj.GenerateResource.Cache
+E:\BEETPERFECT\TRABAJO\TRABAJO\Transporto\Transporto\obj\Debug\Transporto.dll
+E:\BEETPERFECT\TRABAJO\TRABAJO\Transporto\Transporto\obj\Debug\Transporto.pdb
+C:\Users\José Sandovl\Desktop\Transporto\Transporto\bin\roslyn\csc.exe
+C:\Users\José Sandovl\Desktop\Transporto\Transporto\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\José Sandovl\Desktop\Transporto\Transporto\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\José Sandovl\Desktop\Transporto\Transporto\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\José Sandovl\Desktop\Transporto\Transporto\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\José Sandovl\Desktop\Transporto\Transporto\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\José Sandovl\Desktop\Transporto\Transporto\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\José Sandovl\Desktop\Transporto\Transporto\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\José Sandovl\Desktop\Transporto\Transporto\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\José Sandovl\Desktop\Transporto\Transporto\bin\roslyn\vbc.exe
+C:\Users\José Sandovl\Desktop\Transporto\Transporto\bin\roslyn\VBCSCompiler.exe
+C:\Users\José Sandovl\Desktop\Transporto\Transporto\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\José Sandovl\Desktop\Transporto\Transporto\bin\Transporto.dll.config
+C:\Users\José Sandovl\Desktop\Transporto\Transporto\bin\Transporto.dll
+C:\Users\José Sandovl\Desktop\Transporto\Transporto\bin\Transporto.pdb
+C:\Users\José Sandovl\Desktop\Transporto\Transporto\bin\Antlr3.Runtime.dll
+C:\Users\José Sandovl\Desktop\Transporto\Transporto\bin\EntityFramework.dll
+C:\Users\José Sandovl\Desktop\Transporto\Transporto\bin\EntityFramework.SqlServer.dll
+C:\Users\José Sandovl\Desktop\Transporto\Transporto\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\José Sandovl\Desktop\Transporto\Transporto\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\José Sandovl\Desktop\Transporto\Transporto\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\José Sandovl\Desktop\Transporto\Transporto\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\José Sandovl\Desktop\Transporto\Transporto\bin\Microsoft.Owin.dll
+C:\Users\José Sandovl\Desktop\Transporto\Transporto\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\José Sandovl\Desktop\Transporto\Transporto\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\José Sandovl\Desktop\Transporto\Transporto\bin\Microsoft.Owin.Security.dll
+C:\Users\José Sandovl\Desktop\Transporto\Transporto\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\José Sandovl\Desktop\Transporto\Transporto\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\José Sandovl\Desktop\Transporto\Transporto\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\José Sandovl\Desktop\Transporto\Transporto\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\José Sandovl\Desktop\Transporto\Transporto\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\José Sandovl\Desktop\Transporto\Transporto\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\José Sandovl\Desktop\Transporto\Transporto\bin\Newtonsoft.Json.dll
+C:\Users\José Sandovl\Desktop\Transporto\Transporto\bin\Owin.dll
+C:\Users\José Sandovl\Desktop\Transporto\Transporto\bin\PagedList.dll
+C:\Users\José Sandovl\Desktop\Transporto\Transporto\bin\PagedList.Mvc.dll
+C:\Users\José Sandovl\Desktop\Transporto\Transporto\bin\System.Data.Entity.Repository.dll
+C:\Users\José Sandovl\Desktop\Transporto\Transporto\bin\System.Net.Http.dll
+C:\Users\José Sandovl\Desktop\Transporto\Transporto\bin\System.Net.Http.Extensions.dll
+C:\Users\José Sandovl\Desktop\Transporto\Transporto\bin\System.Net.Http.Formatting.dll
+C:\Users\José Sandovl\Desktop\Transporto\Transporto\bin\System.Net.Http.Primitives.dll
+C:\Users\José Sandovl\Desktop\Transporto\Transporto\bin\System.Net.Http.WebRequest.dll
+C:\Users\José Sandovl\Desktop\Transporto\Transporto\bin\System.Web.Helpers.dll
+C:\Users\José Sandovl\Desktop\Transporto\Transporto\bin\System.Web.Mvc.dll
+C:\Users\José Sandovl\Desktop\Transporto\Transporto\bin\System.Web.Optimization.dll
+C:\Users\José Sandovl\Desktop\Transporto\Transporto\bin\System.Web.Razor.dll
+C:\Users\José Sandovl\Desktop\Transporto\Transporto\bin\System.Web.WebPages.Deployment.dll
+C:\Users\José Sandovl\Desktop\Transporto\Transporto\bin\System.Web.WebPages.dll
+C:\Users\José Sandovl\Desktop\Transporto\Transporto\bin\System.Web.WebPages.Razor.dll
+C:\Users\José Sandovl\Desktop\Transporto\Transporto\bin\WebGrease.dll
+C:\Users\José Sandovl\Desktop\Transporto\Transporto\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\José Sandovl\Desktop\Transporto\Transporto\bin\PagedList.xml
+C:\Users\José Sandovl\Desktop\Transporto\Transporto\bin\PagedList.Mvc.xml
+C:\Users\José Sandovl\Desktop\Transporto\Transporto\bin\System.Net.Http.xml
+C:\Users\José Sandovl\Desktop\Transporto\Transporto\bin\System.Net.Http.WebRequest.xml
+C:\Users\José Sandovl\Desktop\Transporto\Transporto\bin\System.Web.Helpers.xml
+C:\Users\José Sandovl\Desktop\Transporto\Transporto\bin\System.Web.Mvc.xml
+C:\Users\José Sandovl\Desktop\Transporto\Transporto\bin\System.Web.Optimization.xml
+C:\Users\José Sandovl\Desktop\Transporto\Transporto\bin\System.Web.Razor.xml
+C:\Users\José Sandovl\Desktop\Transporto\Transporto\bin\System.Web.WebPages.xml
+C:\Users\José Sandovl\Desktop\Transporto\Transporto\bin\System.Web.WebPages.Deployment.xml
+C:\Users\José Sandovl\Desktop\Transporto\Transporto\bin\System.Web.WebPages.Razor.xml
+C:\Users\José Sandovl\Desktop\Transporto\Transporto\bin\Antlr3.Runtime.pdb
+C:\Users\José Sandovl\Desktop\Transporto\Transporto\bin\Newtonsoft.Json.xml
+C:\Users\José Sandovl\Desktop\Transporto\Transporto\bin\EntityFramework.xml
+C:\Users\José Sandovl\Desktop\Transporto\Transporto\bin\EntityFramework.SqlServer.xml
+C:\Users\José Sandovl\Desktop\Transporto\Transporto\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\José Sandovl\Desktop\Transporto\Transporto\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\José Sandovl\Desktop\Transporto\Transporto\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\José Sandovl\Desktop\Transporto\Transporto\bin\Microsoft.Owin.xml
+C:\Users\José Sandovl\Desktop\Transporto\Transporto\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\José Sandovl\Desktop\Transporto\Transporto\bin\Microsoft.Owin.Security.xml
+C:\Users\José Sandovl\Desktop\Transporto\Transporto\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\José Sandovl\Desktop\Transporto\Transporto\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\José Sandovl\Desktop\Transporto\Transporto\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\José Sandovl\Desktop\Transporto\Transporto\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\José Sandovl\Desktop\Transporto\Transporto\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\José Sandovl\Desktop\Transporto\Transporto\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\José Sandovl\Desktop\Transporto\Transporto\obj\Debug\Transporto.csprojResolveAssemblyReference.cache
+C:\Users\José Sandovl\Desktop\Transporto\Transporto\obj\Debug\Transporto.Globalization.MessageFormValidation.resources
+C:\Users\José Sandovl\Desktop\Transporto\Transporto\obj\Debug\Transporto.csproj.GenerateResource.Cache
+C:\Users\José Sandovl\Desktop\Transporto\Transporto\obj\Debug\Transporto.dll
+C:\Users\José Sandovl\Desktop\Transporto\Transporto\obj\Debug\Transporto.pdb
+D:\BitPerfect\Transporto\Transporto\bin\roslyn\csc.exe
+D:\BitPerfect\Transporto\Transporto\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\BitPerfect\Transporto\Transporto\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\BitPerfect\Transporto\Transporto\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\BitPerfect\Transporto\Transporto\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\BitPerfect\Transporto\Transporto\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\BitPerfect\Transporto\Transporto\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\BitPerfect\Transporto\Transporto\bin\roslyn\System.Collections.Immutable.dll
+D:\BitPerfect\Transporto\Transporto\bin\roslyn\System.Reflection.Metadata.dll
+D:\BitPerfect\Transporto\Transporto\bin\roslyn\vbc.exe
+D:\BitPerfect\Transporto\Transporto\bin\roslyn\VBCSCompiler.exe
+D:\BitPerfect\Transporto\Transporto\bin\roslyn\VBCSCompiler.exe.config
+D:\BitPerfect\Transporto\Transporto\bin\Transporto.dll.config
+D:\BitPerfect\Transporto\Transporto\bin\Transporto.dll
+D:\BitPerfect\Transporto\Transporto\bin\Transporto.pdb
+D:\BitPerfect\Transporto\Transporto\bin\Antlr3.Runtime.dll
+D:\BitPerfect\Transporto\Transporto\bin\EntityFramework.dll
+D:\BitPerfect\Transporto\Transporto\bin\EntityFramework.SqlServer.dll
+D:\BitPerfect\Transporto\Transporto\bin\Microsoft.AspNet.Identity.Core.dll
+D:\BitPerfect\Transporto\Transporto\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\BitPerfect\Transporto\Transporto\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\BitPerfect\Transporto\Transporto\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\BitPerfect\Transporto\Transporto\bin\Microsoft.Owin.dll
+D:\BitPerfect\Transporto\Transporto\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\BitPerfect\Transporto\Transporto\bin\Microsoft.Owin.Security.Cookies.dll
+D:\BitPerfect\Transporto\Transporto\bin\Microsoft.Owin.Security.dll
+D:\BitPerfect\Transporto\Transporto\bin\Microsoft.Owin.Security.Facebook.dll
+D:\BitPerfect\Transporto\Transporto\bin\Microsoft.Owin.Security.Google.dll
+D:\BitPerfect\Transporto\Transporto\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\BitPerfect\Transporto\Transporto\bin\Microsoft.Owin.Security.OAuth.dll
+D:\BitPerfect\Transporto\Transporto\bin\Microsoft.Owin.Security.Twitter.dll
+D:\BitPerfect\Transporto\Transporto\bin\Microsoft.Web.Infrastructure.dll
+D:\BitPerfect\Transporto\Transporto\bin\Newtonsoft.Json.dll
+D:\BitPerfect\Transporto\Transporto\bin\Owin.dll
+D:\BitPerfect\Transporto\Transporto\bin\PagedList.dll
+D:\BitPerfect\Transporto\Transporto\bin\PagedList.Mvc.dll
+D:\BitPerfect\Transporto\Transporto\bin\System.Data.Entity.Repository.dll
+D:\BitPerfect\Transporto\Transporto\bin\System.Net.Http.dll
+D:\BitPerfect\Transporto\Transporto\bin\System.Net.Http.Extensions.dll
+D:\BitPerfect\Transporto\Transporto\bin\System.Net.Http.Formatting.dll
+D:\BitPerfect\Transporto\Transporto\bin\System.Net.Http.Primitives.dll
+D:\BitPerfect\Transporto\Transporto\bin\System.Net.Http.WebRequest.dll
+D:\BitPerfect\Transporto\Transporto\bin\System.Web.Helpers.dll
+D:\BitPerfect\Transporto\Transporto\bin\System.Web.Mvc.dll
+D:\BitPerfect\Transporto\Transporto\bin\System.Web.Optimization.dll
+D:\BitPerfect\Transporto\Transporto\bin\System.Web.Razor.dll
+D:\BitPerfect\Transporto\Transporto\bin\System.Web.WebPages.Deployment.dll
+D:\BitPerfect\Transporto\Transporto\bin\System.Web.WebPages.dll
+D:\BitPerfect\Transporto\Transporto\bin\System.Web.WebPages.Razor.dll
+D:\BitPerfect\Transporto\Transporto\bin\WebGrease.dll
+D:\BitPerfect\Transporto\Transporto\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\BitPerfect\Transporto\Transporto\bin\PagedList.xml
+D:\BitPerfect\Transporto\Transporto\bin\PagedList.Mvc.xml
+D:\BitPerfect\Transporto\Transporto\bin\System.Net.Http.xml
+D:\BitPerfect\Transporto\Transporto\bin\System.Net.Http.WebRequest.xml
+D:\BitPerfect\Transporto\Transporto\bin\System.Web.Helpers.xml
+D:\BitPerfect\Transporto\Transporto\bin\System.Web.Mvc.xml
+D:\BitPerfect\Transporto\Transporto\bin\System.Web.Optimization.xml
+D:\BitPerfect\Transporto\Transporto\bin\System.Web.Razor.xml
+D:\BitPerfect\Transporto\Transporto\bin\System.Web.WebPages.xml
+D:\BitPerfect\Transporto\Transporto\bin\System.Web.WebPages.Deployment.xml
+D:\BitPerfect\Transporto\Transporto\bin\System.Web.WebPages.Razor.xml
+D:\BitPerfect\Transporto\Transporto\bin\Antlr3.Runtime.pdb
+D:\BitPerfect\Transporto\Transporto\bin\Newtonsoft.Json.xml
+D:\BitPerfect\Transporto\Transporto\bin\EntityFramework.xml
+D:\BitPerfect\Transporto\Transporto\bin\EntityFramework.SqlServer.xml
+D:\BitPerfect\Transporto\Transporto\bin\Microsoft.AspNet.Identity.Core.xml
+D:\BitPerfect\Transporto\Transporto\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\BitPerfect\Transporto\Transporto\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\BitPerfect\Transporto\Transporto\bin\Microsoft.Owin.xml
+D:\BitPerfect\Transporto\Transporto\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\BitPerfect\Transporto\Transporto\bin\Microsoft.Owin.Security.xml
+D:\BitPerfect\Transporto\Transporto\bin\Microsoft.Owin.Security.Facebook.xml
+D:\BitPerfect\Transporto\Transporto\bin\Microsoft.Owin.Security.Cookies.xml
+D:\BitPerfect\Transporto\Transporto\bin\Microsoft.Owin.Security.OAuth.xml
+D:\BitPerfect\Transporto\Transporto\bin\Microsoft.Owin.Security.Google.xml
+D:\BitPerfect\Transporto\Transporto\bin\Microsoft.Owin.Security.Twitter.xml
+D:\BitPerfect\Transporto\Transporto\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\BitPerfect\Transporto\Transporto\obj\Debug\Transporto.csprojResolveAssemblyReference.cache
+D:\BitPerfect\Transporto\Transporto\obj\Debug\Transporto.Globalization.MessageFormValidation.resources
+D:\BitPerfect\Transporto\Transporto\obj\Debug\Transporto.csproj.GenerateResource.Cache
+D:\BitPerfect\Transporto\Transporto\obj\Debug\Transporto.dll
+D:\BitPerfect\Transporto\Transporto\obj\Debug\Transporto.pdb

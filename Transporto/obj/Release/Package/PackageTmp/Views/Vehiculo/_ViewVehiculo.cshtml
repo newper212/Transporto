@@ -1,0 +1,37 @@
+﻿@model Transporto.ViewModels.Vehiculo._ViewVehiculoViewModel
+@{
+    Layout = ConstantHelpers.LAYOUT.MODAL_LAYOUT_PATH;
+    ViewBag.Title = "Ver Vehiculo";
+    ViewBag.PageIcon = "ti-home";
+}
+
+<div class="form-group">
+    @Html.LabelFor(x => x.Marca, new { @class = "form-label col-md-3" })
+    @Html.TextBoxFor(x => x.Marca, new { @class = "form-control", @readonly = "readonly" })
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(x => x.Modelo, new { @class = "form-label col-md-3" })
+    @Html.TextBoxFor(x => x.Modelo, new { @class = "form-control", @readonly = "readonly" })
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(x => x.Tipo, new { @class = "form-label col-md-3" })
+    @Html.TextBoxFor(x => x.Tipo, new { @class = "form-control", @readonly = "readonly" })
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(x => x.Placa, new { @class = "form-label col-md-3" })
+    @Html.TextBoxFor(x => x.Placa, new { @class = "form-control", @readonly = "readonly" })
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(x => x.FechaVencimientoSOAT, new { @class = "form-label col-md-4" })
+    @Html.TextBoxFor(x => x.FechaVencimientoSOAT, "{0:dd/MM/yyyy}", new { @class = "form-control", @readonly = "readonly" })
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(x => x.Estado, new { @class = "form-label col-md-2" })
+    @Html.Raw(ConstantHelpers.ESTADO.GetLabelEstado(Model.Estado))
+</div>
+

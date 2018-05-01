@@ -1,0 +1,428 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DB_TempanoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="DB_TempanoEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Chofer" EntityType="DB_TempanoModel.Chofer" />
+    <EntitySet Name="Departamento" EntityType="DB_TempanoModel.Departamento" />
+    <EntitySet Name="Distrito" EntityType="DB_TempanoModel.Distrito" />
+    <EntitySet Name="Kilometraje" EntityType="DB_TempanoModel.Kilometraje" />
+    <EntitySet Name="Provincia" EntityType="DB_TempanoModel.Provincia" />
+    <EntitySet Name="Usuario" EntityType="DB_TempanoModel.Usuario" />
+    <EntitySet Name="Vehiculo" EntityType="DB_TempanoModel.Vehiculo" />
+    <AssociationSet Name="FK_Provincia_Departamento" Association="DB_TempanoModel.FK_Provincia_Departamento">
+      <End Role="Departamento" EntitySet="Departamento" />
+      <End Role="Provincia" EntitySet="Provincia" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Distrito_Provincia" Association="DB_TempanoModel.FK_Distrito_Provincia">
+      <End Role="Provincia" EntitySet="Provincia" />
+      <End Role="Distrito" EntitySet="Distrito" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Kilometraje_Vehiculo" Association="DB_TempanoModel.FK_Kilometraje_Vehiculo">
+      <End Role="Vehiculo" EntitySet="Vehiculo" />
+      <End Role="Kilometraje" EntitySet="Kilometraje" />
+    </AssociationSet>
+    <EntitySet Name="GetVehiculos" EntityType="DB_TempanoModel.GetVehiculos" />
+    <EntitySet Name="GetVehiculoSOAT" EntityType="DB_TempanoModel.GetVehiculoSOAT" />
+    <EntitySet Name="AsistenteChofer" EntityType="DB_TempanoModel.AsistenteChofer" />
+    <EntitySet Name="HojaRuta" EntityType="DB_TempanoModel.HojaRuta" />
+    <AssociationSet Name="FK_HojaRuta_AsistenteChofer" Association="DB_TempanoModel.FK_HojaRuta_AsistenteChofer">
+      <End Role="AsistenteChofer" EntitySet="AsistenteChofer" />
+      <End Role="HojaRuta" EntitySet="HojaRuta" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HojaRuta_AsistenteChofer1" Association="DB_TempanoModel.FK_HojaRuta_AsistenteChofer1">
+      <End Role="AsistenteChofer" EntitySet="AsistenteChofer" />
+      <End Role="HojaRuta" EntitySet="HojaRuta" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HojaRuta_Chofer" Association="DB_TempanoModel.FK_HojaRuta_Chofer">
+      <End Role="Chofer" EntitySet="Chofer" />
+      <End Role="HojaRuta" EntitySet="HojaRuta" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HojaRuta_Vehiculo" Association="DB_TempanoModel.FK_HojaRuta_Vehiculo">
+      <End Role="Vehiculo" EntitySet="Vehiculo" />
+      <End Role="HojaRuta" EntitySet="HojaRuta" />
+    </AssociationSet>
+    <EntitySet Name="Rol" EntityType="DB_TempanoModel.Rol" />
+    <EntitySet Name="RolUsuario" EntityType="DB_TempanoModel.RolUsuario" />
+    <AssociationSet Name="FK_RolUsuario_Rol" Association="DB_TempanoModel.FK_RolUsuario_Rol">
+      <End Role="Rol" EntitySet="Rol" />
+      <End Role="RolUsuario" EntitySet="RolUsuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RolUsuario_Usuario" Association="DB_TempanoModel.FK_RolUsuario_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="RolUsuario" EntitySet="RolUsuario" />
+    </AssociationSet>
+    <EntitySet Name="GetChoferBrevete" EntityType="DB_TempanoModel.GetChoferBrevete" />
+    <EntitySet Name="Cliente" EntityType="DB_TempanoModel.Cliente" />
+    <AssociationSet Name="FK_Cliente_Departamento" Association="DB_TempanoModel.FK_Cliente_Departamento">
+      <End Role="Departamento" EntitySet="Departamento" />
+      <End Role="Cliente" EntitySet="Cliente" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cliente_Distrito" Association="DB_TempanoModel.FK_Cliente_Distrito">
+      <End Role="Distrito" EntitySet="Distrito" />
+      <End Role="Cliente" EntitySet="Cliente" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cliente_Provincia" Association="DB_TempanoModel.FK_Cliente_Provincia">
+      <End Role="Provincia" EntitySet="Provincia" />
+      <End Role="Cliente" EntitySet="Cliente" />
+    </AssociationSet>
+    <EntitySet Name="Contacto" EntityType="DB_TempanoModel.Contacto" />
+    <AssociationSet Name="FK_Contacto_Cliente" Association="DB_TempanoModel.FK_Contacto_Cliente">
+      <End Role="Cliente" EntitySet="Cliente" />
+      <End Role="Contacto" EntitySet="Contacto" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Chofer">
+    <Key>
+      <PropertyRef Name="ChoferId" />
+    </Key>
+    <Property Name="ChoferId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombres" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Apellidos" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="DNI" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="NumeroBrevete" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="FechaActivacionBrevete" Type="DateTime" Precision="3" />
+    <Property Name="FechaVencimientoBrevete" Type="DateTime" Precision="3" />
+    <Property Name="CelularPersonal" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CelularCorporativo" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Estado" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="HojaRuta" Relationship="DB_TempanoModel.FK_HojaRuta_Chofer" FromRole="Chofer" ToRole="HojaRuta" />
+  </EntityType>
+  <EntityType Name="Departamento">
+    <Key>
+      <PropertyRef Name="DepartamentoId" />
+    </Key>
+    <Property Name="DepartamentoId" Type="Int32" Nullable="false" />
+    <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Provincia" Relationship="DB_TempanoModel.FK_Provincia_Departamento" FromRole="Departamento" ToRole="Provincia" />
+    <NavigationProperty Name="Cliente" Relationship="DB_TempanoModel.FK_Cliente_Departamento" FromRole="Departamento" ToRole="Cliente" />
+  </EntityType>
+  <EntityType Name="Distrito">
+    <Key>
+      <PropertyRef Name="DistritoId" />
+    </Key>
+    <Property Name="DistritoId" Type="Int32" Nullable="false" />
+    <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ProvinciaId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Provincia" Relationship="DB_TempanoModel.FK_Distrito_Provincia" FromRole="Distrito" ToRole="Provincia" />
+    <NavigationProperty Name="Cliente" Relationship="DB_TempanoModel.FK_Cliente_Distrito" FromRole="Distrito" ToRole="Cliente" />
+  </EntityType>
+  <EntityType Name="Kilometraje">
+    <Key>
+      <PropertyRef Name="KilometrajeId" />
+    </Key>
+    <Property Name="KilometrajeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="VehiculoId" Type="Int32" />
+    <Property Name="Kilometros" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Multiplo" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Redondeo" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Fecha" Type="DateTime" Precision="3" />
+    <Property Name="EstadoMantenimiento" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Estado" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Vehiculo" Relationship="DB_TempanoModel.FK_Kilometraje_Vehiculo" FromRole="Kilometraje" ToRole="Vehiculo" />
+  </EntityType>
+  <EntityType Name="Provincia">
+    <Key>
+      <PropertyRef Name="ProvinciaId" />
+    </Key>
+    <Property Name="ProvinciaId" Type="Int32" Nullable="false" />
+    <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DepartamentoId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Departamento" Relationship="DB_TempanoModel.FK_Provincia_Departamento" FromRole="Provincia" ToRole="Departamento" />
+    <NavigationProperty Name="Distrito" Relationship="DB_TempanoModel.FK_Distrito_Provincia" FromRole="Provincia" ToRole="Distrito" />
+    <NavigationProperty Name="Cliente" Relationship="DB_TempanoModel.FK_Cliente_Provincia" FromRole="Provincia" ToRole="Cliente" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="UsuarioId" />
+    </Key>
+    <Property Name="UsuarioId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombres" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="ApellidoPaterno" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="ApellidoMaterno" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Codigo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Estado" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="RolUsuario" Relationship="DB_TempanoModel.FK_RolUsuario_Usuario" FromRole="Usuario" ToRole="RolUsuario" />
+  </EntityType>
+  <EntityType Name="Vehiculo">
+    <Key>
+      <PropertyRef Name="VehiculoId" />
+    </Key>
+    <Property Name="VehiculoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Marca" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Modelo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Tipo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Placa" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="FechaVencimientoSOAT" Type="DateTime" Precision="3" />
+    <Property Name="Estado" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Kilometraje" Relationship="DB_TempanoModel.FK_Kilometraje_Vehiculo" FromRole="Vehiculo" ToRole="Kilometraje" />
+    <NavigationProperty Name="HojaRuta" Relationship="DB_TempanoModel.FK_HojaRuta_Vehiculo" FromRole="Vehiculo" ToRole="HojaRuta" />
+  </EntityType>
+  <Association Name="FK_Provincia_Departamento">
+    <End Type="DB_TempanoModel.Departamento" Role="Departamento" Multiplicity="1" />
+    <End Type="DB_TempanoModel.Provincia" Role="Provincia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Departamento">
+        <PropertyRef Name="DepartamentoId" />
+      </Principal>
+      <Dependent Role="Provincia">
+        <PropertyRef Name="DepartamentoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Distrito_Provincia">
+    <End Type="DB_TempanoModel.Provincia" Role="Provincia" Multiplicity="1" />
+    <End Type="DB_TempanoModel.Distrito" Role="Distrito" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Provincia">
+        <PropertyRef Name="ProvinciaId" />
+      </Principal>
+      <Dependent Role="Distrito">
+        <PropertyRef Name="ProvinciaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Kilometraje_Vehiculo">
+    <End Type="DB_TempanoModel.Vehiculo" Role="Vehiculo" Multiplicity="0..1" />
+    <End Type="DB_TempanoModel.Kilometraje" Role="Kilometraje" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vehiculo">
+        <PropertyRef Name="VehiculoId" />
+      </Principal>
+      <Dependent Role="Kilometraje">
+        <PropertyRef Name="VehiculoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="GetVehiculos">
+    <Key>
+      <PropertyRef Name="VehiculoId" />
+    </Key>
+    <Property Name="VehiculoId" Type="Int32" Nullable="false" />
+    <Property Name="Alerta" Type="String" Nullable="false" MaxLength="22" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="GetVehiculoSOAT">
+    <Key>
+      <PropertyRef Name="VehiculoId" />
+    </Key>
+    <Property Name="VehiculoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AlertaSOAT" Type="String" Nullable="false" MaxLength="21" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="AsistenteChofer">
+    <Key>
+      <PropertyRef Name="AsistenteId" />
+    </Key>
+    <Property Name="AsistenteId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombres" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Apellidos" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DNI" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Direccion" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Telefono" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Celular" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Estado" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="HojaRuta" Relationship="DB_TempanoModel.FK_HojaRuta_AsistenteChofer" FromRole="AsistenteChofer" ToRole="HojaRuta" />
+    <NavigationProperty Name="HojaRuta1" Relationship="DB_TempanoModel.FK_HojaRuta_AsistenteChofer1" FromRole="AsistenteChofer" ToRole="HojaRuta" />
+  </EntityType>
+  <EntityType Name="HojaRuta">
+    <Key>
+      <PropertyRef Name="HojaRutaId" />
+    </Key>
+    <Property Name="HojaRutaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FechaHoja" Type="DateTime" Precision="3" />
+    <Property Name="HoraSalida" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="VehiculoId" Type="Int32" />
+    <Property Name="ChoferId" Type="Int32" />
+    <Property Name="AsistenteId" Type="Int32" />
+    <Property Name="Observacion" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Estado" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="AsistenteAlternoId" Type="Int32" />
+    <NavigationProperty Name="AsistenteChofer" Relationship="DB_TempanoModel.FK_HojaRuta_AsistenteChofer" FromRole="HojaRuta" ToRole="AsistenteChofer" />
+    <NavigationProperty Name="AsistenteChoferAlterno" Relationship="DB_TempanoModel.FK_HojaRuta_AsistenteChofer1" FromRole="HojaRuta" ToRole="AsistenteChofer" />
+    <NavigationProperty Name="Chofer" Relationship="DB_TempanoModel.FK_HojaRuta_Chofer" FromRole="HojaRuta" ToRole="Chofer" />
+    <NavigationProperty Name="Vehiculo" Relationship="DB_TempanoModel.FK_HojaRuta_Vehiculo" FromRole="HojaRuta" ToRole="Vehiculo" />
+  </EntityType>
+  <Association Name="FK_HojaRuta_AsistenteChofer">
+    <End Type="DB_TempanoModel.AsistenteChofer" Role="AsistenteChofer" Multiplicity="0..1" />
+    <End Type="DB_TempanoModel.HojaRuta" Role="HojaRuta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AsistenteChofer">
+        <PropertyRef Name="AsistenteId" />
+      </Principal>
+      <Dependent Role="HojaRuta">
+        <PropertyRef Name="AsistenteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HojaRuta_AsistenteChofer1">
+    <End Type="DB_TempanoModel.AsistenteChofer" Role="AsistenteChofer" Multiplicity="0..1" />
+    <End Type="DB_TempanoModel.HojaRuta" Role="HojaRuta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AsistenteChofer">
+        <PropertyRef Name="AsistenteId" />
+      </Principal>
+      <Dependent Role="HojaRuta">
+        <PropertyRef Name="AsistenteAlternoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HojaRuta_Chofer">
+    <End Type="DB_TempanoModel.Chofer" Role="Chofer" Multiplicity="0..1" />
+    <End Type="DB_TempanoModel.HojaRuta" Role="HojaRuta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Chofer">
+        <PropertyRef Name="ChoferId" />
+      </Principal>
+      <Dependent Role="HojaRuta">
+        <PropertyRef Name="ChoferId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HojaRuta_Vehiculo">
+    <End Type="DB_TempanoModel.Vehiculo" Role="Vehiculo" Multiplicity="0..1" />
+    <End Type="DB_TempanoModel.HojaRuta" Role="HojaRuta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vehiculo">
+        <PropertyRef Name="VehiculoId" />
+      </Principal>
+      <Dependent Role="HojaRuta">
+        <PropertyRef Name="VehiculoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Rol">
+    <Key>
+      <PropertyRef Name="RolId" />
+    </Key>
+    <Property Name="RolId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Acronimo" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="Estado" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="RolUsuario" Relationship="DB_TempanoModel.FK_RolUsuario_Rol" FromRole="Rol" ToRole="RolUsuario" />
+  </EntityType>
+  <EntityType Name="RolUsuario">
+    <Key>
+      <PropertyRef Name="RolUsuarioId" />
+    </Key>
+    <Property Name="RolUsuarioId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RolId" Type="Int32" Nullable="false" />
+    <Property Name="UsuarioId" Type="Int32" Nullable="false" />
+    <Property Name="EsPrincipal" Type="Boolean" />
+    <Property Name="Estado" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Rol" Relationship="DB_TempanoModel.FK_RolUsuario_Rol" FromRole="RolUsuario" ToRole="Rol" />
+    <NavigationProperty Name="Usuario" Relationship="DB_TempanoModel.FK_RolUsuario_Usuario" FromRole="RolUsuario" ToRole="Usuario" />
+  </EntityType>
+  <Association Name="FK_RolUsuario_Rol">
+    <End Type="DB_TempanoModel.Rol" Role="Rol" Multiplicity="1" />
+    <End Type="DB_TempanoModel.RolUsuario" Role="RolUsuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rol">
+        <PropertyRef Name="RolId" />
+      </Principal>
+      <Dependent Role="RolUsuario">
+        <PropertyRef Name="RolId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RolUsuario_Usuario">
+    <End Type="DB_TempanoModel.Usuario" Role="Usuario" Multiplicity="1" />
+    <End Type="DB_TempanoModel.RolUsuario" Role="RolUsuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="UsuarioId" />
+      </Principal>
+      <Dependent Role="RolUsuario">
+        <PropertyRef Name="UsuarioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="GetChoferBrevete">
+    <Key>
+      <PropertyRef Name="ChoferId" />
+    </Key>
+    <Property Name="ChoferId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AlertaBrevete" Type="String" MaxLength="21" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Cliente">
+    <Key>
+      <PropertyRef Name="ClienteId" />
+    </Key>
+    <Property Name="ClienteId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Ruc" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+    <Property Name="Telefono" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Direccion" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="DepartamentoId" Type="Int32" />
+    <Property Name="ProvinciaId" Type="Int32" />
+    <Property Name="DistritoId" Type="Int32" />
+    <Property Name="EmailCorporativo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EmailPersonal" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Observaciones" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Estado" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Departamento" Relationship="DB_TempanoModel.FK_Cliente_Departamento" FromRole="Cliente" ToRole="Departamento" />
+    <NavigationProperty Name="Distrito" Relationship="DB_TempanoModel.FK_Cliente_Distrito" FromRole="Cliente" ToRole="Distrito" />
+    <NavigationProperty Name="Provincia" Relationship="DB_TempanoModel.FK_Cliente_Provincia" FromRole="Cliente" ToRole="Provincia" />
+    <NavigationProperty Name="Contacto" Relationship="DB_TempanoModel.FK_Contacto_Cliente" FromRole="Cliente" ToRole="Contacto" />
+  </EntityType>
+  <Association Name="FK_Cliente_Departamento">
+    <End Type="DB_TempanoModel.Departamento" Role="Departamento" Multiplicity="0..1" />
+    <End Type="DB_TempanoModel.Cliente" Role="Cliente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Departamento">
+        <PropertyRef Name="DepartamentoId" />
+      </Principal>
+      <Dependent Role="Cliente">
+        <PropertyRef Name="DepartamentoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cliente_Distrito">
+    <End Type="DB_TempanoModel.Distrito" Role="Distrito" Multiplicity="0..1" />
+    <End Type="DB_TempanoModel.Cliente" Role="Cliente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Distrito">
+        <PropertyRef Name="DistritoId" />
+      </Principal>
+      <Dependent Role="Cliente">
+        <PropertyRef Name="DistritoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cliente_Provincia">
+    <End Type="DB_TempanoModel.Provincia" Role="Provincia" Multiplicity="0..1" />
+    <End Type="DB_TempanoModel.Cliente" Role="Cliente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Provincia">
+        <PropertyRef Name="ProvinciaId" />
+      </Principal>
+      <Dependent Role="Cliente">
+        <PropertyRef Name="ProvinciaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Contacto">
+    <Key>
+      <PropertyRef Name="ContactoId" />
+    </Key>
+    <Property Name="ContactoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ClienteId" Type="Int32" />
+    <Property Name="Nombres" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Apellidos" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Telefono" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Celular" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Estado" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Cliente" Relationship="DB_TempanoModel.FK_Contacto_Cliente" FromRole="Contacto" ToRole="Cliente" />
+  </EntityType>
+  <Association Name="FK_Contacto_Cliente">
+    <End Type="DB_TempanoModel.Cliente" Role="Cliente" Multiplicity="0..1" />
+    <End Type="DB_TempanoModel.Contacto" Role="Contacto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cliente">
+        <PropertyRef Name="ClienteId" />
+      </Principal>
+      <Dependent Role="Contacto">
+        <PropertyRef Name="ClienteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

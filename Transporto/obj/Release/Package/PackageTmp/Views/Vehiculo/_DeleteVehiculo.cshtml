@@ -1,0 +1,16 @@
+﻿@model Transporto.ViewModels.Vehiculo._DeleteVehiculoViewModel
+@{
+    Layout = ConstantHelpers.LAYOUT.MODAL_LAYOUT_PATH;
+    ViewBag.Title = "Eliminar Vehiculo";
+    ViewBag.PageIcon = "ti-trash";
+    ViewBag.Form = new ModalFormHelpers("_DeleteVehiculo", "Vehiculo", FormMethod.Post);
+}
+
+@Html.HiddenFor(x => x.VehiculoId)
+
+<p>¿Está seguro de eliminar el vehiculo <b>@Model.Marca</b>?</p>
+
+@section Footer{
+    <button type="submit" class="btn btn-primary btn-xs"><i class="ti-check"></i>&nbsp;Aceptar</button>
+}
+

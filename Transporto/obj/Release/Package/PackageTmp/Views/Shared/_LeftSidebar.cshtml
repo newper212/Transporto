@@ -1,0 +1,39 @@
+﻿@{
+    ViewBag.Title = "_LeftSidebar";
+}
+<div class="left side-menu">
+    <div class="sidebar-inner slimscrollleft">
+        <div id="sidebar-menu">
+            <ul>
+                <li class="text-muted menu-title">Menú de Opciones</li>
+
+                <li class="@(ViewBag.Section == "Dashboard" ? "active" : "")">
+                    <a href="@Url.Action("Index", "Home")" class="waves-effect @(ViewBag.Section == "Dashboard" ? "active" : "")"><i class="ti-dashboard"></i> <span> Dashboard </span></a>
+                </li>
+
+                <li class="@(ViewBag.Section == "Vehiculos" ? "active" : "")">
+                    <a href="@Url.Action("ListVehiculos", "Vehiculo")" class="waves-effect @(ViewBag.Section == "Vehiculos" ? "active" : "")"><i class="ti-dashboard"></i> <span> Vehiculos </span></a>
+                </li>
+
+                <li class="@(ViewBag.Section == "Clientes" ? "active" : "")">
+                    <a href="@Url.Action("ListClientes", "Cliente")" class="waves-effect @(ViewBag.Section == "Clientes" ? "active" : "")"><i class="ti-dashboard"></i> <span> Clientes </span></a>
+                </li>
+
+                <li class="@(ViewBag.Section == "Contactos" ? "active" : "")">
+                    <a href="@Url.Action("ListContactos", "Contacto")" class="waves-effect @(ViewBag.Section == "Contactos" ? "active" : "")"><i class="ti-dashboard"></i> <span> Contactos </span></a>
+                </li>
+
+                <li class="@(ViewBag.Section == "Choferes" ? "active" : "")">
+                    <a href="@Url.Action("ListChoferes", "Chofer")" class="waves-effect @(ViewBag.Section == "Choferes" ? "active" : "")"><i class="ti-dashboard"></i> <span> Choferes </span></a>
+                </li>
+
+                <li class="@(ViewBag.Section == "Usuarios" ? "active" : "")">
+                    <a href="@Url.Action("ListUsuarios", "Usuario")" class="waves-effect @(ViewBag.Section == "Usuarios" ? "active" : "")"><i class="ti-dashboard"></i> <span> Usuarios </span></a>
+                </li>
+                
+            </ul>
+            <div class="clearfix"></div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>

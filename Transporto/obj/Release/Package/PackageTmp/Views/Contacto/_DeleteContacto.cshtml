@@ -1,0 +1,15 @@
+﻿@model Transporto.ViewModels.Contacto._DeleteContactoViewModel
+@{
+    Layout = ConstantHelpers.LAYOUT.MODAL_LAYOUT_PATH;
+    ViewBag.Title = "Eliminar   Contacto";
+    ViewBag.PageIcon = "ti-trash";
+    ViewBag.Form = new ModalFormHelpers("_DeleteContacto", "Contacto", FormMethod.Post);
+}
+
+@Html.HiddenFor(x => x.ContactoId)
+
+<p>¿Está seguro de eliminar el contacto <b>@Model.Nombres</b>?</p>
+
+@section Footer{
+    <button type="submit" class="btn btn-primary btn-xs"><i class="ti-check"></i>&nbsp;Aceptar</button>
+}

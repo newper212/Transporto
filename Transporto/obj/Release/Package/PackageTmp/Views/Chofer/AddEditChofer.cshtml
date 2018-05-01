@@ -1,0 +1,108 @@
+﻿@model Transporto.ViewModels.Chofer.AddEditChoferViewModel
+
+@{
+    ViewBag.Title = Model.ChoferId.HasValue ? "Editar Chofer" : "Nuevo Chofer";
+}
+
+@Html.HiddenFor(x => x.ChoferId)
+
+<div class="row">
+    <div class="col-12">
+        <div class="card-box">
+            <h4 class="m-t-0 header-title"><b>Datos Principales</b></h4>
+            <p class="text-muted m-b-30 font-14">
+                Datos principales para <code>@(Model.ChoferId.HasValue ? "editar" : "crear")</code> un chofer.
+            </p>
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="p-20">
+                        <form class="form-horizontal" role="form" method="post">
+                            <div class="form-group row">
+                                @Html.LabelFor(x => x.Nombres, new { @class = "col-2 col-form-label" })
+                                <div class="col-10">
+                                    @Html.TextBoxFor(x => x.Nombres, new { @class = "form-control" })
+                                    @*Html.ValidationMessageFor(x => x.Nombres)*@
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                @Html.LabelFor(x => x.Apellidos, new { @class = "col-2 col-form-label" })
+                                <div class="col-10">
+                                    @Html.TextBoxFor(x => x.Apellidos, new { @class = "form-control" })
+                                    @*Html.ValidationMessageFor(x => x.Nombres)*@
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                @Html.LabelFor(x => x.DNI, new { @class = "col-2 col-form-label" })
+                                <div class="col-10">
+                                    @Html.TextBoxFor(x => x.DNI, new { @class = "form-control" })
+                                    @*@Html.ValidationMessageFor(x => x.ApellidoPaterno)*@
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                @Html.LabelFor(x => x.NumeroBrevete, new { @class = "col-2 col-form-label" })
+                                <div class="col-10">
+                                    @Html.TextBoxFor(x => x.NumeroBrevete, new { @class = "form-control" })
+                                    @*Html.ValidationMessageFor(x => x.ApellidoMaterno)*@
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                @Html.LabelFor(x => x.FechaActivacionBrevete, new { @class = "col-2 col-form-label" })
+                                <div class="col-10">
+                                    @Html.TextBoxFor(x => x.FechaActivacionBrevete, "{0:dd/MM/yyyy}", new { @class = "form-control datepicker" })
+                                    @*Html.ValidationMessageFor(x => x.DNI)*@
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                @Html.LabelFor(x => x.FechaVencimientoBrevete, new { @class = "col-2 col-form-label" })
+                                <div class="col-10">
+                                    @Html.TextBoxFor(x => x.FechaVencimientoBrevete, new { @class = "form-control datepicker" })
+
+                                    @*Html.ValidationMessageFor(x => x.DNI)*@
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                @Html.LabelFor(x => x.CelularPersonal, new { @class = "col-2 col-form-label" })
+                                <div class="col-10">
+                                    @Html.TextBoxFor(x => x.CelularPersonal, new { @class = "form-control" })
+                                    @*Html.ValidationMessageFor(x => x.DistritoId)*@
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                @Html.LabelFor(x => x.CelularCorporativo, new { @class = "col-2 col-form-label" })
+                                <div class="col-10">
+                                    @Html.TextBoxFor(x => x.CelularCorporativo, new { @class = "form-control" })
+                                </div>
+                            </div>
+                            
+                            <div class="form-group row">
+                                @Html.LabelFor(x => x.Email, new { @class = "col-2 col-form-label" })
+                                <div class="col-10">
+                                    @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+                                </div>
+                            </div>
+
+                            <div class="form-group text-right m-b-0">
+                                <button class="btn btn-primary waves-effect waves-light" type="submit"><i class="ti-save"></i> Guardar</button>
+                                <a href="@Url.Action("ListChoferes", "Chofer")" class="btn btn-inverse waves-effect m-l-5"><i class="ti-back-left"></i> Cancelar</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts{
+   <script>
+        $(function () {
+            $('.datepicker').datepicker({
+                format: "dd/MM/yyyy",
+                language: "es"
+            });
+        })
+</script>
+}

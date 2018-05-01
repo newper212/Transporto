@@ -1,0 +1,42 @@
+﻿@model Transporto.ViewModels.Cliente._ViewClienteViewModel
+@{
+    Layout = ConstantHelpers.LAYOUT.MODAL_LAYOUT_PATH;
+    ViewBag.Title = "Ver Cliente";
+    ViewBag.PageIcon = "ti-user";
+}
+
+<div class="form-group">
+    @Html.LabelFor(x => x.Nombre, new { @class = "form-label col-md-3" })
+    @Html.TextBoxFor(x => x.Nombre, new { @class = "form-control", @readonly = "readonly" })
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(x => x.Ruc, new { @class = "form-label col-md-3" })
+    @Html.TextBoxFor(x => x.Ruc, new { @class = "form-control", @readonly = "readonly" })
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(x => x.Telefono, new { @class = "form-label col-md-3" })
+    @Html.TextBoxFor(x => x.Telefono, new { @class = "form-control", @readonly = "readonly" })
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(x => x.Direccion, new { @class = "form-label col-md-4" })
+    @Html.TextBoxFor(x => x.Direccion, new { @class = "form-control", @readonly = "readonly" })
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(x => x.NombreDistrito, new { @class = "form-label col-md-3" })
+    @Html.TextBoxFor(x => x.NombreDistrito, new { @class = "form-control", @readonly = "readonly" })
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(x => x.Observaciones, new { @class = "form-label col-md-3" })
+    @Html.TextBoxFor(x => x.Observaciones, new { @class = "form-control", @readonly = "readonly" })
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(x => x.Estado, new { @class = "form-label col-md-2" })
+    @Html.Raw(ConstantHelpers.ESTADO.GetLabelEstado(Model.Estado))
+</div>
+

@@ -1,0 +1,155 @@
+﻿
+@{
+    ViewBag.Title = "Dashboard";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 col-lg-3">
+            <div class="mini-stat clearfix bx-shadow bg-info">
+                <span class="mini-stat-icon"><i class="ion-thumbsup"></i></span>
+                <div class="mini-stat-info text-right">
+                    <span class="counter">8</span>
+                    Entregas Satisfactorías
+                </div>
+                <div class="tiles-progress">
+                    <div class="m-t-20">
+                        <h5 class="text-uppercase text-white m-0">Indice de Satisfacción <span class="pull-right">80%</span></h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-3">
+            <div class="mini-stat clearfix bg-purple bx-shadow">
+                <span class="mini-stat-icon"><i class="ion-android-location"></i></span>
+                <div class="mini-stat-info text-right">
+                    <span class="counter">20</span>
+                    Rutas en el mes de Febrero
+                </div>
+                <div class="tiles-progress">
+                    <div class="m-t-20">
+                        <h5 class="text-uppercase text-white m-0">Promedio de Rutas <span class="pull-right">180</span></h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-3">
+            <div class="mini-stat clearfix bg-success bx-shadow">
+                <span class="mini-stat-icon"><i class="ion-model-s"></i></span>
+                <div class="mini-stat-info text-right">
+                    <span class="counter">2</span>
+                    Vehículos
+                </div>
+                <div class="tiles-progress">
+                    <div class="m-t-20">
+                        <h5 class="text-uppercase text-white m-0">Población activa <span class="pull-right">40%</span></h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-3">
+            <div class="mini-stat clearfix bg-primary bx-shadow">
+                <span class="mini-stat-icon"><i class="ion-android-contacts"></i></span>
+                <div class="mini-stat-info text-right">
+                    <span class="counter">7</span>
+                    Conductores
+                </div>
+                <div class="tiles-progress">
+                    <div class="m-t-20">
+                        <h5 class="text-uppercase text-white m-0">El último mes se afiliaron <span class="pull-right">2</span></h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="portlet">
+                <!-- /portlet heading -->
+                <div class="portlet-heading">
+                    <h3 class="portlet-title text-dark text-uppercase">
+                        Rendimiento de Conductores
+                    </h3>
+                    <div class="portlet-widgets">
+                        <a href="javascript:;" data-toggle="reload"><i class="ion-refresh"></i></a>
+                        <span class="divider"></span>
+                        <a data-toggle="collapse" data-parent="#accordion1" href="#portlet1"><i class="ion-minus-round"></i></a>
+                        <span class="divider"></span>
+                        <a href="#" data-toggle="remove"><i class="ion-close-round"></i></a>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div id="portlet1" class="panel-collapse collapse in">
+                    <div class="portlet-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div id="website-stats" style="position: relative; height: 320px; padding: 0px;"><canvas class="flot-base" width="1045" height="320" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 1045px; height: 320px;"></canvas><div class="flot-text" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; font-size: smaller; color: rgb(84, 84, 84);"><div class="flot-x-axis flot-x1-axis xAxis x1Axis" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; display: block;"><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 81px; top: 304px; left: 24px; text-align: center;">0.0</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 81px; top: 304px; left: 108px; text-align: center;">0.5</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 81px; top: 304px; left: 192px; text-align: center;">1.0</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 81px; top: 304px; left: 275px; text-align: center;">1.5</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 81px; top: 304px; left: 359px; text-align: center;">2.0</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 81px; top: 304px; left: 443px; text-align: center;">2.5</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 81px; top: 304px; left: 527px; text-align: center;">3.0</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 81px; top: 304px; left: 610px; text-align: center;">3.5</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 81px; top: 304px; left: 694px; text-align: center;">4.0</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 81px; top: 304px; left: 778px; text-align: center;">4.5</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 81px; top: 304px; left: 862px; text-align: center;">5.0</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 81px; top: 304px; left: 945px; text-align: center;">5.5</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 81px; top: 304px; left: 1029px; text-align: center;">6.0</div></div><div class="flot-y-axis flot-y1-axis yAxis y1Axis" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; display: block;"><div class="flot-tick-label tickLabel" style="position: absolute; top: 286px; left: 6px; text-align: right;">0.0</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 238px; left: 6px; text-align: right;">2.5</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 191px; left: 6px; text-align: right;">5.0</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 143px; left: 6px; text-align: right;">7.5</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 95px; left: 0px; text-align: right;">10.0</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 48px; left: 0px; text-align: right;">12.5</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 0px; left: 0px; text-align: right;">15.0</div></div></div><canvas class="flot-overlay" width="1045" height="320" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 1045px; height: 320px;"></canvas><div class="legend"><div style="position: absolute; width: 85px; height: 32px; top: 13px; left: 37px; background-color: rgb(255, 255, 255); opacity: 0.85;"> </div><table style="position:absolute;top:13px;left:37px;;font-size:smaller;color:#545454"><tbody><tr><td class="legendColorBox"><div style="border:1px solid #ccc;padding:1px"><div style="width:4px;height:0;border:5px solid #6e8cd7;overflow:hidden"></div></div></td><td class="legendLabel">Visits</td></tr><tr><td class="legendColorBox"><div style="border:1px solid #ccc;padding:1px"><div style="width:4px;height:0;border:5px solid #29b6f6;overflow:hidden"></div></div></td><td class="legendLabel">Pages/Visit</td></tr></tbody></table></div></div>
+                                <div class="row text-center m-t-30">
+                                    <div class="col-sm-4">
+                                        <h4 class="counter">0</h4>
+                                        <small class="text-muted">Semanal</small>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <h4 class="counter">0</h4>
+                                        <small class="text-muted">Mensual</small>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <h4 class="counter">0</h4>
+                                        <small class="text-muted">Anual</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- /Portlet -->
+        </div> <!-- end col -->
+        <div class="col-lg-4">
+            <div class="portlet">
+                <!-- /portlet heading -->
+                <div class="portlet-heading">
+                    <h3 class="portlet-title text-dark text-uppercase">
+                        Entregas
+                    </h3>
+                    <div class="portlet-widgets">
+                        <a href="javascript:;" data-toggle="reload"><i class="ion-refresh"></i></a>
+                        <span class="divider"></span>
+                        <a data-toggle="collapse" data-parent="#accordion1" href="#portlet2"><i class="ion-minus-round"></i></a>
+                        <span class="divider"></span>
+                        <a href="#" data-toggle="remove"><i class="ion-close-round"></i></a>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div id="portlet2" class="panel-collapse collapse in">
+                    <div class="portlet-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div id="pie-chart">
+                                    <div id="pie-chart-container" class="flot-chart" style="height: 320px; padding: 0px; position: relative;">
+                                        <canvas class="flot-base" width="498" height="320" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 498px; height: 320px;"></canvas><canvas class="flot-overlay" width="498" height="320" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 498px; height: 320px;"></canvas><span class="pieLabel" id="pieLabel0" style="position: absolute; top: 54px; left: 342px;"><div style="font-size:x-small;text-align:center;padding:2px;color:rgba(30,136,229,0.85);">Series 1<br>29%</div></span><span class="pieLabel" id="pieLabel1" style="position: absolute; top: 288px; left: 229px;"><div style="font-size:x-small;text-align:center;padding:2px;color:rgba(41,182,246,0.85);">Series 2<br>43%</div></span><span class="pieLabel" id="pieLabel2" style="position: absolute; top: 54px; left: 116px;"><div style="font-size:x-small;text-align:center;padding:2px;color:rgba(126,87,194,0.85);">Series 3<br>29%</div></span>
+                                    </div>
+                                </div>
+                                <div class="row text-center m-t-30">
+                                    <div class="col-sm-6">
+                                        <h4 class="counter">0</h4>
+                                        <small class="text-muted">Semanal</small>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <h4 class="counter">0</h4>
+                                        <small class="text-muted">Mensual</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- /Portlet -->
+        </div> <!-- end col -->
+    </div>
+
+</div>
+
+

@@ -1,0 +1,15 @@
+﻿@model Transporto.ViewModels.Cliente._DeleteClienteViewModel
+@{
+    Layout = ConstantHelpers.LAYOUT.MODAL_LAYOUT_PATH;
+    ViewBag.Title = "Eliminar   Cliente";
+    ViewBag.PageIcon = "ti-trash";
+    ViewBag.Form = new ModalFormHelpers("_DeleteCliente", "Cliente", FormMethod.Post);
+}
+
+@Html.HiddenFor(x => x.ClienteId)
+
+<p>¿Está seguro de eliminar el cliente <b>@Model.Nombre</b>?</p>
+
+@section Footer{
+    <button type="submit" class="btn btn-primary btn-xs"><i class="ti-check"></i>&nbsp;Aceptar</button>
+}

@@ -1,0 +1,59 @@
+﻿@model Transporto.ViewModels.Contacto.ListContactoViewModel
+@{
+    ViewBag.Title = "Listado de Contactos";
+}
+
+@section Breadcrumbs{
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card-box">
+            <h4 class="m-t-0 header-title">Contactos</h4>
+            <p class="text-muted font-14 m-b-20">
+                Listado de Contactos registrados en <code>Tempano</code>.
+            </p>
+
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th class="col-md-3">Nombres</th>
+                        <th class="col-md-3">Apellidos</th>
+                        <th class="col-md-1">Teléfono</th>
+                        <th class="col-md-1">Celular</th>
+                        <th class="col-md-1">Estado</th>
+                        <th class="col-md-2">Opciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var contacto in Model.LstContacto)
+                    {
+                        <tr>
+                            <td class="col-md-3">@contacto.Nombres</td>
+                            <td class="col-md-3">@contacto.Apellidos</td>
+                            <td class="col-md-1">@contacto.Telefono</td>
+                            <td class="col-md-1">@contacto.Celular</td>
+                            <td class="col-md-1">@contacto.Estado</td>
+                            <td class="actions col-md-2">
+                                <a style="color: #797979; font-size:initial; cursor: pointer;" href="@Url.Action("AddEditContacto", "Contacto", new { ContactoId = contacto.ContactoId })" class="on-default"><i class="ti-pencil"></i></a>&nbsp;&nbsp;&nbsp;
+                                <a style="color: red; font-size:initial; cursor: pointer;" @Data.ModalLink("_DeleteContacto", "Contacto", new { ContactoId = contacto.ContactoId }) class="on-default"><i class="ti-trash"></i></a>&nbsp;&nbsp;&nbsp;
+                                <a style="color: #007bff; font-size:initial; cursor: pointer;" @Data.ModalLink("_ViewContacto", "Contacto", new { ContactoId = contacto.ContactoId }) class="on-default"><i class="ti-eye"></i></a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+            <div class="row">
+                <div class="col-md-4" style="margin: 25px 0;">
+                    <a href="@Url.Action("AddEditContacto", "Contacto")" class="btn btn-sm btn-primary"><i class="ti-plus"></i> Nuevo</a>
+                </div>
+                <div class="col-md-8 text-right">
+                    @Html.PagedListPager(Model.LstContacto, page => Url.Action("ListContactos", new { p = page, Nombres = Model.Nombres }), ConstantHelpers.Bootstrap3Pager)
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
