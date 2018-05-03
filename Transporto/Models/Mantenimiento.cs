@@ -25,7 +25,7 @@ namespace Transporto.Models
         public int IDVehiculo { get; set; }
         public string Estado { get; set; }
     
+        public virtual Bckp_vehiculo Bckp_vehiculo { get; set; }
         public virtual Usuario Usuario { get; set; }
-        public virtual Vehiculo Vehiculo { get; set; }
     }
 }

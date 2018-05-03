@@ -24,11 +24,11 @@ namespace Transporto.ViewModels.Mantenimiento
         {
             this.p = numeroPagina ?? 1; 
 
-            var query = c.context.Mantenimiento.Include(x => x.Usuario).Include(x => x.Vehiculo).Where(x => x.Vehiculo.Estado == ConstantHelpers.ESTADO.ACTIVO && 
-                                                                                                            x.Usuario.Estado == ConstantHelpers.ESTADO.ACTIVO &&
-                                                                                                            x.Estado == ConstantHelpers.ESTADO.ACTIVO);
+            //var query = c.context.Mantenimiento.Include(x => x.Usuario).Include(x => x.Vehiculo).Where(x => x.Vehiculo.Estado == ConstantHelpers.ESTADO.ACTIVO && 
+            //                                                                                                x.Usuario.Estado == ConstantHelpers.ESTADO.ACTIVO &&
+            //                                                                                                x.Estado == ConstantHelpers.ESTADO.ACTIVO);
 
-            this.LstMantenimiento = query.OrderBy(x => x.FechaMantenimiento).ToPagedList(p, 10);
+            //this.LstMantenimiento = query.OrderBy(x => x.FechaMantenimiento).ToPagedList(p, 10);
                         
         }
 

@@ -26,6 +26,7 @@ namespace Transporto.Models
         }
     
         public virtual DbSet<Ayudante> Ayudante { get; set; }
+        public virtual DbSet<Bckp_vehiculo> Bckp_vehiculo { get; set; }
         public virtual DbSet<Chofer> Chofer { get; set; }
         public virtual DbSet<Contactos> Contactos { get; set; }
         public virtual DbSet<Distrito> Distrito { get; set; }
@@ -33,8 +34,10 @@ namespace Transporto.Models
         public virtual DbSet<HojaDeRuta> HojaDeRuta { get; set; }
         public virtual DbSet<Mantenimiento> Mantenimiento { get; set; }
         public virtual DbSet<Observacion> Observacion { get; set; }
+        public virtual DbSet<RevisionTecnica> RevisionTecnica { get; set; }
         public virtual DbSet<Rol> Rol { get; set; }
         public virtual DbSet<RolesDeUsuario> RolesDeUsuario { get; set; }
+        public virtual DbSet<Soat> Soat { get; set; }
         public virtual DbSet<Usuario> Usuario { get; set; }
         public virtual DbSet<Vehiculo> Vehiculo { get; set; }
     }

@@ -13,6 +13,28 @@
     <Property Name="CelularAyudante" Type="varchar" MaxLength="50" />
     <Property Name="Estado" Type="varchar" MaxLength="50" />
   </EntityType>
+  <EntityType Name="Bckp_vehiculo">
+    <Key>
+      <PropertyRef Name="IDVehiculo" />
+    </Key>
+    <Property Name="IDVehiculo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Marca" Type="varchar" MaxLength="50" />
+    <Property Name="Modelo" Type="varchar" MaxLength="50" />
+    <Property Name="Tipo" Type="varchar" MaxLength="50" />
+    <Property Name="Placa" Type="char" MaxLength="6" Nullable="false" />
+    <Property Name="SoatFechaInic" Type="datetime" Nullable="false" />
+    <Property Name="SoatFechVenc" Type="datetime" Nullable="false" />
+    <Property Name="Peso" Type="decimal" Precision="10" Scale="8" />
+    <Property Name="Volumen" Type="decimal" Precision="10" Scale="8" />
+    <Property Name="FechaDeInicioRevisionTecn" Type="datetime" />
+    <Property Name="FechaDeCaducidadReviciTecni" Type="datetime" />
+    <Property Name="FechaIncioSeguroVehicular" Type="datetime" />
+    <Property Name="FechaCaducidadSeguVehicu" Type="datetime" />
+    <Property Name="NumeroHabilitacion" Type="varchar" MaxLength="50" />
+    <Property Name="FechaInicioCertificadoFumiga" Type="datetime" />
+    <Property Name="FechaCaducidadCertificadoFumiga" Type="datetime" />
+    <Property Name="Estado" Type="varchar" MaxLength="3" />
+  </EntityType>
   <EntityType Name="Chofer">
     <Key>
       <PropertyRef Name="IDchofer" />
@@ -23,8 +45,8 @@
     <Property Name="DNIChofer" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="FuncionChofer" Type="varchar" MaxLength="50" />
     <Property Name="NumeroBreveteChofer" Type="varchar" MaxLength="50" />
-    <Property Name="FechaDActivacionBrevete" Type="date" Nullable="false" />
-    <Property Name="FecchaVencimientoBrevete" Type="date" Nullable="false" />
+    <Property Name="FechaDActivacionBrevete" Type="datetime" Nullable="false" />
+    <Property Name="FecchaVencimientoBrevete" Type="datetime" Nullable="false" />
     <Property Name="CelularPersonalChofer" Type="varchar" MaxLength="50" />
     <Property Name="CelularCorporativoChofer" Type="varchar" MaxLength="50" />
     <Property Name="EmailChofer" Type="varchar" MaxLength="50" />
@@ -79,7 +101,7 @@
     <Property Name="NumeroDocumento" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="IDChofer" Type="int" Nullable="false" />
     <Property Name="IDAyudante" Type="int" Nullable="false" />
-    <Property Name="Fecha" Type="date" />
+    <Property Name="Fecha" Type="datetime" />
     <Property Name="IDClienteEmpresa" Type="int" Nullable="false" />
     <Property Name="Direccion" Type="varchar" MaxLength="50" />
     <Property Name="IDDistrito" Type="int" Nullable="false" />
@@ -96,9 +118,9 @@
     </Key>
     <Property Name="IDMantenimiento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Kilometraje" Type="int" Nullable="false" />
-    <Property Name="FechaMantenimiento" Type="date" Nullable="false" />
+    <Property Name="FechaMantenimiento" Type="datetime" Nullable="false" />
     <Property Name="Taller" Type="varchar" MaxLength="50" />
-    <Property Name="FechaDMantenimientoObcional" Type="date" />
+    <Property Name="FechaDMantenimientoObcional" Type="datetime" />
     <Property Name="Monto" Type="decimal" Precision="10" Scale="2" Nullable="false" />
     <Property Name="Motivo" Type="varchar" MaxLength="50" />
     <Property Name="IDUsuario" Type="int" Nullable="false" />
@@ -112,6 +134,21 @@
     <Property Name="IDObservaciones" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="IDHojaDeRuta" Type="int" Nullable="false" />
     <Property Name="DescripcionDObservacion" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="RevisionTecnica">
+    <Key>
+      <PropertyRef Name="RevisionTecnicaId" />
+    </Key>
+    <Property Name="RevisionTecnicaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="VehiculoId" Type="int" Nullable="false" />
+    <Property Name="Observacion" Type="varchar" MaxLength="150" />
+    <Property Name="FechaEmision" Type="datetime" />
+    <Property Name="FechaCaducidad" Type="datetime" />
+    <Property Name="FecEmisionSeguro" Type="datetime" />
+    <Property Name="FecCaducidadSeguro" Type="datetime" />
+    <Property Name="FecEmisionCertiFumiga" Type="datetime" />
+    <Property Name="FecCaducidadCertiFumiga" Type="datetime" />
+    <Property Name="Estado" Type="nchar" MaxLength="10" />
   </EntityType>
   <EntityType Name="Rol">
     <Key>
@@ -130,6 +167,17 @@
     <Property Name="IDRol" Type="int" Nullable="false" />
     <Property Name="Estado" Type="varchar" MaxLength="3" Nullable="false" />
   </EntityType>
+  <EntityType Name="Soat">
+    <Key>
+      <PropertyRef Name="SoatId" />
+    </Key>
+    <Property Name="SoatId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="VehiculoId" Type="int" Nullable="false" />
+    <Property Name="Numero" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="FechaEmision" Type="datetime" Nullable="false" />
+    <Property Name="FechaCaducidad" Type="datetime" Nullable="false" />
+    <Property Name="Estado" Type="nchar" MaxLength="3" />
+  </EntityType>
   <EntityType Name="Usuario">
     <Key>
       <PropertyRef Name="IdUsuario" />
@@ -144,24 +192,15 @@
   </EntityType>
   <EntityType Name="Vehiculo">
     <Key>
-      <PropertyRef Name="IDVehiculo" />
+      <PropertyRef Name="VehiculoId" />
     </Key>
-    <Property Name="IDVehiculo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Marca" Type="varchar" MaxLength="50" />
-    <Property Name="Modelo" Type="varchar" MaxLength="50" />
+    <Property Name="VehiculoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Marca" Type="varchar" MaxLength="70" Nullable="false" />
+    <Property Name="Modelo" Type="varchar" MaxLength="70" Nullable="false" />
     <Property Name="Tipo" Type="varchar" MaxLength="50" />
-    <Property Name="Placa" Type="char" MaxLength="6" Nullable="false" />
-    <Property Name="SoatFechaInic" Type="date" Nullable="false" />
-    <Property Name="SoatFechVenc" Type="date" Nullable="false" />
-    <Property Name="Peso" Type="decimal" Precision="10" Scale="8" />
-    <Property Name="Volumen" Type="decimal" Precision="10" Scale="8" />
-    <Property Name="FechaDeInicioRevisionTecn" Type="date" />
-    <Property Name="FechaDeCaducidadReviciTecni" Type="date" />
-    <Property Name="FechaIncioSeguroVehicular" Type="date" />
-    <Property Name="FechaCaducidadSeguVehicu" Type="date" />
-    <Property Name="NumeroHabilitacion" Type="varchar" MaxLength="50" />
-    <Property Name="FechaInicioCertificadoFumiga" Type="date" />
-    <Property Name="FechaCaducidadCertificadoFumiga" Type="date" />
+    <Property Name="Placa" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Peso" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="Volumen" Type="decimal" Precision="10" Scale="2" Nullable="false" />
     <Property Name="Estado" Type="varchar" MaxLength="3" />
   </EntityType>
   <Association Name="FK_Contactos_EmpresaCliente">
@@ -237,10 +276,10 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_HojaDeRuta_Vehiculo">
-    <End Role="Vehiculo" Type="Self.Vehiculo" Multiplicity="1" />
+    <End Role="Bckp_vehiculo" Type="Self.Bckp_vehiculo" Multiplicity="1" />
     <End Role="HojaDeRuta" Type="Self.HojaDeRuta" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Vehiculo">
+      <Principal Role="Bckp_vehiculo">
         <PropertyRef Name="IDVehiculo" />
       </Principal>
       <Dependent Role="HojaDeRuta">
@@ -261,10 +300,10 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Mantenimiento_Vehiculo">
-    <End Role="Vehiculo" Type="Self.Vehiculo" Multiplicity="1" />
+    <End Role="Bckp_vehiculo" Type="Self.Bckp_vehiculo" Multiplicity="1" />
     <End Role="Mantenimiento" Type="Self.Mantenimiento" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Vehiculo">
+      <Principal Role="Bckp_vehiculo">
         <PropertyRef Name="IDVehiculo" />
       </Principal>
       <Dependent Role="Mantenimiento">
@@ -281,6 +320,18 @@
       </Principal>
       <Dependent Role="Observacion">
         <PropertyRef Name="IDHojaDeRuta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RevisionTecnica_Vehiculo">
+    <End Role="Vehiculo" Type="Self.Vehiculo" Multiplicity="1" />
+    <End Role="RevisionTecnica" Type="Self.RevisionTecnica" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vehiculo">
+        <PropertyRef Name="VehiculoId" />
+      </Principal>
+      <Dependent Role="RevisionTecnica">
+        <PropertyRef Name="VehiculoId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -308,8 +359,21 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_Soat_Vehiculo">
+    <End Role="Vehiculo" Type="Self.Vehiculo" Multiplicity="1" />
+    <End Role="Soat" Type="Self.Soat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vehiculo">
+        <PropertyRef Name="VehiculoId" />
+      </Principal>
+      <Dependent Role="Soat">
+        <PropertyRef Name="VehiculoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="BD_TRANSPORTOModelStoreContainer">
     <EntitySet Name="Ayudante" EntityType="Self.Ayudante" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Bckp_vehiculo" EntityType="Self.Bckp_vehiculo" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Chofer" EntityType="Self.Chofer" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Contactos" EntityType="Self.Contactos" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Distrito" EntityType="Self.Distrito" Schema="dbo" store:Type="Tables" />
@@ -317,8 +381,10 @@
     <EntitySet Name="HojaDeRuta" EntityType="Self.HojaDeRuta" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Mantenimiento" EntityType="Self.Mantenimiento" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Observacion" EntityType="Self.Observacion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RevisionTecnica" EntityType="Self.RevisionTecnica" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Rol" EntityType="Self.Rol" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="RolesDeUsuario" EntityType="Self.RolesDeUsuario" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Soat" EntityType="Self.Soat" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Vehiculo" EntityType="Self.Vehiculo" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_Contactos_EmpresaCliente" Association="Self.FK_Contactos_EmpresaCliente">
@@ -346,7 +412,7 @@
       <End Role="HojaDeRuta" EntitySet="HojaDeRuta" />
     </AssociationSet>
     <AssociationSet Name="FK_HojaDeRuta_Vehiculo" Association="Self.FK_HojaDeRuta_Vehiculo">
-      <End Role="Vehiculo" EntitySet="Vehiculo" />
+      <End Role="Bckp_vehiculo" EntitySet="Bckp_vehiculo" />
       <End Role="HojaDeRuta" EntitySet="HojaDeRuta" />
     </AssociationSet>
     <AssociationSet Name="FK_Mantenimiento_Usuario" Association="Self.FK_Mantenimiento_Usuario">
@@ -354,12 +420,16 @@
       <End Role="Mantenimiento" EntitySet="Mantenimiento" />
     </AssociationSet>
     <AssociationSet Name="FK_Mantenimiento_Vehiculo" Association="Self.FK_Mantenimiento_Vehiculo">
-      <End Role="Vehiculo" EntitySet="Vehiculo" />
+      <End Role="Bckp_vehiculo" EntitySet="Bckp_vehiculo" />
       <End Role="Mantenimiento" EntitySet="Mantenimiento" />
     </AssociationSet>
     <AssociationSet Name="FK_Observacion_HojaDeRuta" Association="Self.FK_Observacion_HojaDeRuta">
       <End Role="HojaDeRuta" EntitySet="HojaDeRuta" />
       <End Role="Observacion" EntitySet="Observacion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RevisionTecnica_Vehiculo" Association="Self.FK_RevisionTecnica_Vehiculo">
+      <End Role="Vehiculo" EntitySet="Vehiculo" />
+      <End Role="RevisionTecnica" EntitySet="RevisionTecnica" />
     </AssociationSet>
     <AssociationSet Name="FK_RolesDeUsuario_Rol" Association="Self.FK_RolesDeUsuario_Rol">
       <End Role="Rol" EntitySet="Rol" />
@@ -368,6 +438,10 @@
     <AssociationSet Name="FK_RolesDeUsuario_Usuario" Association="Self.FK_RolesDeUsuario_Usuario">
       <End Role="Usuario" EntitySet="Usuario" />
       <End Role="RolesDeUsuario" EntitySet="RolesDeUsuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Soat_Vehiculo" Association="Self.FK_Soat_Vehiculo">
+      <End Role="Vehiculo" EntitySet="Vehiculo" />
+      <End Role="Soat" EntitySet="Soat" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

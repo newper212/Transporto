@@ -27,40 +27,73 @@
     <link href="@Url.Content("~/Content/assets/css/menucontext/jquery.contextMenu.css")" rel="stylesheet" />
     <link href="@Url.Content("~/Content/assets/css/menucontext/jquery.contextMenu.min.css")" rel="stylesheet" />
     <link href="@Url.Content("~/Content/assets/plugins/bootstrap-datepicker/css/bootstrap-datepicker.css")" rel="stylesheet" />
-    <link href="@Url.Content("~/Content/custom-styles.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/assets/css/style.css")" rel="stylesheet" />
     @RenderSection("Styles", false)
 </head>
 
 <body class="fixed-left widescreen">
-    <div id="wrapper">
-        @{ Html.RenderPartial("_Topbar");}
-        @{ Html.RenderPartial("_LeftSidebar");}
-        <div class="content-page">
-            <div class="content">
-                <div class="container">
-                    @*@MessageHelpers.ShowMessages(TempData)*@
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <h4 class="page-title"><i class="ti-@ViewBag.PageIcon"></i>&nbsp;&nbsp;@ViewBag.Title</h4>
-                            @if (IsSectionDefined("Breadcrumbs"))
-                            {
-                                <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="@Url.Action("Dashboard", "Home")" style="color: #3da5c6;"><i class="ti-dashboard"></i></a></li>
-                                    @RenderSection("Breadcrumbs", false)
-                                    <li class="breadcrumb-item active"><strong>@ViewBag.Title</strong></li>
-                                </ol>
-                            }
 
+    <div id="wrapper">
+
+        <div class="page-container row-fluid container-fluid">
+            @{ Html.RenderPartial("_Topbar");}
+            @{ Html.RenderPartial("_LeftSidebar");}
+            <section id="main-content">
+                <section class="wrapper main-wrapper row" style="">
+                    <div class="col-xs-12">
+                        <div class="page-title">
+                            <div class="pull-left">
+                                @if (ViewBag.Title != null)
+                                {
+                                    <h1 class="page-title"><i class="fa fa-@ViewBag.PageIcon" style="font-size: 25px;"></i> @ViewBag.Title</h1>
+                                }
+                            </div>
+                            <div class="pull-right hidden-xs">
+                                @if (IsSectionDefined("Breadcrumbs"))
+                                {
+                                    <ol class="breadcrumb">
+                                        <li><a href="@Url.Action("Index", "Home")"><i class="fa fa-home"></i> Home</a></li>
+                                        @RenderSection("Breadcrumbs", false)
+                                        <li class="active">@ViewBag.Title</li>
+                                    </ol>
+                                }
+                            </div>
                         </div>
                     </div>
-                    <div class="clearfix"></div>
-                    @RenderBody()
+                    <div class="col-xs-12">
+                        @MessageHelpers.ShowMessages(TempData)
+                        <section class="">
+                            <div class="">
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        @RenderBody()
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </section>
+            </section>
+        </div>
+        <div class="row-fluid" id="default-modal-container">
+            <div class="hide" id="default-modal-loading" style="display:none;">
+                <div class="modal-body">
+                    <h3>
+                        <i class="fa fa-cog fa-spin fa-1x fa-fw"></i> Cargando...
+                    </h3>
+                </div>
+            </div>
+            <div class="hide" id="default-modal-loading-error" style="display:none;">
+                <div class="modal-body">
+                    <h3>
+                        <i class="fa fa-exclamation-triangle"></i> Ha ocurrido un error
+                    </h3>
                 </div>
             </div>
         </div>
-        <footer class="footer">
-            Transporto © 2018. Todos los derechos reservados.
-        </footer>
+
         <script>
             var resizefunc = [];
         </script>
@@ -92,37 +125,23 @@
         <script src="@Url.Content("~/Content/assets/js/menucontext/jquery.ui.position.min.js")"></script>
         <script src="@Url.Content("~/Content/assets/plugins/notifyjs/js/notify.js")"></script>
         <script src="@Url.Content("~/Content/assets/plugins/notifications/notify-metro.js")"></script>
-        <script src="@Url.Content("~/Scripts/jquery.validate.min.js")"></script>
+        @*<script src="@Url.Content("~/Scripts/jquery.validate.min.js")"></script>*@
         <script src="@Url.Content("~/Content/assets/plugins/parsleyjs/parsley.min.js")"></script>
         <script src="@Url.Content("~/Content/assets/plugins/parsleyjs/parsley-es.js")"></script>
-        <script src="https://cdn.jsdelivr.net/npm/jquery-validation-unobtrusive@3.2.6/jquery.validate.unobtrusive.min.js"></script>>
-
+        @*<script src="https://cdn.jsdelivr.net/npm/jquery-validation-unobtrusive@3.2.6/jquery.validate.unobtrusive.min.js"></script>>*@
+        <script src="@Url.Content("~/Scripts/jquery.validate.js")"></script>
+        <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.js")"></script>
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
+
+        <script src="@Url.Content("~/Content/assets/js/scripts.js")"></script>
+        <script src="@Url.Content("~/Content/assets/js/moment.js")"></script>
+
         @*@RazorHelpers.Script("Pages/Shared/shopping-cart.js", Url);
-        @RazorHelpers.Script("Pages/Shared/Global.js", Url)*@
+            @RazorHelpers.Script("Pages/Shared/Global.js", Url)*@
         @RazorHelpers.Script("Pages/Shared/Global.js", Url)
 
         @RenderSection("Scripts", false)
-
-        <!-- General section box modal start -->
-        <div class="row-fluid" id="default-modal-container">
-            <div class="hide" id="default-modal-loading">
-                <div class="modal-body">
-                    <h3>
-                        <i class="fa fa-cog fa-spin fa-1x fa-fw"></i> Cargando...
-                    </h3>
-                </div>
-            </div>
-            <div class="hide" id="default-modal-loading-error">
-                <div class="modal-body">
-                    <h3>
-                        <i class="fa fa-exclamation-triangle"></i> Ha ocurrido un error
-                    </h3>
-                </div>
-            </div>
         </div>
-        <!-- modal end -->
-    </div>
 </body>
 </html>

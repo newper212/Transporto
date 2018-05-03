@@ -30,14 +30,13 @@ namespace Transporto.ViewModels.vehiculo
         [Required]
         public String Placa { get; set; }
 
-        [Display(Name = "Fec Inicio SOAT: ")]
-        //[Required]
-        public DateTime FechaInicioSOAT { get; set; }
+        //[Display(Name = "Fec Inicio SOAT: ")]
+        //public DateTime FechaInicioSOAT { get; set; }
 
 
-        [Display(Name = "Fec Venc. SOAT: ")]
-        //[Required]
-        public DateTime FechaVencimientoSOAT { get; set; }
+        //[Display(Name = "Fec Venc. SOAT: ")]
+        ////[Required]
+        //public DateTime FechaVencimientoSOAT { get; set; }
 
 
 
@@ -52,37 +51,37 @@ namespace Transporto.ViewModels.vehiculo
         public decimal Volumen { get; set; }
 
 
-        [Display(Name = "FechaInicioRevicionTec: ")]
-        //[Required]
-        public DateTime FechaInicRevicTecn { get; set; }
+        //[Display(Name = "FechaInicioRevicionTec: ")]
+        ////[Required]
+        //public DateTime FechaInicRevicTecn { get; set; }
 
-        [Display(Name = "FechaCaducidadRevicionTec: ")]
-        //[Required]
-        public DateTime FechaCaducidadRevicionTec { get; set; }
-
-
-        [Display(Name = "FechaInicioSeguro: ")]
-        //[Required]
-        public DateTime FechaInicioSeguro { get; set; }
+        //[Display(Name = "FechaCaducidadRevicionTec: ")]
+        ////[Required]
+        //public DateTime FechaCaducidadRevicionTec { get; set; }
 
 
-        [Display(Name = "FechaCaduidadSeguro: ")]
-        //[Required]
-        public DateTime FechaCaduidadSeguro { get; set; }
+        //[Display(Name = "FechaInicioSeguro: ")]
+        ////[Required]
+        //public DateTime FechaInicioSeguro { get; set; }
+
+
+        //[Display(Name = "FechaCaduidadSeguro: ")]
+        ////[Required]
+        //public DateTime FechaCaduidadSeguro { get; set; }
 
         [Display(Name = "NumeroDeHabilitacion: ")]
         [Required]
         public String NumeroDeHabilitacion { get; set; }
 
 
-        [Display(Name = "FechaIncioCertificado: ")]
-        //[Required]
-        public DateTime FechaIncioCertificado { get; set; }
+        //[Display(Name = "FechaIncioCertificado: ")]
+        ////[Required]
+        //public DateTime FechaIncioCertificado { get; set; }
 
 
-        [Display(Name = "FechaCaducidadCertificado: ")]
-        //[Required]
-        public DateTime FechaCadicidadCertificado { get; set; }
+        //[Display(Name = "FechaCaducidadCertificado: ")]
+        ////[Required]
+        //public DateTime FechaCadicidadCertificado { get; set; }
 
         //[Display(Name = "Estado: ")]
         //[Required]
@@ -106,17 +105,17 @@ namespace Transporto.ViewModels.vehiculo
                 this.Modelo = vehiculo.Modelo;
                 this.Tipo = vehiculo.Tipo;
                 this.Placa = vehiculo.Placa;
-                this.FechaInicioSOAT = vehiculo.SoatFechaInic;
-                this.FechaVencimientoSOAT = vehiculo.SoatFechVenc;
-                this.Peso = vehiculo.Peso.Value;
-                this.Volumen = vehiculo.Volumen.Value;
-                this.FechaInicRevicTecn = vehiculo.FechaDeInicioRevisionTecn.Value;
-                this.FechaCaducidadRevicionTec = vehiculo.FechaDeCaducidadReviciTecni.Value;
-                this.FechaInicioSeguro = vehiculo.FechaIncioSeguroVehicular.Value;
-                this.FechaCaduidadSeguro = vehiculo.FechaCaducidadSeguVehicu.Value;
-                this.NumeroDeHabilitacion = vehiculo.NumeroHabilitacion;
-                this.FechaIncioCertificado = vehiculo.FechaInicioCertificadoFumiga.Value;
-                this.FechaCadicidadCertificado = vehiculo.FechaCaducidadCertificadoFumiga.Value;
+                //this.FechaInicioSOAT = vehiculo.SoatFechaInic;
+                //this.FechaVencimientoSOAT = vehiculo.SoatFechVenc;
+                this.Peso = vehiculo.Peso;
+                this.Volumen = vehiculo.Volumen;
+                //this.FechaInicRevicTecn = vehiculo.FechaDeInicioRevisionTecn.Value;
+                //this.FechaCaducidadRevicionTec = vehiculo.FechaDeCaducidadReviciTecni.Value;
+                //this.FechaInicioSeguro = vehiculo.FechaIncioSeguroVehicular.Value;
+                //this.FechaCaduidadSeguro = vehiculo.FechaCaducidadSeguVehicu.Value;
+                //this.NumeroDeHabilitacion = vehiculo.NumeroHabilitacion;
+                //this.FechaIncioCertificado = vehiculo.FechaInicioCertificadoFumiga.Value;
+                //this.FechaCadicidadCertificado = vehiculo.FechaCaducidadCertificadoFumiga.Value;
                 //this.Estado = vehiculo.Estado;
 
             }

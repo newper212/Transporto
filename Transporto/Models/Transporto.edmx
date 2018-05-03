@@ -18,6 +18,28 @@
           <Property Name="CelularAyudante" Type="varchar" MaxLength="50" />
           <Property Name="Estado" Type="varchar" MaxLength="50" />
         </EntityType>
+        <EntityType Name="Bckp_vehiculo">
+          <Key>
+            <PropertyRef Name="IDVehiculo" />
+          </Key>
+          <Property Name="IDVehiculo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Marca" Type="varchar" MaxLength="50" />
+          <Property Name="Modelo" Type="varchar" MaxLength="50" />
+          <Property Name="Tipo" Type="varchar" MaxLength="50" />
+          <Property Name="Placa" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="SoatFechaInic" Type="datetime" Nullable="false" />
+          <Property Name="SoatFechVenc" Type="datetime" Nullable="false" />
+          <Property Name="Peso" Type="decimal" Precision="10" Scale="8" />
+          <Property Name="Volumen" Type="decimal" Precision="10" Scale="8" />
+          <Property Name="FechaDeInicioRevisionTecn" Type="datetime" />
+          <Property Name="FechaDeCaducidadReviciTecni" Type="datetime" />
+          <Property Name="FechaIncioSeguroVehicular" Type="datetime" />
+          <Property Name="FechaCaducidadSeguVehicu" Type="datetime" />
+          <Property Name="NumeroHabilitacion" Type="varchar" MaxLength="50" />
+          <Property Name="FechaInicioCertificadoFumiga" Type="datetime" />
+          <Property Name="FechaCaducidadCertificadoFumiga" Type="datetime" />
+          <Property Name="Estado" Type="varchar" MaxLength="3" />
+        </EntityType>
         <EntityType Name="Chofer">
           <Key>
             <PropertyRef Name="IDchofer" />
@@ -28,8 +50,8 @@
           <Property Name="DNIChofer" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="FuncionChofer" Type="varchar" MaxLength="50" />
           <Property Name="NumeroBreveteChofer" Type="varchar" MaxLength="50" />
-          <Property Name="FechaDActivacionBrevete" Type="date" Nullable="false" />
-          <Property Name="FecchaVencimientoBrevete" Type="date" Nullable="false" />
+          <Property Name="FechaDActivacionBrevete" Type="datetime" Nullable="false" />
+          <Property Name="FecchaVencimientoBrevete" Type="datetime" Nullable="false" />
           <Property Name="CelularPersonalChofer" Type="varchar" MaxLength="50" />
           <Property Name="CelularCorporativoChofer" Type="varchar" MaxLength="50" />
           <Property Name="EmailChofer" Type="varchar" MaxLength="50" />
@@ -84,7 +106,7 @@
           <Property Name="NumeroDocumento" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="IDChofer" Type="int" Nullable="false" />
           <Property Name="IDAyudante" Type="int" Nullable="false" />
-          <Property Name="Fecha" Type="date" />
+          <Property Name="Fecha" Type="datetime" />
           <Property Name="IDClienteEmpresa" Type="int" Nullable="false" />
           <Property Name="Direccion" Type="varchar" MaxLength="50" />
           <Property Name="IDDistrito" Type="int" Nullable="false" />
@@ -101,9 +123,9 @@
           </Key>
           <Property Name="IDMantenimiento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Kilometraje" Type="int" Nullable="false" />
-          <Property Name="FechaMantenimiento" Type="date" Nullable="false" />
+          <Property Name="FechaMantenimiento" Type="datetime" Nullable="false" />
           <Property Name="Taller" Type="varchar" MaxLength="50" />
-          <Property Name="FechaDMantenimientoObcional" Type="date" />
+          <Property Name="FechaDMantenimientoObcional" Type="datetime" />
           <Property Name="Monto" Type="decimal" Precision="10" Scale="2" Nullable="false" />
           <Property Name="Motivo" Type="varchar" MaxLength="50" />
           <Property Name="IDUsuario" Type="int" Nullable="false" />
@@ -117,6 +139,21 @@
           <Property Name="IDObservaciones" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="IDHojaDeRuta" Type="int" Nullable="false" />
           <Property Name="DescripcionDObservacion" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="RevisionTecnica">
+          <Key>
+            <PropertyRef Name="RevisionTecnicaId" />
+          </Key>
+          <Property Name="RevisionTecnicaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="VehiculoId" Type="int" Nullable="false" />
+          <Property Name="Observacion" Type="varchar" MaxLength="150" />
+          <Property Name="FechaEmision" Type="datetime" />
+          <Property Name="FechaCaducidad" Type="datetime" />
+          <Property Name="FecEmisionSeguro" Type="datetime" />
+          <Property Name="FecCaducidadSeguro" Type="datetime" />
+          <Property Name="FecEmisionCertiFumiga" Type="datetime" />
+          <Property Name="FecCaducidadCertiFumiga" Type="datetime" />
+          <Property Name="Estado" Type="nchar" MaxLength="10" />
         </EntityType>
         <EntityType Name="Rol">
           <Key>
@@ -135,6 +172,17 @@
           <Property Name="IDRol" Type="int" Nullable="false" />
           <Property Name="Estado" Type="varchar" MaxLength="3" Nullable="false" />
         </EntityType>
+        <EntityType Name="Soat">
+          <Key>
+            <PropertyRef Name="SoatId" />
+          </Key>
+          <Property Name="SoatId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="VehiculoId" Type="int" Nullable="false" />
+          <Property Name="Numero" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="FechaEmision" Type="datetime" Nullable="false" />
+          <Property Name="FechaCaducidad" Type="datetime" Nullable="false" />
+          <Property Name="Estado" Type="nchar" MaxLength="3" />
+        </EntityType>
         <EntityType Name="Usuario">
           <Key>
             <PropertyRef Name="IdUsuario" />
@@ -149,24 +197,15 @@
         </EntityType>
         <EntityType Name="Vehiculo">
           <Key>
-            <PropertyRef Name="IDVehiculo" />
+            <PropertyRef Name="VehiculoId" />
           </Key>
-          <Property Name="IDVehiculo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Marca" Type="varchar" MaxLength="50" />
-          <Property Name="Modelo" Type="varchar" MaxLength="50" />
+          <Property Name="VehiculoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Marca" Type="varchar" MaxLength="70" Nullable="false" />
+          <Property Name="Modelo" Type="varchar" MaxLength="70" Nullable="false" />
           <Property Name="Tipo" Type="varchar" MaxLength="50" />
-          <Property Name="Placa" Type="char" MaxLength="6" Nullable="false" />
-          <Property Name="SoatFechaInic" Type="date" Nullable="false" />
-          <Property Name="SoatFechVenc" Type="date" Nullable="false" />
-          <Property Name="Peso" Type="decimal" Precision="10" Scale="8" />
-          <Property Name="Volumen" Type="decimal" Precision="10" Scale="8" />
-          <Property Name="FechaDeInicioRevisionTecn" Type="date" />
-          <Property Name="FechaDeCaducidadReviciTecni" Type="date" />
-          <Property Name="FechaIncioSeguroVehicular" Type="date" />
-          <Property Name="FechaCaducidadSeguVehicu" Type="date" />
-          <Property Name="NumeroHabilitacion" Type="varchar" MaxLength="50" />
-          <Property Name="FechaInicioCertificadoFumiga" Type="date" />
-          <Property Name="FechaCaducidadCertificadoFumiga" Type="date" />
+          <Property Name="Placa" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Peso" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Volumen" Type="decimal" Precision="10" Scale="2" Nullable="false" />
           <Property Name="Estado" Type="varchar" MaxLength="3" />
         </EntityType>
         <Association Name="FK_Contactos_EmpresaCliente">
@@ -242,10 +281,10 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_HojaDeRuta_Vehiculo">
-          <End Role="Vehiculo" Type="Self.Vehiculo" Multiplicity="1" />
+          <End Role="Bckp_vehiculo" Type="Self.Bckp_vehiculo" Multiplicity="1" />
           <End Role="HojaDeRuta" Type="Self.HojaDeRuta" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Vehiculo">
+            <Principal Role="Bckp_vehiculo">
               <PropertyRef Name="IDVehiculo" />
             </Principal>
             <Dependent Role="HojaDeRuta">
@@ -266,10 +305,10 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Mantenimiento_Vehiculo">
-          <End Role="Vehiculo" Type="Self.Vehiculo" Multiplicity="1" />
+          <End Role="Bckp_vehiculo" Type="Self.Bckp_vehiculo" Multiplicity="1" />
           <End Role="Mantenimiento" Type="Self.Mantenimiento" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Vehiculo">
+            <Principal Role="Bckp_vehiculo">
               <PropertyRef Name="IDVehiculo" />
             </Principal>
             <Dependent Role="Mantenimiento">
@@ -286,6 +325,18 @@
             </Principal>
             <Dependent Role="Observacion">
               <PropertyRef Name="IDHojaDeRuta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RevisionTecnica_Vehiculo">
+          <End Role="Vehiculo" Type="Self.Vehiculo" Multiplicity="1" />
+          <End Role="RevisionTecnica" Type="Self.RevisionTecnica" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vehiculo">
+              <PropertyRef Name="VehiculoId" />
+            </Principal>
+            <Dependent Role="RevisionTecnica">
+              <PropertyRef Name="VehiculoId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -313,8 +364,21 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Soat_Vehiculo">
+          <End Role="Vehiculo" Type="Self.Vehiculo" Multiplicity="1" />
+          <End Role="Soat" Type="Self.Soat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vehiculo">
+              <PropertyRef Name="VehiculoId" />
+            </Principal>
+            <Dependent Role="Soat">
+              <PropertyRef Name="VehiculoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="BD_TRANSPORTOModelStoreContainer">
           <EntitySet Name="Ayudante" EntityType="Self.Ayudante" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Bckp_vehiculo" EntityType="Self.Bckp_vehiculo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Chofer" EntityType="Self.Chofer" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Contactos" EntityType="Self.Contactos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Distrito" EntityType="Self.Distrito" Schema="dbo" store:Type="Tables" />
@@ -322,8 +386,10 @@
           <EntitySet Name="HojaDeRuta" EntityType="Self.HojaDeRuta" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Mantenimiento" EntityType="Self.Mantenimiento" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Observacion" EntityType="Self.Observacion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RevisionTecnica" EntityType="Self.RevisionTecnica" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Rol" EntityType="Self.Rol" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="RolesDeUsuario" EntityType="Self.RolesDeUsuario" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Soat" EntityType="Self.Soat" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Vehiculo" EntityType="Self.Vehiculo" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Contactos_EmpresaCliente" Association="Self.FK_Contactos_EmpresaCliente">
@@ -351,7 +417,7 @@
             <End Role="HojaDeRuta" EntitySet="HojaDeRuta" />
           </AssociationSet>
           <AssociationSet Name="FK_HojaDeRuta_Vehiculo" Association="Self.FK_HojaDeRuta_Vehiculo">
-            <End Role="Vehiculo" EntitySet="Vehiculo" />
+            <End Role="Bckp_vehiculo" EntitySet="Bckp_vehiculo" />
             <End Role="HojaDeRuta" EntitySet="HojaDeRuta" />
           </AssociationSet>
           <AssociationSet Name="FK_Mantenimiento_Usuario" Association="Self.FK_Mantenimiento_Usuario">
@@ -359,12 +425,16 @@
             <End Role="Mantenimiento" EntitySet="Mantenimiento" />
           </AssociationSet>
           <AssociationSet Name="FK_Mantenimiento_Vehiculo" Association="Self.FK_Mantenimiento_Vehiculo">
-            <End Role="Vehiculo" EntitySet="Vehiculo" />
+            <End Role="Bckp_vehiculo" EntitySet="Bckp_vehiculo" />
             <End Role="Mantenimiento" EntitySet="Mantenimiento" />
           </AssociationSet>
           <AssociationSet Name="FK_Observacion_HojaDeRuta" Association="Self.FK_Observacion_HojaDeRuta">
             <End Role="HojaDeRuta" EntitySet="HojaDeRuta" />
             <End Role="Observacion" EntitySet="Observacion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RevisionTecnica_Vehiculo" Association="Self.FK_RevisionTecnica_Vehiculo">
+            <End Role="Vehiculo" EntitySet="Vehiculo" />
+            <End Role="RevisionTecnica" EntitySet="RevisionTecnica" />
           </AssociationSet>
           <AssociationSet Name="FK_RolesDeUsuario_Rol" Association="Self.FK_RolesDeUsuario_Rol">
             <End Role="Rol" EntitySet="Rol" />
@@ -374,6 +444,10 @@
             <End Role="Usuario" EntitySet="Usuario" />
             <End Role="RolesDeUsuario" EntitySet="RolesDeUsuario" />
           </AssociationSet>
+          <AssociationSet Name="FK_Soat_Vehiculo" Association="Self.FK_Soat_Vehiculo">
+            <End Role="Vehiculo" EntitySet="Vehiculo" />
+            <End Role="Soat" EntitySet="Soat" />
+          </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -381,6 +455,7 @@
       <Schema Namespace="BD_TRANSPORTOModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="BD_TRANSPORTOEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Ayudante" EntityType="BD_TRANSPORTOModel.Ayudante" />
+          <EntitySet Name="Bckp_vehiculo" EntityType="BD_TRANSPORTOModel.Bckp_vehiculo" />
           <EntitySet Name="Chofer" EntityType="BD_TRANSPORTOModel.Chofer" />
           <EntitySet Name="Contactos" EntityType="BD_TRANSPORTOModel.Contactos" />
           <EntitySet Name="Distrito" EntityType="BD_TRANSPORTOModel.Distrito" />
@@ -388,13 +463,23 @@
           <EntitySet Name="HojaDeRuta" EntityType="BD_TRANSPORTOModel.HojaDeRuta" />
           <EntitySet Name="Mantenimiento" EntityType="BD_TRANSPORTOModel.Mantenimiento" />
           <EntitySet Name="Observacion" EntityType="BD_TRANSPORTOModel.Observacion" />
+          <EntitySet Name="RevisionTecnica" EntityType="BD_TRANSPORTOModel.RevisionTecnica" />
           <EntitySet Name="Rol" EntityType="BD_TRANSPORTOModel.Rol" />
           <EntitySet Name="RolesDeUsuario" EntityType="BD_TRANSPORTOModel.RolesDeUsuario" />
+          <EntitySet Name="Soat" EntityType="BD_TRANSPORTOModel.Soat" />
           <EntitySet Name="Usuario" EntityType="BD_TRANSPORTOModel.Usuario" />
           <EntitySet Name="Vehiculo" EntityType="BD_TRANSPORTOModel.Vehiculo" />
           <AssociationSet Name="FK_HojaDeRuta_Ayudante" Association="BD_TRANSPORTOModel.FK_HojaDeRuta_Ayudante">
             <End Role="Ayudante" EntitySet="Ayudante" />
             <End Role="HojaDeRuta" EntitySet="HojaDeRuta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HojaDeRuta_Vehiculo" Association="BD_TRANSPORTOModel.FK_HojaDeRuta_Vehiculo">
+            <End Role="Bckp_vehiculo" EntitySet="Bckp_vehiculo" />
+            <End Role="HojaDeRuta" EntitySet="HojaDeRuta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Mantenimiento_Vehiculo" Association="BD_TRANSPORTOModel.FK_Mantenimiento_Vehiculo">
+            <End Role="Bckp_vehiculo" EntitySet="Bckp_vehiculo" />
+            <End Role="Mantenimiento" EntitySet="Mantenimiento" />
           </AssociationSet>
           <AssociationSet Name="FK_HojaDeRuta_Chofer" Association="BD_TRANSPORTOModel.FK_HojaDeRuta_Chofer">
             <End Role="Chofer" EntitySet="Chofer" />
@@ -416,10 +501,6 @@
             <End Role="EmpresaCliente" EntitySet="EmpresaCliente" />
             <End Role="HojaDeRuta" EntitySet="HojaDeRuta" />
           </AssociationSet>
-          <AssociationSet Name="FK_HojaDeRuta_Vehiculo" Association="BD_TRANSPORTOModel.FK_HojaDeRuta_Vehiculo">
-            <End Role="Vehiculo" EntitySet="Vehiculo" />
-            <End Role="HojaDeRuta" EntitySet="HojaDeRuta" />
-          </AssociationSet>
           <AssociationSet Name="FK_Observacion_HojaDeRuta" Association="BD_TRANSPORTOModel.FK_Observacion_HojaDeRuta">
             <End Role="HojaDeRuta" EntitySet="HojaDeRuta" />
             <End Role="Observacion" EntitySet="Observacion" />
@@ -428,9 +509,9 @@
             <End Role="Usuario" EntitySet="Usuario" />
             <End Role="Mantenimiento" EntitySet="Mantenimiento" />
           </AssociationSet>
-          <AssociationSet Name="FK_Mantenimiento_Vehiculo" Association="BD_TRANSPORTOModel.FK_Mantenimiento_Vehiculo">
+          <AssociationSet Name="FK_RevisionTecnica_Vehiculo" Association="BD_TRANSPORTOModel.FK_RevisionTecnica_Vehiculo">
             <End Role="Vehiculo" EntitySet="Vehiculo" />
-            <End Role="Mantenimiento" EntitySet="Mantenimiento" />
+            <End Role="RevisionTecnica" EntitySet="RevisionTecnica" />
           </AssociationSet>
           <AssociationSet Name="FK_RolesDeUsuario_Rol" Association="BD_TRANSPORTOModel.FK_RolesDeUsuario_Rol">
             <End Role="Rol" EntitySet="Rol" />
@@ -439,6 +520,10 @@
           <AssociationSet Name="FK_RolesDeUsuario_Usuario" Association="BD_TRANSPORTOModel.FK_RolesDeUsuario_Usuario">
             <End Role="Usuario" EntitySet="Usuario" />
             <End Role="RolesDeUsuario" EntitySet="RolesDeUsuario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Soat_Vehiculo" Association="BD_TRANSPORTOModel.FK_Soat_Vehiculo">
+            <End Role="Vehiculo" EntitySet="Vehiculo" />
+            <End Role="Soat" EntitySet="Soat" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="Ayudante">
@@ -455,6 +540,30 @@
           <Property Name="Estado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="HojaDeRuta" Relationship="BD_TRANSPORTOModel.FK_HojaDeRuta_Ayudante" FromRole="Ayudante" ToRole="HojaDeRuta" />
         </EntityType>
+        <EntityType Name="Bckp_vehiculo">
+          <Key>
+            <PropertyRef Name="IDVehiculo" />
+          </Key>
+          <Property Name="IDVehiculo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Marca" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Modelo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Tipo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Placa" Type="String" Nullable="false" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Name="SoatFechaInic" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="SoatFechVenc" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Peso" Type="Decimal" Precision="10" Scale="8" />
+          <Property Name="Volumen" Type="Decimal" Precision="10" Scale="8" />
+          <Property Name="FechaDeInicioRevisionTecn" Type="DateTime" Precision="3" />
+          <Property Name="FechaDeCaducidadReviciTecni" Type="DateTime" Precision="3" />
+          <Property Name="FechaIncioSeguroVehicular" Type="DateTime" Precision="3" />
+          <Property Name="FechaCaducidadSeguVehicu" Type="DateTime" Precision="3" />
+          <Property Name="NumeroHabilitacion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FechaInicioCertificadoFumiga" Type="DateTime" Precision="3" />
+          <Property Name="FechaCaducidadCertificadoFumiga" Type="DateTime" Precision="3" />
+          <Property Name="Estado" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="HojaDeRuta" Relationship="BD_TRANSPORTOModel.FK_HojaDeRuta_Vehiculo" FromRole="Bckp_vehiculo" ToRole="HojaDeRuta" />
+          <NavigationProperty Name="Mantenimiento" Relationship="BD_TRANSPORTOModel.FK_Mantenimiento_Vehiculo" FromRole="Bckp_vehiculo" ToRole="Mantenimiento" />
+        </EntityType>
         <EntityType Name="Chofer">
           <Key>
             <PropertyRef Name="IDchofer" />
@@ -465,8 +574,8 @@
           <Property Name="DNIChofer" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="FuncionChofer" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="NumeroBreveteChofer" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="FechaDActivacionBrevete" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="FecchaVencimientoBrevete" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="FechaDActivacionBrevete" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FecchaVencimientoBrevete" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="CelularPersonalChofer" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="CelularCorporativoChofer" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="EmailChofer" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
@@ -528,7 +637,7 @@
           <Property Name="NumeroDocumento" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="IDChofer" Type="Int32" Nullable="false" />
           <Property Name="IDAyudante" Type="Int32" Nullable="false" />
-          <Property Name="Fecha" Type="DateTime" Precision="0" />
+          <Property Name="Fecha" Type="DateTime" Precision="3" />
           <Property Name="IDClienteEmpresa" Type="Int32" Nullable="false" />
           <Property Name="Direccion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="IDDistrito" Type="Int32" Nullable="false" />
@@ -539,10 +648,10 @@
           <Property Name="Hora" Type="DateTime" Precision="3" />
           <Property Name="Estado" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Ayudante" Relationship="BD_TRANSPORTOModel.FK_HojaDeRuta_Ayudante" FromRole="HojaDeRuta" ToRole="Ayudante" />
+          <NavigationProperty Name="Bckp_vehiculo" Relationship="BD_TRANSPORTOModel.FK_HojaDeRuta_Vehiculo" FromRole="HojaDeRuta" ToRole="Bckp_vehiculo" />
           <NavigationProperty Name="Chofer" Relationship="BD_TRANSPORTOModel.FK_HojaDeRuta_Chofer" FromRole="HojaDeRuta" ToRole="Chofer" />
           <NavigationProperty Name="Distrito" Relationship="BD_TRANSPORTOModel.FK_HojaDeRuta_Distrito" FromRole="HojaDeRuta" ToRole="Distrito" />
           <NavigationProperty Name="EmpresaCliente" Relationship="BD_TRANSPORTOModel.FK_HojaDeRuta_EmpresaCliente" FromRole="HojaDeRuta" ToRole="EmpresaCliente" />
-          <NavigationProperty Name="Vehiculo" Relationship="BD_TRANSPORTOModel.FK_HojaDeRuta_Vehiculo" FromRole="HojaDeRuta" ToRole="Vehiculo" />
           <NavigationProperty Name="Observacion" Relationship="BD_TRANSPORTOModel.FK_Observacion_HojaDeRuta" FromRole="HojaDeRuta" ToRole="Observacion" />
         </EntityType>
         <EntityType Name="Mantenimiento">
@@ -551,16 +660,16 @@
           </Key>
           <Property Name="IDMantenimiento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Kilometraje" Type="Int32" Nullable="false" />
-          <Property Name="FechaMantenimiento" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="FechaMantenimiento" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Taller" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="FechaDMantenimientoObcional" Type="DateTime" Precision="0" />
+          <Property Name="FechaDMantenimientoObcional" Type="DateTime" Precision="3" />
           <Property Name="Monto" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
           <Property Name="Motivo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="IDUsuario" Type="Int32" Nullable="false" />
           <Property Name="IDVehiculo" Type="Int32" Nullable="false" />
           <Property Name="Estado" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Bckp_vehiculo" Relationship="BD_TRANSPORTOModel.FK_Mantenimiento_Vehiculo" FromRole="Mantenimiento" ToRole="Bckp_vehiculo" />
           <NavigationProperty Name="Usuario" Relationship="BD_TRANSPORTOModel.FK_Mantenimiento_Usuario" FromRole="Mantenimiento" ToRole="Usuario" />
-          <NavigationProperty Name="Vehiculo" Relationship="BD_TRANSPORTOModel.FK_Mantenimiento_Vehiculo" FromRole="Mantenimiento" ToRole="Vehiculo" />
         </EntityType>
         <EntityType Name="Observacion">
           <Key>
@@ -570,6 +679,22 @@
           <Property Name="IDHojaDeRuta" Type="Int32" Nullable="false" />
           <Property Name="DescripcionDObservacion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="HojaDeRuta" Relationship="BD_TRANSPORTOModel.FK_Observacion_HojaDeRuta" FromRole="Observacion" ToRole="HojaDeRuta" />
+        </EntityType>
+        <EntityType Name="RevisionTecnica">
+          <Key>
+            <PropertyRef Name="RevisionTecnicaId" />
+          </Key>
+          <Property Name="RevisionTecnicaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="VehiculoId" Type="Int32" Nullable="false" />
+          <Property Name="Observacion" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="FechaEmision" Type="DateTime" Precision="3" />
+          <Property Name="FechaCaducidad" Type="DateTime" Precision="3" />
+          <Property Name="FecEmisionSeguro" Type="DateTime" Precision="3" />
+          <Property Name="FecCaducidadSeguro" Type="DateTime" Precision="3" />
+          <Property Name="FecEmisionCertiFumiga" Type="DateTime" Precision="3" />
+          <Property Name="FecCaducidadCertiFumiga" Type="DateTime" Precision="3" />
+          <Property Name="Estado" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="Vehiculo" Relationship="BD_TRANSPORTOModel.FK_RevisionTecnica_Vehiculo" FromRole="RevisionTecnica" ToRole="Vehiculo" />
         </EntityType>
         <EntityType Name="Rol">
           <Key>
@@ -591,6 +716,18 @@
           <NavigationProperty Name="Rol" Relationship="BD_TRANSPORTOModel.FK_RolesDeUsuario_Rol" FromRole="RolesDeUsuario" ToRole="Rol" />
           <NavigationProperty Name="Usuario" Relationship="BD_TRANSPORTOModel.FK_RolesDeUsuario_Usuario" FromRole="RolesDeUsuario" ToRole="Usuario" />
         </EntityType>
+        <EntityType Name="Soat">
+          <Key>
+            <PropertyRef Name="SoatId" />
+          </Key>
+          <Property Name="SoatId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="VehiculoId" Type="Int32" Nullable="false" />
+          <Property Name="Numero" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="FechaEmision" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FechaCaducidad" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Estado" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="Vehiculo" Relationship="BD_TRANSPORTOModel.FK_Soat_Vehiculo" FromRole="Soat" ToRole="Vehiculo" />
+        </EntityType>
         <EntityType Name="Usuario">
           <Key>
             <PropertyRef Name="IdUsuario" />
@@ -607,27 +744,18 @@
         </EntityType>
         <EntityType Name="Vehiculo">
           <Key>
-            <PropertyRef Name="IDVehiculo" />
+            <PropertyRef Name="VehiculoId" />
           </Key>
-          <Property Name="IDVehiculo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Marca" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Modelo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="VehiculoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Marca" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="Modelo" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="false" />
           <Property Name="Tipo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Placa" Type="String" Nullable="false" MaxLength="6" FixedLength="true" Unicode="false" />
-          <Property Name="SoatFechaInic" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="SoatFechVenc" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="Peso" Type="Decimal" Precision="10" Scale="8" />
-          <Property Name="Volumen" Type="Decimal" Precision="10" Scale="8" />
-          <Property Name="FechaDeInicioRevisionTecn" Type="DateTime" Precision="0" />
-          <Property Name="FechaDeCaducidadReviciTecni" Type="DateTime" Precision="0" />
-          <Property Name="FechaIncioSeguroVehicular" Type="DateTime" Precision="0" />
-          <Property Name="FechaCaducidadSeguVehicu" Type="DateTime" Precision="0" />
-          <Property Name="NumeroHabilitacion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="FechaInicioCertificadoFumiga" Type="DateTime" Precision="0" />
-          <Property Name="FechaCaducidadCertificadoFumiga" Type="DateTime" Precision="0" />
+          <Property Name="Placa" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Peso" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="Volumen" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
           <Property Name="Estado" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="HojaDeRuta" Relationship="BD_TRANSPORTOModel.FK_HojaDeRuta_Vehiculo" FromRole="Vehiculo" ToRole="HojaDeRuta" />
-          <NavigationProperty Name="Mantenimiento" Relationship="BD_TRANSPORTOModel.FK_Mantenimiento_Vehiculo" FromRole="Vehiculo" ToRole="Mantenimiento" />
+          <NavigationProperty Name="RevisionTecnica" Relationship="BD_TRANSPORTOModel.FK_RevisionTecnica_Vehiculo" FromRole="Vehiculo" ToRole="RevisionTecnica" />
+          <NavigationProperty Name="Soat" Relationship="BD_TRANSPORTOModel.FK_Soat_Vehiculo" FromRole="Vehiculo" ToRole="Soat" />
         </EntityType>
         <Association Name="FK_HojaDeRuta_Ayudante">
           <End Type="BD_TRANSPORTOModel.Ayudante" Role="Ayudante" Multiplicity="1" />
@@ -638,6 +766,30 @@
             </Principal>
             <Dependent Role="HojaDeRuta">
               <PropertyRef Name="IDAyudante" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HojaDeRuta_Vehiculo">
+          <End Type="BD_TRANSPORTOModel.Bckp_vehiculo" Role="Bckp_vehiculo" Multiplicity="1" />
+          <End Type="BD_TRANSPORTOModel.HojaDeRuta" Role="HojaDeRuta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Bckp_vehiculo">
+              <PropertyRef Name="IDVehiculo" />
+            </Principal>
+            <Dependent Role="HojaDeRuta">
+              <PropertyRef Name="IDVehiculo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Mantenimiento_Vehiculo">
+          <End Type="BD_TRANSPORTOModel.Bckp_vehiculo" Role="Bckp_vehiculo" Multiplicity="1" />
+          <End Type="BD_TRANSPORTOModel.Mantenimiento" Role="Mantenimiento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Bckp_vehiculo">
+              <PropertyRef Name="IDVehiculo" />
+            </Principal>
+            <Dependent Role="Mantenimiento">
+              <PropertyRef Name="IDVehiculo" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -701,18 +853,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_HojaDeRuta_Vehiculo">
-          <End Type="BD_TRANSPORTOModel.Vehiculo" Role="Vehiculo" Multiplicity="1" />
-          <End Type="BD_TRANSPORTOModel.HojaDeRuta" Role="HojaDeRuta" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Vehiculo">
-              <PropertyRef Name="IDVehiculo" />
-            </Principal>
-            <Dependent Role="HojaDeRuta">
-              <PropertyRef Name="IDVehiculo" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Observacion_HojaDeRuta">
           <End Type="BD_TRANSPORTOModel.HojaDeRuta" Role="HojaDeRuta" Multiplicity="1" />
           <End Type="BD_TRANSPORTOModel.Observacion" Role="Observacion" Multiplicity="*" />
@@ -737,15 +877,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Mantenimiento_Vehiculo">
+        <Association Name="FK_RevisionTecnica_Vehiculo">
           <End Type="BD_TRANSPORTOModel.Vehiculo" Role="Vehiculo" Multiplicity="1" />
-          <End Type="BD_TRANSPORTOModel.Mantenimiento" Role="Mantenimiento" Multiplicity="*" />
+          <End Type="BD_TRANSPORTOModel.RevisionTecnica" Role="RevisionTecnica" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Vehiculo">
-              <PropertyRef Name="IDVehiculo" />
+              <PropertyRef Name="VehiculoId" />
             </Principal>
-            <Dependent Role="Mantenimiento">
-              <PropertyRef Name="IDVehiculo" />
+            <Dependent Role="RevisionTecnica">
+              <PropertyRef Name="VehiculoId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -773,6 +913,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Soat_Vehiculo">
+          <End Type="BD_TRANSPORTOModel.Vehiculo" Role="Vehiculo" Multiplicity="1" />
+          <End Type="BD_TRANSPORTOModel.Soat" Role="Soat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vehiculo">
+              <PropertyRef Name="VehiculoId" />
+            </Principal>
+            <Dependent Role="Soat">
+              <PropertyRef Name="VehiculoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -790,6 +942,29 @@
                 <ScalarProperty Name="ApellidoAyudante" ColumnName="ApellidoAyudante" />
                 <ScalarProperty Name="NombreAyudante" ColumnName="NombreAyudante" />
                 <ScalarProperty Name="IDAyudate" ColumnName="IDAyudate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Bckp_vehiculo">
+            <EntityTypeMapping TypeName="BD_TRANSPORTOModel.Bckp_vehiculo">
+              <MappingFragment StoreEntitySet="Bckp_vehiculo">
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="FechaCaducidadCertificadoFumiga" ColumnName="FechaCaducidadCertificadoFumiga" />
+                <ScalarProperty Name="FechaInicioCertificadoFumiga" ColumnName="FechaInicioCertificadoFumiga" />
+                <ScalarProperty Name="NumeroHabilitacion" ColumnName="NumeroHabilitacion" />
+                <ScalarProperty Name="FechaCaducidadSeguVehicu" ColumnName="FechaCaducidadSeguVehicu" />
+                <ScalarProperty Name="FechaIncioSeguroVehicular" ColumnName="FechaIncioSeguroVehicular" />
+                <ScalarProperty Name="FechaDeCaducidadReviciTecni" ColumnName="FechaDeCaducidadReviciTecni" />
+                <ScalarProperty Name="FechaDeInicioRevisionTecn" ColumnName="FechaDeInicioRevisionTecn" />
+                <ScalarProperty Name="Volumen" ColumnName="Volumen" />
+                <ScalarProperty Name="Peso" ColumnName="Peso" />
+                <ScalarProperty Name="SoatFechVenc" ColumnName="SoatFechVenc" />
+                <ScalarProperty Name="SoatFechaInic" ColumnName="SoatFechaInic" />
+                <ScalarProperty Name="Placa" ColumnName="Placa" />
+                <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+                <ScalarProperty Name="Modelo" ColumnName="Modelo" />
+                <ScalarProperty Name="Marca" ColumnName="Marca" />
+                <ScalarProperty Name="IDVehiculo" ColumnName="IDVehiculo" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -900,6 +1075,22 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="RevisionTecnica">
+            <EntityTypeMapping TypeName="BD_TRANSPORTOModel.RevisionTecnica">
+              <MappingFragment StoreEntitySet="RevisionTecnica">
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="FecCaducidadCertiFumiga" ColumnName="FecCaducidadCertiFumiga" />
+                <ScalarProperty Name="FecEmisionCertiFumiga" ColumnName="FecEmisionCertiFumiga" />
+                <ScalarProperty Name="FecCaducidadSeguro" ColumnName="FecCaducidadSeguro" />
+                <ScalarProperty Name="FecEmisionSeguro" ColumnName="FecEmisionSeguro" />
+                <ScalarProperty Name="FechaCaducidad" ColumnName="FechaCaducidad" />
+                <ScalarProperty Name="FechaEmision" ColumnName="FechaEmision" />
+                <ScalarProperty Name="Observacion" ColumnName="Observacion" />
+                <ScalarProperty Name="VehiculoId" ColumnName="VehiculoId" />
+                <ScalarProperty Name="RevisionTecnicaId" ColumnName="RevisionTecnicaId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Rol">
             <EntityTypeMapping TypeName="BD_TRANSPORTOModel.Rol">
               <MappingFragment StoreEntitySet="Rol">
@@ -916,6 +1107,18 @@
                 <ScalarProperty Name="IDRol" ColumnName="IDRol" />
                 <ScalarProperty Name="IDUsuario" ColumnName="IDUsuario" />
                 <ScalarProperty Name="IDRolesUsuario" ColumnName="IDRolesUsuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Soat">
+            <EntityTypeMapping TypeName="BD_TRANSPORTOModel.Soat">
+              <MappingFragment StoreEntitySet="Soat">
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="FechaCaducidad" ColumnName="FechaCaducidad" />
+                <ScalarProperty Name="FechaEmision" ColumnName="FechaEmision" />
+                <ScalarProperty Name="Numero" ColumnName="Numero" />
+                <ScalarProperty Name="VehiculoId" ColumnName="VehiculoId" />
+                <ScalarProperty Name="SoatId" ColumnName="SoatId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -936,22 +1139,13 @@
             <EntityTypeMapping TypeName="BD_TRANSPORTOModel.Vehiculo">
               <MappingFragment StoreEntitySet="Vehiculo">
                 <ScalarProperty Name="Estado" ColumnName="Estado" />
-                <ScalarProperty Name="FechaCaducidadCertificadoFumiga" ColumnName="FechaCaducidadCertificadoFumiga" />
-                <ScalarProperty Name="FechaInicioCertificadoFumiga" ColumnName="FechaInicioCertificadoFumiga" />
-                <ScalarProperty Name="NumeroHabilitacion" ColumnName="NumeroHabilitacion" />
-                <ScalarProperty Name="FechaCaducidadSeguVehicu" ColumnName="FechaCaducidadSeguVehicu" />
-                <ScalarProperty Name="FechaIncioSeguroVehicular" ColumnName="FechaIncioSeguroVehicular" />
-                <ScalarProperty Name="FechaDeCaducidadReviciTecni" ColumnName="FechaDeCaducidadReviciTecni" />
-                <ScalarProperty Name="FechaDeInicioRevisionTecn" ColumnName="FechaDeInicioRevisionTecn" />
                 <ScalarProperty Name="Volumen" ColumnName="Volumen" />
                 <ScalarProperty Name="Peso" ColumnName="Peso" />
-                <ScalarProperty Name="SoatFechVenc" ColumnName="SoatFechVenc" />
-                <ScalarProperty Name="SoatFechaInic" ColumnName="SoatFechaInic" />
                 <ScalarProperty Name="Placa" ColumnName="Placa" />
                 <ScalarProperty Name="Tipo" ColumnName="Tipo" />
                 <ScalarProperty Name="Modelo" ColumnName="Modelo" />
                 <ScalarProperty Name="Marca" ColumnName="Marca" />
-                <ScalarProperty Name="IDVehiculo" ColumnName="IDVehiculo" />
+                <ScalarProperty Name="VehiculoId" ColumnName="VehiculoId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

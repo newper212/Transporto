@@ -1,97 +1,111 @@
 ﻿@model Transporto.ViewModels.vehiculo.AddEditVehiculoViewModel
 @{
-    ViewBag.Title = "Agregar/Modificar Vehiculo";
+    ViewBag.Title = "Vehiculo";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<div class="col-md-6" style="margin-top:25px;">
-    <div class="row">
-        <form class="form-horizontal" method="post">
-            @Html.HiddenFor(x => x.VehiculoId)
-            <div class="form-group">
-                @Html.LabelFor(x => x.Marca)
-                @Html.TextBoxFor(x => x.Marca, new { @class = "form-control" })
-            </div>
-            <div class="form-group">
-                @Html.LabelFor(x => x.Modelo)
-                @Html.TextBoxFor(x => x.Modelo, new { @class = "form-control" })
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(x => x.Tipo)
-                @Html.TextBoxFor(x => x.Tipo, new { @class = "form-control" })
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(x => x.Placa)
-                @Html.TextBoxFor(x => x.Placa, new { @class = "form-control" })
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(x => x.FechaInicioSOAT)
-                @Html.TextBoxFor(x => x.FechaInicioSOAT, new { @class = "form-control" })
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(x => x.FechaVencimientoSOAT)
-                @Html.TextBoxFor(x => x.FechaVencimientoSOAT, new { @class = "form-control" })
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(x => x.Peso)
-                @Html.TextBoxFor(x => x.Peso, new { @class = "form-control" })
-            </div>
 
 
-            <div class="form-group">
-                @Html.LabelFor(x => x.Volumen)
-                @Html.TextBoxFor(x => x.Volumen, new { @class = "form-control" })
-            </div>
+<div class="col-lg-12">
+    <section class="box ">
+        <header class="panel_header">
+            <h2 class="title pull-left">@(Model.VehiculoId.HasValue ? "Editar" : "Agregar") Vehiculos</h2>
+        </header>
+        <div class="content-body">
+            <form id="msg_validate" method="post" novalidate="novalidate">
+                @Html.AntiForgeryToken()
+                @Html.HiddenFor(x => x.VehiculoId)
+
+                <div class="form-group">
+                    <div class="row">
+
+                        <div class="col-xs-4">
+                            @Html.LabelFor(x => x.Placa, new { @class = "control-label" })
+                            <div class="controls">
+                                @Html.TextBoxFor(x => x.Placa, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(x => x.Placa)
+                            </div>
+                        </div>
+
+                        <div class="col-xs-4">
+                            @Html.LabelFor(x => x.Marca, new { @class = "control-label" })
+                            <div class="controls">
+                                @Html.TextBoxFor(x => x.Marca, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(x => x.Marca)
+                            </div>
+                        </div>
+
+                        <div class="col-xs-4">
+                            @Html.LabelFor(x => x.Modelo, new { @class = "control-label" })
+                            <div class="controls">
+                                @Html.TextBoxFor(x => x.Modelo, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(x => x.Modelo)
+                            </div>
+                        </div>
+
+                        
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+
+                        <div class="col-xs-4">
+                            @Html.LabelFor(x => x.Tipo, new { @class = "control-label" })
+                            <div class="controls">
+                                @Html.TextBoxFor(x => x.Tipo, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(x => x.Tipo)
+                            </div>
+                        </div>
+
+                        <div class="col-xs-4">
+                            @Html.LabelFor(x => x.Peso, new { @class = "control-label" })
+                            <div class="controls">
+                                @Html.TextBoxFor(x => x.Peso, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(x => x.Peso)
+                            </div>
+                        </div>
+
+                        <div class="col-xs-4">
+                            @Html.LabelFor(x => x.Volumen, new { @class = "control-label" })
+                            <div class="controls">
+                                @Html.TextBoxFor(x => x.Volumen, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(x => x.Volumen)
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="pull-right">
+                            <button type="submit" class="btn btn-primary">Guardar</button>
+                            <button type="button" class="btn" onclick="window.history.back()"><i class="fa fa-arrow-left" aria-hidden="true"></i> Salir</button>
+                        </div>
+                    </div>
+                </div>
 
 
 
-            <div class="form-group">
-                @Html.LabelFor(x => x.FechaInicRevicTecn)
-                @Html.TextBoxFor(x => x.FechaInicRevicTecn, new { @class = "form-control" })
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(x => x.FechaCaducidadRevicionTec)
-                @Html.TextBoxFor(x => x.FechaCaducidadRevicionTec, new { @class = "form-control" })
-            </div>
-
-
-
-            <div class="form-group">
-                @Html.LabelFor(x => x.FechaInicioSeguro)
-                @Html.TextBoxFor(x => x.FechaInicioSeguro, new { @class = "form-control" })
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(x => x.FechaCaduidadSeguro)
-                @Html.TextBoxFor(x => x.FechaCaduidadSeguro, new { @class = "form-control" })
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(x => x.NumeroDeHabilitacion)
-                @Html.TextBoxFor(x => x.NumeroDeHabilitacion, new { @class = "form-control" })
-            </div>
-
-
-
-            <div class="form-group">
-                @Html.LabelFor(x => x.FechaIncioCertificado)
-                @Html.TextBoxFor(x => x.FechaIncioCertificado, new { @class = "form-control" })
-            </div>
-
-
-            <div class="form-group">
-                @Html.LabelFor(x => x.FechaCaduidadSeguro)
-                @Html.TextBoxFor(x => x.FechaCaduidadSeguro, new { @class = "form-control" })
-            </div>
-
-
-            @*@Html.DropDownListFor(x => x.DistritoId, new SelectList(Model.ListDistrito,"DistritoId", "NombreDistrito"), "Seleccione")*@
-            <button type="submit" class="btn btn-primary">Guardar</button>
-        </form>
-    </div>
+            </form>
+        </div>
+    </section>
 </div>
+
+@section Scripts
+{
+
+<script type="text/javascript">
+
+
+
+    $(document).ready(function () {
+        $('.datepicker').datepicker({
+            format: "dd/mm/yyyy"
+        });
+    });
+
+</script>
+
+}

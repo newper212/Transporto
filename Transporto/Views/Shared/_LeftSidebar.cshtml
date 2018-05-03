@@ -18,7 +18,7 @@
                         <li><a href="@Url.Action("ListVehiculo", "Vehiculo")"> Lista de Vehiculos</a></li>
                         <li><a href="@Url.Action("ListSoat", "Vehiculo")"> SOAT</a></li>
                         <li><a href="@Url.Action("ListEstadoVehiculo", "Vehiculo")">Estado</a></li>
-                        <li><a href="@Url.Action("ListMantenimiento", "Mantenimiento")">Mantenimiento</a></li>  
+                        <li><a href="@Url.Action("ListMantenimiento", "Mantenimiento")">Mantenimiento</a></li>
                     </ul>
                 </li>
 
@@ -30,11 +30,11 @@
                         <li><a href="@Url.Action("LstEmpresaCliente", "EmpresaCliente")"> Clientes</a></li>
                         <li><a href="@Url.Action("LstContacto", "EmpresaCliente")"> Contactos Fijos</a></li>
                         <li><a href="@Url.Action("ListContacto", "Contacto")"> Contactos</a></li>
-                   
+
                     </ul>
                 </li>
 
-                   
+
 
                 <li class="@(ViewBag.Section == "Choferes" ? "active" : "")">
                     <a href="@Url.Action("ListChofer", "Chofer")" class="waves-effect @(ViewBag.Section == "Choferes" ? "active" : "")"><i class="md md-credit-card"></i> <span> Chofer </span></a>
@@ -52,7 +52,7 @@
                     <a href="@Url.Action("ListUsuario", "Usuario")" class="waves-effect @(ViewBag.Section == "Usuarios" ? "active" : "")"><i class="ti-user"></i> <span> Usuarios </span></a>
                 </li>
 
-                <li class="@(ViewBag.Section == "Roles" ? "active" : "")">
+                <li class="@(ViewBag.Section == "Roles" ? "actve" : "")">
                     <a href="@Url.Action("ListRol", "Rol")" class="waves-effect @(ViewBag.Section == "Roles" ? "active" : "")"><i class="ti-file"></i> <span> Roles </span></a>
                 </li>
 
@@ -62,8 +62,16 @@
 
 
             </ul>
-            <div class="clearfix"></div>
+
+            <div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 3px;">
+                <div class="ps-scrollbar-x" style="left: 0px; width: 0px;"></div>
+            </div>
+
+            <div class="ps-scrollbar-y-rail" style="top: 0px; height: 284px; right: 3px; bottom: 0px;">
+                <div class="ps-scrollbar-y" style="top: 0px; height: 41px;">
+                </div>
+            </div>
+
         </div>
-        <div class="clearfix"></div>
     </div>
 </div>

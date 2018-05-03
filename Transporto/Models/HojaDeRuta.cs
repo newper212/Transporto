@@ -38,10 +38,10 @@ namespace Transporto.Models
         public string Estado { get; set; }
     
         public virtual Ayudante Ayudante { get; set; }
+        public virtual Bckp_vehiculo Bckp_vehiculo { get; set; }
         public virtual Chofer Chofer { get; set; }
         public virtual Distrito Distrito { get; set; }
         public virtual EmpresaCliente EmpresaCliente { get; set; }
-        public virtual Vehiculo Vehiculo { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Observacion> Observacion { get; set; }
     }

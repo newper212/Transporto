@@ -15,6 +15,29 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Bckp_vehiculo">
+      <EntityTypeMapping TypeName="BD_TRANSPORTOModel.Bckp_vehiculo">
+        <MappingFragment StoreEntitySet="Bckp_vehiculo">
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="FechaCaducidadCertificadoFumiga" ColumnName="FechaCaducidadCertificadoFumiga" />
+          <ScalarProperty Name="FechaInicioCertificadoFumiga" ColumnName="FechaInicioCertificadoFumiga" />
+          <ScalarProperty Name="NumeroHabilitacion" ColumnName="NumeroHabilitacion" />
+          <ScalarProperty Name="FechaCaducidadSeguVehicu" ColumnName="FechaCaducidadSeguVehicu" />
+          <ScalarProperty Name="FechaIncioSeguroVehicular" ColumnName="FechaIncioSeguroVehicular" />
+          <ScalarProperty Name="FechaDeCaducidadReviciTecni" ColumnName="FechaDeCaducidadReviciTecni" />
+          <ScalarProperty Name="FechaDeInicioRevisionTecn" ColumnName="FechaDeInicioRevisionTecn" />
+          <ScalarProperty Name="Volumen" ColumnName="Volumen" />
+          <ScalarProperty Name="Peso" ColumnName="Peso" />
+          <ScalarProperty Name="SoatFechVenc" ColumnName="SoatFechVenc" />
+          <ScalarProperty Name="SoatFechaInic" ColumnName="SoatFechaInic" />
+          <ScalarProperty Name="Placa" ColumnName="Placa" />
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+          <ScalarProperty Name="Modelo" ColumnName="Modelo" />
+          <ScalarProperty Name="Marca" ColumnName="Marca" />
+          <ScalarProperty Name="IDVehiculo" ColumnName="IDVehiculo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Chofer">
       <EntityTypeMapping TypeName="BD_TRANSPORTOModel.Chofer">
         <MappingFragment StoreEntitySet="Chofer">
@@ -122,6 +145,22 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="RevisionTecnica">
+      <EntityTypeMapping TypeName="BD_TRANSPORTOModel.RevisionTecnica">
+        <MappingFragment StoreEntitySet="RevisionTecnica">
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="FecCaducidadCertiFumiga" ColumnName="FecCaducidadCertiFumiga" />
+          <ScalarProperty Name="FecEmisionCertiFumiga" ColumnName="FecEmisionCertiFumiga" />
+          <ScalarProperty Name="FecCaducidadSeguro" ColumnName="FecCaducidadSeguro" />
+          <ScalarProperty Name="FecEmisionSeguro" ColumnName="FecEmisionSeguro" />
+          <ScalarProperty Name="FechaCaducidad" ColumnName="FechaCaducidad" />
+          <ScalarProperty Name="FechaEmision" ColumnName="FechaEmision" />
+          <ScalarProperty Name="Observacion" ColumnName="Observacion" />
+          <ScalarProperty Name="VehiculoId" ColumnName="VehiculoId" />
+          <ScalarProperty Name="RevisionTecnicaId" ColumnName="RevisionTecnicaId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Rol">
       <EntityTypeMapping TypeName="BD_TRANSPORTOModel.Rol">
         <MappingFragment StoreEntitySet="Rol">
@@ -138,6 +177,18 @@
           <ScalarProperty Name="IDRol" ColumnName="IDRol" />
           <ScalarProperty Name="IDUsuario" ColumnName="IDUsuario" />
           <ScalarProperty Name="IDRolesUsuario" ColumnName="IDRolesUsuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Soat">
+      <EntityTypeMapping TypeName="BD_TRANSPORTOModel.Soat">
+        <MappingFragment StoreEntitySet="Soat">
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="FechaCaducidad" ColumnName="FechaCaducidad" />
+          <ScalarProperty Name="FechaEmision" ColumnName="FechaEmision" />
+          <ScalarProperty Name="Numero" ColumnName="Numero" />
+          <ScalarProperty Name="VehiculoId" ColumnName="VehiculoId" />
+          <ScalarProperty Name="SoatId" ColumnName="SoatId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -158,22 +209,13 @@
       <EntityTypeMapping TypeName="BD_TRANSPORTOModel.Vehiculo">
         <MappingFragment StoreEntitySet="Vehiculo">
           <ScalarProperty Name="Estado" ColumnName="Estado" />
-          <ScalarProperty Name="FechaCaducidadCertificadoFumiga" ColumnName="FechaCaducidadCertificadoFumiga" />
-          <ScalarProperty Name="FechaInicioCertificadoFumiga" ColumnName="FechaInicioCertificadoFumiga" />
-          <ScalarProperty Name="NumeroHabilitacion" ColumnName="NumeroHabilitacion" />
-          <ScalarProperty Name="FechaCaducidadSeguVehicu" ColumnName="FechaCaducidadSeguVehicu" />
-          <ScalarProperty Name="FechaIncioSeguroVehicular" ColumnName="FechaIncioSeguroVehicular" />
-          <ScalarProperty Name="FechaDeCaducidadReviciTecni" ColumnName="FechaDeCaducidadReviciTecni" />
-          <ScalarProperty Name="FechaDeInicioRevisionTecn" ColumnName="FechaDeInicioRevisionTecn" />
           <ScalarProperty Name="Volumen" ColumnName="Volumen" />
           <ScalarProperty Name="Peso" ColumnName="Peso" />
-          <ScalarProperty Name="SoatFechVenc" ColumnName="SoatFechVenc" />
-          <ScalarProperty Name="SoatFechaInic" ColumnName="SoatFechaInic" />
           <ScalarProperty Name="Placa" ColumnName="Placa" />
           <ScalarProperty Name="Tipo" ColumnName="Tipo" />
           <ScalarProperty Name="Modelo" ColumnName="Modelo" />
           <ScalarProperty Name="Marca" ColumnName="Marca" />
-          <ScalarProperty Name="IDVehiculo" ColumnName="IDVehiculo" />
+          <ScalarProperty Name="VehiculoId" ColumnName="VehiculoId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

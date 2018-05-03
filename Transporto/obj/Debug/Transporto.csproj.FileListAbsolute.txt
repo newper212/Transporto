@@ -402,6 +402,8 @@ C:\Users\José Sandovl\Desktop\Transporto\Transporto\obj\Debug\Transporto.Global
 C:\Users\José Sandovl\Desktop\Transporto\Transporto\obj\Debug\Transporto.csproj.GenerateResource.Cache
 C:\Users\José Sandovl\Desktop\Transporto\Transporto\obj\Debug\Transporto.dll
 C:\Users\José Sandovl\Desktop\Transporto\Transporto\obj\Debug\Transporto.pdb
+D:\BitPerfect\Transporto\Transporto\obj\Debug\Transporto.Globalization.MessageFormValidation.resources
+D:\BitPerfect\Transporto\Transporto\obj\Debug\Transporto.csproj.GenerateResource.Cache
 D:\BitPerfect\Transporto\Transporto\bin\roslyn\csc.exe
 D:\BitPerfect\Transporto\Transporto\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
 D:\BitPerfect\Transporto\Transporto\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
@@ -480,8 +482,8 @@ D:\BitPerfect\Transporto\Transporto\bin\Microsoft.Owin.Security.OAuth.xml
 D:\BitPerfect\Transporto\Transporto\bin\Microsoft.Owin.Security.Google.xml
 D:\BitPerfect\Transporto\Transporto\bin\Microsoft.Owin.Security.Twitter.xml
 D:\BitPerfect\Transporto\Transporto\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-D:\BitPerfect\Transporto\Transporto\obj\Debug\Transporto.csprojResolveAssemblyReference.cache
-D:\BitPerfect\Transporto\Transporto\obj\Debug\Transporto.Globalization.MessageFormValidation.resources
-D:\BitPerfect\Transporto\Transporto\obj\Debug\Transporto.csproj.GenerateResource.Cache
 D:\BitPerfect\Transporto\Transporto\obj\Debug\Transporto.dll
 D:\BitPerfect\Transporto\Transporto\obj\Debug\Transporto.pdb
+D:\BitPerfect\Transporto\Transporto\obj\Debug\Transporto.csprojResolveAssemblyReference.cache
+D:\BitPerfect\Transporto\Transporto\bin\Microsoft.VisualStudio.DebuggerVisualizers.dll
+D:\BitPerfect\Transporto\Transporto\bin\Microsoft.VisualStudio.DebuggerVisualizers.xml

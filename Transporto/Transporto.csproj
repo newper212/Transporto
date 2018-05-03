@@ -49,6 +49,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.VisualStudio.DebuggerVisualizers, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
       <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
       <Private>True</Private>
@@ -95,6 +96,7 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -228,6 +230,7 @@
     <Compile Include="Helpers\CookieHelpers.cs" />
     <Compile Include="Helpers\DataHelper.cs" />
     <Compile Include="Helpers\ExtensionHelpers.cs" />
+    <Compile Include="Helpers\HtmlHelpersExtensions.cs" />
     <Compile Include="Helpers\MessageHelpers.cs" />
     <Compile Include="Helpers\ModalFormHelpers.cs" />
     <Compile Include="Helpers\ModelBinderHelpers.cs" />
@@ -239,6 +242,9 @@
     <Compile Include="Logic\PermisoAccesoLogic.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Ayudante.cs">
+      <DependentUpon>Transporto.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Bckp_vehiculo.cs">
       <DependentUpon>Transporto.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Chofer.cs">
@@ -270,10 +276,16 @@
     <Compile Include="Models\Observacion.cs">
       <DependentUpon>Transporto.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\RevisionTecnica.cs">
+      <DependentUpon>Transporto.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Rol.cs">
       <DependentUpon>Transporto.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\RolesDeUsuario.cs">
+      <DependentUpon>Transporto.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Soat.cs">
       <DependentUpon>Transporto.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Transporto.Context.cs">
@@ -323,7 +335,9 @@
     <Compile Include="ViewModels\usuario\AddEditUsuarioViewModel.cs" />
     <Compile Include="ViewModels\usuario\ListUsuarioViewModel.cs" />
     <Compile Include="ViewModels\usuario\_DeleteUsuarioViewModel.cs" />
+    <Compile Include="ViewModels\vehiculo\AddEditSoatViewModel.cs" />
     <Compile Include="ViewModels\vehiculo\AddEditVehiculoViewModel.cs" />
+    <Compile Include="ViewModels\vehiculo\ListSoatVehiculoViewModel.cs" />
     <Compile Include="ViewModels\vehiculo\ListVehiculoViewModel.cs" />
     <Compile Include="ViewModels\vehiculo\_DeleteVehiculoViewModelcs.cs" />
   </ItemGroup>
@@ -343,6 +357,7 @@
     <Content Include="Content\assets\css\select2\select2.min.css" />
     <Content Include="Content\assets\css\select2\select2.png" />
     <Content Include="Content\assets\css\select2\select2x2.png" />
+    <Content Include="Content\assets\css\style.css" />
     <Content Include="Content\assets\fonts\fontawesome-webfont5b62.svg" />
     <Content Include="Content\assets\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\assets\fonts\ioniconsaa26.svg" />
@@ -444,6 +459,8 @@
     <Content Include="Content\assets\js\menucontext\jquery.ui.position.min.js" />
     <Content Include="Content\assets\js\menucontext\jquery\contextMenuFunction.js" />
     <Content Include="Content\assets\js\modernizr.min.js" />
+    <Content Include="Content\assets\js\moment.js" />
+    <Content Include="Content\assets\js\scripts.js" />
     <Content Include="Content\assets\js\select2.min.js" />
     <Content Include="Content\assets\js\select2\select2-spinner.gif" />
     <Content Include="Content\assets\js\select2\select2.full.js" />
@@ -786,11 +803,6 @@
     <Content Include="font\context-menu-icons.ttf" />
     <Content Include="font\context-menu-icons.eot" />
     <Content Include="Content\jquery.contextMenu.min.css.map" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Content\bootstrap.css.map" />
-    <Content Include="Content\bootstrap-theme.css.map" />
     <EntityDeploy Include="Models\Transporto.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Transporto.Designer.cs</LastGenOutput>
@@ -798,8 +810,15 @@
     <Content Include="Models\Transporto.edmx.diagram">
       <DependentUpon>Transporto.edmx</DependentUpon>
     </Content>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Properties\PublishProfiles\APP_Transporto.pubxml" />
-    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Models\Transporto.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Transporto.edmx</DependentUpon>
@@ -814,8 +833,6 @@
     <Content Include="Scripts\bootstrap-datetimepicker.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Scripts\jquery-1.10.2.js" />
-    <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\jquery-3.2.1.min.map" />
     <Content Include="Scripts\jquery-3.2.1.slim.min.map" />
     <Content Include="Scripts\jquery.contextMenu.js" />
@@ -840,7 +857,6 @@
     <Content Include="Scripts\moment-with-locales.min.js" />
     <Content Include="Scripts\moment.js" />
     <Content Include="Scripts\moment.min.js" />
-    <Content Include="Scripts\npm.js" />
     <Content Include="Scripts\Pages\Shared\Global.js" />
     <Content Include="Scripts\Pages\Shared\global.min.js" />
     <Content Include="Scripts\Pages\Shared\shopping-cart.js" />
@@ -901,6 +917,7 @@
     <Content Include="Views\RolesUsuario\ListRolUsuario.cshtml" />
     <Content Include="Views\RolesUsuario\AddEditRolUsuario.cshtml" />
     <Content Include="Views\RolesUsuario\_DeleteRolUsuario.cshtml" />
+    <Content Include="Views\Vehiculo\AddEditSoat.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -910,7 +927,6 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
-    <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
